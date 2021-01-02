@@ -1,0 +1,265 @@
+FUNCTION FC_XV : VOID
+NAME    : 'FC_XV'
+AUTHOR  : 'YACINEAA'
+FAMILY  : 'XV'
+VERSION : '1.3'
+
+
+//COPYRIGHT:   © 2020 COPAG, Automation engineering office / Taroudant, Morocco
+//-------------------------------------------------------------------------------------------------------------------------------------
+//-- Object         Management of valves XV
+//-- Type           Function
+//-- Version        1
+//-------------------------------------------------------------------------------------------------------------------------------------
+//--Author          Yacine A.A.
+//--Organization    COPAG SA&I         
+//--Description     This block takes care of object handling for valve objects :
+//                      - The activation of the object in the different modes.
+//                      - The monitoring of the feedbacks.
+//                      - Turn-on delay and Turn-off delay of the object.
+//                      - Interlocking the object
+//                      - Interlocking the manual mode of the object      
+//                      - Mask object errors.
+//-----------------------------------------------------------------------------------------------------------------
+//--History
+//--[Version]         [Name]                        [DATE]                    [Comments]
+//--1.00              Yacine AA                     25-08-20                  Creation
+//--1.10              Yacine AA                     08-09-20                  Donwsizing the UDT to 64k
+//--1.20              Yacine AA                     25-09-20                  Adaptting with WW logic
+//--1.30              Yacine AA                     27-12-20                  Standardizing UDT naming and adding manual mode counter  
+//-------------------------------------------------------------------------------------------------------------------------------------
+//-----ToDo
+//-- Animation seat-lifts faults
+//-- Animation rebounding fault
+//---
+//---
+//-------------------------------------------------------------------------------------------------------------------------------------
+//-----HELP
+// Type ID : 
+// 0 : solenoid valve : Vavle with solenoid and no feedback [e.g. Bürkert 2000]
+// 1 : simple valve : Shut off or change over valve equipped with one solenoid and 2 feedbacks [e.g. Definox DCX4 or Alfalaval SSV]
+// 2 : mixproof vavle : Mixproof valve with plug and 2 feedbacks and 2 seats with feedback [e.g. Definox VEOX, Alafalaval Unique Mixproof]
+// 3 : mixproff valve : Mixproof valve with plug and 2 feedbacks and 2 seats without feedback [e.g. Definox VEOX]
+// 4 : simple valve with leak chamber : Double sealing shut-off valve with one plug and 2 feedbacks and one solenoid for laek [e.g. Definox DCX3-DE]
+// 5 : simple valve with leak chamber and washing valve : Double sealing shut-off valve with one plug and 2 feedbacks and one solenoid for laek and its cleaning vavle [e.g. Definox DCX4-DE]
+
+VAR_IN_OUT
+    XV                      : UDT_XV ; //Standerd user data type for valves XV
+END_VAR
+
+VAR_INPUT
+    PostiveEdge100ms        : BOOL ; //Positive edge for 100ms (10Hz) 
+    PostiveEdge1s           : BOOL ; //Positive edge for 1s (1Hz) 
+    Acknowledgment          : BOOL ; //Acknowledgment for valve zone
+    Simulation              : BOOL ; //Simulation mode in valve zone
+END_VAR
+
+VAR_TEMP
+    Ack                     : BOOL ; //Acknowledgment temporary working bit 
+END_VAR 
+
+
+
+BEGIN
+
+//Simulation = Zone Simulation or element Simulation
+XV.WorkinMode0 := Simulation OR "DB_SCADA".SimulationMode_0 ;
+
+//Acknowledgment = Zone acknowledgment or element acknowledgment
+Ack := XV.Acknowledgment OR Acknowledgment;
+
+//Resetting faults
+IF Ack THEN
+    XV.Fault_00     := False;
+    XV.Fault_01     := False;
+    XV.Fault_02     := False;
+    XV.Fault_03     := False;
+    XV.Fault_04     := False;
+    XV.Fault_05     := False;
+    XV.Fault_06     := False;
+    XV.Fault_07     := False;
+    XV.Acknowledged := True;
+END_IF;
+
+//Prohibiting manual mode
+IF XV.WorkinMode5  THEN XV.WorkinMode3  := False; XV.ForceOutput0 := False; END_IF; //Main valves
+IF XV.WorkinMode6  THEN XV.ForceOutput1 := False; XV.ForceOutput2 := False; XV.ForceOutput3 := False; END_IF;//Secondary valves
+
+//Main inputs animation 
+IF (XV.Setting._00 = 0) OR XV.WorkinMode0 OR XV.WorkinMode1 THEN 
+    IF NOT XV.WorkinMode4 THEN
+        XV.Feedback0 := NOT XV.Output0;
+        XV.Feedback1 :=     XV.Output0;
+    ELSE
+        XV.Feedback0 :=     XV.Output0;
+        XV.Feedback1 := NOT XV.Output0;
+    END_IF;
+    IF NOT XV.Edge._08 THEN XV.Acknowledgment := True ; END_IF;
+ELSE
+    IF NOT XV.WorkinMode4 THEN
+        XV.Feedback0 :=     XV.IOFeedback0;
+        XV.Feedback1 :=     XV.IOFeedback1;
+    ELSE
+        XV.Feedback0 :=     XV.IOFeedback1;
+        XV.Feedback1 :=     XV.IOFeedback0;
+    END_IF;
+END_IF;
+
+//Positions established
+XV.Bit._00  := (XV.Output0 AND  XV.Feedback1 AND NOT XV.Feedback0) OR ((NOT XV.Output0) AND XV.Feedback0 AND NOT XV.Feedback1 ) ;
+XV.Bit._01  := (XV.Output1 AND  XV.Feedback2) OR (NOT XV.Output1 AND NOT XV.Feedback2) ;
+XV.Bit._02  := (XV.Output2 AND  XV.Feedback3) OR (NOT XV.Output2 AND NOT XV.Feedback3) ;
+
+//Resetting grace temporary timers
+IF XV.Bit._00 AND NOT XV.Edge._00 THEN 
+    XV.Setting.Buffer._00  := 0;
+    XV.Setting.Buffer._01  := 0;
+    XV.Setting.Buffer._02  := 0;
+END_IF;
+IF XV.Bit._01 AND NOT XV.Edge._01 THEN 
+    XV.Setting.Buffer._03  := 0;
+END_IF;
+IF XV.Bit._02 AND NOT XV.Edge._02 THEN 
+    XV.Setting.Buffer._04  := 0;
+END_IF;
+
+//Secondary inputs animation  
+IF (XV.Setting._00 < 2 OR XV.Setting._00 > 3)  OR XV.WorkinMode0 OR XV.WorkinMode2 THEN 
+    XV.Feedback2 := XV.Output1;
+    XV.Feedback3 := XV.Output2;
+ELSE
+    XV.Feedback2 := XV.IOFeedback2;
+    XV.Feedback3 := XV.IOFeedback3;
+END_IF;
+
+//Activation order to outputs 
+XV.Bit._10   :=  (NOT XV.WorkinMode3 AND XV.AutoOutput0) OR (XV.WorkinMode3 AND XV.ForceOutput0) ;
+XV.Bit._11   :=  (NOT XV.WorkinMode3 AND XV.AutoOutput1) OR (XV.WorkinMode3 AND XV.ForceOutput1) ;
+XV.Bit._12   :=  (NOT XV.WorkinMode3 AND XV.AutoOutput2) OR (XV.WorkinMode3 AND XV.ForceOutput2) ;
+XV.Bit._13   :=  False ;
+
+//Management of outputs according to valve type
+CASE XV.Setting._00 OF
+    0,1: // 0 : solenoid valve , 1 : simple valve
+        XV.Bit._11 := False;
+        XV.Bit._12 := False;
+        XV.Bit._13 := False;
+    2,3: // 2-3 : mixproof vavle 
+        IF XV.Bit._10 THEN 
+            XV.Bit._11 := False;
+            XV.Bit._12 := False;
+            XV.Bit._13 := False;
+        END_IF;
+        IF XV.Bit._11 THEN XV.Bit._12 := False; END_IF;
+        IF XV.Bit._12 THEN XV.Bit._11 := False; END_IF;
+    4: // 4 : simple valve with leak chamber 
+        XV.Bit._12 := False;
+END_CASE;
+
+//Writting output 0
+IF XV.Bit._10 THEN
+    IF NOT XV.Edge._10 THEN 
+        XV.Setting.Buffer._00  := 0;
+        XV.Setting.Buffer._01  := 0;
+        XV.Setting.Buffer._02  := 0;
+        XV.Setting.Buffer._05  := 0 ;
+        XV.Register._01        := XV.Register._01 + 1; //counting energizing cycles
+    END_IF;
+    IF PostiveEdge100ms AND XV.Setting.Buffer._05 < XV.Setting._08    THEN XV.Setting.Buffer._05 := XV.Setting.Buffer._05 + 1; END_IF;
+    IF XV.Setting.Buffer._05 >= XV.Setting._08 OR XV.Setting._08 <= 0 THEN XV.Output0 := XV.Bit._10; END_IF;
+ELSE
+    IF  XV.Edge._10 THEN 
+        XV.Setting.Buffer._05     := 0 ; 
+        XV.Setting.Buffer._00     := 0;
+        XV.Setting.Buffer._01  := 0;
+        XV.Setting.Buffer._02  := 0;
+    END_IF;
+    IF PostiveEdge100ms AND XV.Setting.Buffer._05 < XV.Setting._07    THEN XV.Setting.Buffer._05 := XV.Setting.Buffer._05 + 1; END_IF;
+    IF XV.Setting.Buffer._05 >= XV.Setting._07 OR XV.Setting._07 <= 0 THEN XV.Output0 := XV.Bit._10; END_IF;
+END_IF; 
+
+//Writting output 1-2-3
+XV.Output1 := XV.Bit._11 ;
+XV.Output2 := XV.Bit._12 ;
+XV.Output3 := XV.Bit._13 ;
+IF XV.Bit._11 AND NOT XV.Edge._11 THEN 
+    XV.Register._02 := XV.Register._02 + 1; //Upper seat-lift or leak chamber cycle counter
+END_IF;
+IF XV.Bit._12 AND NOT XV.Edge._12 THEN 
+    XV.Register._03 := XV.Register._03 + 1; //Lower seat-lift or washing valve cycle counter
+END_IF;
+
+//Main manual counter
+IF XV.WorkinMode3 AND NOT XV.Edge._07 THEN 
+    XV.Register._05 := XV.Register._05 + 1 ;
+END_IF;
+   
+//Upper/Lower seat lift fault counter
+IF (XV.Fault_01 OR XV.Fault_02) AND NOT XV.Edge._15 THEN 
+    XV.Register._06 := XV.Register._06 + 1 ;
+END_IF;  
+
+//Main valve position not established yet : 03/04 Main activation/desactivation fault
+IF NOT XV.Bit._00 THEN
+    IF PostiveEdge100ms THEN XV.Setting.Buffer._00 := XV.Setting.Buffer._00 + 1 ; END_IF;
+    XV.Fault_03 := XV.Setting.Buffer._00 > XV.Setting._03 AND     XV.Bit._10;  
+    XV.Fault_04 := XV.Setting.Buffer._00 > XV.Setting._02 AND NOT XV.Bit._10;      
+END_IF;
+
+//Main hardware fault : 04 Main Hardware fault (Both feedbacks on)
+IF XV.Feedback0 AND XV.Feedback1 THEN
+    IF PostiveEdge100ms THEN XV.Setting.Buffer._02 := XV.Setting.Buffer._02 + 1 ; END_IF;
+    XV.Fault_05 := XV.Setting.Buffer._02 > 10 ;
+END_IF;
+
+//Calculating faults : 07 Main maximum number of activation cycles reached
+IF XV.Register._01 >= XV.Setting._01  THEN
+    XV.Fault_07 := True ;
+END_IF;
+
+//Summing main faults : 00
+IF XV.Fault_03 OR XV.Fault_04 OR XV.Fault_05 OR XV.Fault_06 THEN
+    XV.Fault_00 := True ;
+ELSE
+    XV.Acknowledged := False;
+END_IF;
+
+//Main fault counter
+IF XV.Fault_00 AND NOT XV.Edge._09 THEN 
+    XV.Register._04 := XV.Register._04 + 1 ; //Main fault counter
+END_IF; 
+
+//Edgging
+XV.Edge._00 := XV.Bit._00 ; //Positive edge position of main valve established
+XV.Edge._01 := XV.Bit._01 ; //Positif edge for position of upper seat lift established
+XV.Edge._02 := XV.Bit._02 ; //Positive edge position of main valve established
+
+XV.Edge._07 := XV.WorkinMode3 ; //Positive edge for manuel mode
+
+XV.Edge._08 := XV.WorkinMode0 OR XV.WorkinMode1 OR (XV.Setting._00 = 0) ; //Positive edge for inhibition
+XV.Edge._09 := XV.Fault_00 ; 
+XV.Edge._10 := XV.Bit._10 ; 
+XV.Edge._11 := XV.Bit._11 ;
+XV.Edge._12 := XV.Bit._12 ;
+XV.Edge._13 := XV.Bit._13 ;
+
+XV.Edge._15 := XV.Fault_01 OR XV.Fault_02 ;
+
+//Main operating time [h]
+IF PostiveEdge1s AND XV.Output0 THEN 
+    XV.Register._00 := XV.Register._00 + (1.0/3600.0); 
+END_IF;
+
+//Calulating number of forced, inhibited and in fault elements [Legacy]
+IF XV.WorkinMode3    THEN "DB_SCADA".XVForc  := "DB_SCADA".XVForc  + 1 ; END_IF;
+IF XV.WorkinMode1    THEN "DB_SCADA".XVInhib := "DB_SCADA".XVInhib + 1 ; END_IF;
+IF XV.Fault_00       THEN "DB_SCADA".XVFault := "DB_SCADA".XVFault + 1 ; END_IF;
+
+//Resetting Acknowledgment
+IF XV.Acknowledgment AND NOT (XV.WorkinMode0 OR XV.WorkinMode1 OR (XV.Setting._00 = 0)) THEN XV.Acknowledgment:=FALSE; END_IF;
+
+
+END_FUNCTION
+ 
+
+
