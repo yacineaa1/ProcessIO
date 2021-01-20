@@ -12,7 +12,7 @@ VERSION : '1.3'
 //-- Version        1
 //-------------------------------------------------------------------------------------------------------------------------------------
 //--Author          Yacine A.A.
-//--Organization    2020 COPAG, PMOI, Automation engineering office / Taroudant, Morocco          
+//--Organization    2020 COPAG, Industrial project management office, Department of operational technology / Taroudant, Morocco          
 //--Description     This block takes care of object handling for valve objects :
 //                      - The activation of the object in the different modes.
 //                      - The monitoring of the feedbacks.
