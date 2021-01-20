@@ -5,7 +5,7 @@ Last Modified Date/Time : jeu. janv. 14 07:32:30  2021
 OpenXV( Message XVTagName)   {
 
                 {-------------------------------------------------------------------------------------------------------------------------------------
-                COPYRIGHT:   © 2021 COPAG, Operational technology office / Taroudant, Morocco
+                COPYRIGHT:   Â© 2021 COPAG, Operational technology office / Taroudant, Morocco
                 -- Object          OpenXV
                 -- Type             Function
                 -- Version         1
@@ -97,7 +97,7 @@ Last Modified Date/Time : dim. janv. 17 11:26:15  2021
 OpenWin( Message ArgNameWin, Message ArgTitleWin)   {
 
                 {-----------------------------------------------------------------------------------------------------------------------------------------------------------
-                COPYRIGHT:   © 2021 COPAG, Operational technology office / Taroudant, Morocco
+                COPYRIGHT:   Â© 2021 COPAG, Operational technology office / Taroudant, Morocco
                 -- Object          OpenWin
                 -- Type             Function
                 -- Version         1
@@ -175,7 +175,7 @@ Last Modified Date/Time : lun. janv. 18 04:10:10  2021
 OpenMM( Message MMTagName)   {
 
                 {-------------------------------------------------------------------------------------------------------------------------------------
-                COPYRIGHT:   © 2021 COPAG, Operational technology office / Taroudant, Morocco
+                COPYRIGHT:   Â© 2021 COPAG, Operational technology office / Taroudant, Morocco
                 -- Object          OpenMM
                 -- Type             Function
                 -- Version         1.00
@@ -266,7 +266,7 @@ Last Modified Date/Time : lun. janv. 18 04:10:10  2021
 OpenDIO( Message DIOTagName)   {
 
                 {-------------------------------------------------------------------------------------------------------------------------------------
-                COPYRIGHT:   © 2021 COPAG, Operational technology office / Taroudant, Morocco
+                COPYRIGHT:   Â© 2021 COPAG, Operational technology office / Taroudant, Morocco
                 -- Object          OpenDIO
                 -- Type             Function
                 -- Version         1.00
