@@ -5,14 +5,14 @@ FAMILY  : 'DIO'
 VERSION : '1.0'
 
 
-//COPYRIGHT:   © 2020 COPAG, Automation engineering office / Taroudant, Morocco
+//GNU General Public License v3.0
 //--------------------------------------------------------------------------------------------------------------------------------------
 //-- Object         Management of Digital inputs or outputs DIO
 //-- Type           Function
 //-- Version        1
 //--------------------------------------------------------------------------------------------------------------------------------------
 //--Author          Yacine A.A.
-//--Organization    COPAG SA&I         
+//--Organization    2020 COPAG, Industrial project management office, Department of operational technology / Taroudant, Morocco          
 //--Description     This block takes care of handling for Digital inputs or outputs, this is in particular:
 //                      - The activation of the object in the different modes
 //                      - Turn-on delay and Turn-off delay of the object in the different modes
