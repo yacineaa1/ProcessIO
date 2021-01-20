@@ -1,4 +1,4 @@
-FUNCTION FC_XV : VOID
+FUNCTION FC1090 : VOID
 NAME    : 'FC_XV'
 AUTHOR  : 'YACINEAA'
 FAMILY  : 'XV'
@@ -228,6 +228,14 @@ END_IF;
 IF XV.Fault_00 AND NOT XV.Edge._09 THEN 
     XV.Register._04 := XV.Register._04 + 1 ; //Main fault counter
 END_IF; 
+
+//Access levels monitoring
+IF XV.AccessLevel._03 > 9999               THEN XV.AccessLevel._03 := 9999; END_IF;
+IF XV.AccessLevel._03 < XV.AccessLevel._02 THEN XV.AccessLevel._03 := XV.AccessLevel._02 + 1; END_IF;
+IF XV.AccessLevel._02 < XV.AccessLevel._01 THEN XV.AccessLevel._02 := XV.AccessLevel._01 + 1; END_IF;
+IF XV.AccessLevel._01 < XV.AccessLevel._00 THEN XV.AccessLevel._01 := XV.AccessLevel._00 + 1; END_IF;
+IF XV.AccessLevel._00 < 0                  THEN XV.AccessLevel._00 := 0; END_IF;
+
 
 //Edgging
 XV.Edge._00 := XV.Bit._00 ; //Positive edge position of main valve established
