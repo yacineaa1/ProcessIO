@@ -1,4 +1,4 @@
-FUNCTION FC_MM : VOID
+FUNCTION FC1091 : VOID
 NAME    : 'FC_MM'
 AUTHOR  : 'YACINEAA'
 FAMILY  : 'MM'
@@ -218,6 +218,14 @@ END_IF;
 IF MM.Fault_04 AND NOT MM.Fault_00 THEN 
     MM.Register._06 := MM.Register._06 + 1 ;
 END_IF;   
+
+//Access levels monitoring
+IF MM.AccessLevel._03 > 9999               THEN MM.AccessLevel._03 := 9999; END_IF;
+IF MM.AccessLevel._03 < MM.AccessLevel._02 THEN MM.AccessLevel._03 := MM.AccessLevel._02 + 1; END_IF;
+IF MM.AccessLevel._02 < MM.AccessLevel._01 THEN MM.AccessLevel._02 := MM.AccessLevel._01 + 1; END_IF;
+IF MM.AccessLevel._01 < MM.AccessLevel._00 THEN MM.AccessLevel._01 := MM.AccessLevel._00 + 1; END_IF;
+IF MM.AccessLevel._00 < 0                  THEN MM.AccessLevel._00 := 0; END_IF;
+
 
 //Edgging
 MM.Edge._00 := MM.Bit._00 ; //Positive edge position of motor running forward
