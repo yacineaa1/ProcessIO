@@ -5,14 +5,14 @@ FAMILY  : 'XV'
 VERSION : '1.3'
 
 
-//COPYRIGHT:   © 2020 COPAG, Automation engineering office / Taroudant, Morocco
+//GNU General Public License v3.0
 //-------------------------------------------------------------------------------------------------------------------------------------
 //-- Object         Management of valves XV
 //-- Type           Function
 //-- Version        1
 //-------------------------------------------------------------------------------------------------------------------------------------
 //--Author          Yacine A.A.
-//--Organization    COPAG SA&I         
+//--Organization    2020 COPAG, PMOI, Automation engineering office / Taroudant, Morocco          
 //--Description     This block takes care of object handling for valve objects :
 //                      - The activation of the object in the different modes.
 //                      - The monitoring of the feedbacks.
@@ -36,7 +36,7 @@ VERSION : '1.3'
 //-------------------------------------------------------------------------------------------------------------------------------------
 //-----HELP
 // Type ID : 
-// 0 : solenoid valve : Vavle with solenoid and no feedback [e.g. Bürkert 2000]
+// 0 : solenoid valve : Vavle with solenoid and no feedback [e.g. BÃ¼rkert 2000]
 // 1 : simple valve : Shut off or change over valve equipped with one solenoid and 2 feedbacks [e.g. Definox DCX4 or Alfalaval SSV]
 // 2 : mixproof vavle : Mixproof valve with plug and 2 feedbacks and 2 seats with feedback [e.g. Definox VEOX, Alafalaval Unique Mixproof]
 // 3 : mixproff valve : Mixproof valve with plug and 2 feedbacks and 2 seats without feedback [e.g. Definox VEOX]
