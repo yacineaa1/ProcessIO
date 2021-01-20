@@ -1,0 +1,144 @@
+TYPE "UDT_MM"
+NAME    : UDT_MM
+AUTHOR  : YACINEAA
+FAMILY  : MM
+VERSION : 1.2
+
+
+  STRUCT	
+	Feedback0			: BOOL ;			//24 Running feedback from contactor or VFD (F/R)
+	Feedback1			: BOOL ;			//25 No overload from CB or VFD
+	Feedback2			: BOOL ;			//26 VFD ready
+	Feedback3 			: BOOL ;			//27 Empty
+	
+	Output0 			: BOOL ;			//28 Forward running
+	Output1 			: BOOL ;			//29 Reverse running
+	Output2 			: BOOL ;			//30 No emergency stop (Only for >=15kW)
+	Output3 			: BOOL ;			//31 Empty
+	
+	AutoOutput0 		: BOOL ;			//16 Automatic order for : Forward running
+	AutoOutput1 		: BOOL ;			//17 Automatic order for : Reverse running
+	AutoOutput2			: BOOL ;			//18 Automatic order for : Emergency stop (For >15kW)
+	AutoOutput3			: BOOL ;			//19 Automatic order for : Empty
+		
+	ForceOutput0		: BOOL ;			//20 Forcing order for : Forward running
+	ForceOutput1		: BOOL ;			//21 Forcing order for : Reverse running
+	ForceOutput2		: BOOL ;			//22 Forcing order for : Emergency stop (For >15kW)
+	ForceOutput3		: BOOL ;			//23 Forcing order for : Empty
+	
+	WorkinMode0			: BOOL ;			//08 Mode simulation
+	WorkinMode1			: BOOL ;			//09 Mode suppression
+	WorkinMode2			: BOOL ;			//10 Mode reverse
+	WorkinMode3			: BOOL ;			//11 Mode manual	
+	WorkinMode4	 		: BOOL ;			//12 Motor equiped with a VFD
+	WorkinMode5		 	: BOOL ;			//13 Interdiction manual mode for forward running
+	WorkinMode6		 	: BOOL ;			//14 Interdiction manual mode for reverse running
+
+	Fault_00 			: BOOL ;			//15 Sum of motor faults
+	Fault_01 			: BOOL ;			//00 motor starting fault (running without feedback)
+	Fault_02			: BOOL ;			//01 motor stopping fault (stoped with running feedback)
+	Fault_03 			: BOOL ;			//02 motor overload fault (lost of no overload feedback) 
+	Fault_04 			: BOOL ;			//03 VFD not ready fault (lost VFD ready feedback)
+	Fault_05 			: BOOL ;			//04 Emergency stop 
+	Fault_06 			: BOOL ;			//05 Maximum operating time before preventive maintenance reached 
+	Fault_07 			: BOOL ;			//06 motor rebounding fault
+	Acknowledged 		: BOOL ;			//07 The object faultes has been acknowledged
+	
+	IOFeedback0	 		: BOOL ;			//Running from contactor or VFD (F/R)
+	IOFeedback1			: BOOL := True ;	//No overload from CB or VFD
+	IOFeedback2 		: BOOL := True ;	//VFD ready
+	IOFeedback3			: BOOL ;			//Empty
+	Acknowledgment		: BOOL ;			//Acknowledgment of faults
+	Bit_4_5 			: BOOL ;			//Spare
+	Bit_4_6 			: BOOL ;			//Spare
+	Bit_4_7 			: BOOL ;			//Spare
+	Bit_5_0 			: BOOL ;			//Spare
+	Bit_5_1 			: BOOL ;			//Spare
+	Bit_5_2 			: BOOL ;			//Spare
+	Bit_5_3 			: BOOL ;			//Spare
+	Bit_5_4 			: BOOL ;			//Spare
+	Bit_5_5 			: BOOL ;			//Spare
+	Bit_5_6 			: BOOL ;			//Spare
+	Bit_5_7 			: BOOL ;			//Spare
+	
+   
+   Setting : STRUCT 	
+    _00 				: INT  := 0;		//ID type of motor object 
+    _01 				: INT  := 6000;		//Maximum operating time before preventive maintenance [h]
+    _02			 		: INT  := 20;		//Grace period before fault when stopping motor [100ms]
+    _03			 		: INT  := 20;		//Grace period before fault when starting motor [100ms]
+    _04			 		: INT  := 10;		//Grace period before reboundding fault [100ms]
+    _05			 		: INT  := 1;		//Grace period before overload fault [100ms]
+  	_06			 		: INT  := 1;		//Grace period before VFR not ready fault [100ms]
+    _07		 			: INT  := 0; 		//Delay before stopping motor [100ms]
+    _08					: INT  := 0; 		//Delay before starting motor [100ms]
+	Buffer : STRUCT
+		_00				: INT ;				//Grace period before fault when stopping/starting motor [100ms]
+		_01 			: INT ;				//Grace period before rebound fault [100ms]
+		_02		 		: INT ;				//Grace period before overload fault [100ms]
+		_03				: INT ;				//Grace period before VFR not ready fault [100ms]
+		_04 			: INT ;				//Delay before start/stop [100ms]
+		_05 			: INT ;				//Spare
+	END_STRUCT ;	
+   END_STRUCT ;	
+   
+   Register : STRUCT 	
+    _00			 		: REAL ;			//Motor operating time [h]
+    _01					: INT ;				//Motor Forward cycle counter
+    _02					: INT ;				//Motor Reverse cycle counter
+    _03			 		: INT ;				//Manual mode counter
+    _04			 		: INT ;				//Start/Stop fault counter
+    _05			 		: INT ;				//Overload fault counter
+    _06			 		: INT ;				//VFD fault counter
+   END_STRUCT ;	
+   
+   AccessLevel : STRUCT 	
+    _00					: INT   := 2000;	//Access level 0 : for manual operation
+    _01					: INT   := 2050;	//Access level 1 ; for inhibition mode 
+    _02					: INT   := 7000;	//Access level 2 : for setting level 
+    _03					: INT   := 7050;	//Access level 3 : for advenced setting level 
+   END_STRUCT ;
+   
+   Bit : STRUCT 	//Temporary working bits
+    _00 				: BOOL ;			//run forware (start/stop) of motor established
+    _01 				: BOOL ;			//run reverse (start/stop) of motor established
+    _02 				: BOOL ;			//
+    _03 				: BOOL ;			//
+    _04 				: BOOL ;			//
+    _05 				: BOOL ;			//
+    _06 				: BOOL ;			// 
+    _07 				: BOOL ;			//
+    _08 				: BOOL ;			//
+    _09 				: BOOL ;			//
+    _10 				: BOOL ;			//Buffer output 0
+    _11 				: BOOL ;			//Buffer output 1
+    _12 				: BOOL ;			//Buffer output 2
+    _13 				: BOOL ;			//Buffer output 3
+    _14 				: BOOL ;			//
+    _15 				: BOOL ;			//
+   END_STRUCT ;	
+   
+   Edge : STRUCT 	//Working edges
+    _00 				: BOOL ;			//PE run forware (start/stop) of motor established
+    _01 				: BOOL ;			//PE run reverse (start/stop) of motor established
+    _02 				: BOOL ;			//
+    _03 				: BOOL ;			//
+    _04 				: BOOL ;			//
+    _05 				: BOOL ;			//
+    _06 				: BOOL ;			//
+    _07 				: BOOL ;			//
+    _08 				: BOOL ;			//
+    _09 				: BOOL ;			//
+    _10 				: BOOL ;			//Positive edge for output 0
+    _11 				: BOOL ;			//Positive edge for output 1
+    _12 				: BOOL ;			//Positive edge for output 2
+    _13 				: BOOL ;			//Positive edge for output 3
+    _14 				: BOOL ;			//
+    _15 				: BOOL ;			//
+   END_STRUCT ;	
+   
+
+     
+  END_STRUCT ;	
+END_TYPE
+
