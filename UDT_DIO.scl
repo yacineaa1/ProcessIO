@@ -1,0 +1,119 @@
+TYPE "UDT_DIO"
+NAME    : UDT_DIO
+AUTHOR  : YACINEAA
+FAMILY  : DIO
+VERSION : 1.0
+
+
+  STRUCT	
+	Input				: BOOL ;			//24 Input of the digital object
+	Value				: BOOL ;			//25 Value of object after parsing
+	ForceValue			: BOOL ;			//26 Forcing value (not time filtred)
+	Value0				: BOOL ;			//27 Spare
+	Value1				: BOOL ;			//28 Spare
+	Value2				: BOOL ;			//29 Spare
+	Value3				: BOOL ;			//30 Spare
+	Value4				: BOOL ;			//31 Spare
+	
+	WorkinMode0			: BOOL ;			//16 Mode simulation
+	WorkinMode1			: BOOL ;			//17 Mode suppression
+	WorkinMode2			: BOOL ;			//18 Mode CIP
+	WorkinMode3			: BOOL ;			//19 Mode manual	
+	WorkinMode4		 	: BOOL ;			//20 Interdiction manual mode
+	WorkinMode5		 	: BOOL ;			//21 Spare mode
+	WorkinMode6		 	: BOOL ;			//22 Spare mode
+	WorkinMode7		 	: BOOL ;			//23 Spare mode
+
+	Fault_00 			: BOOL ;			//08 Sum of object faults
+	Fault_01 			: BOOL ;			//09 Object in unconformity state (externally set)
+	Fault_02			: BOOL ;			//10 Hardware fault
+	Fault_03 			: BOOL ;			//11 Loss of power fault
+	Fault_04 			: BOOL ;			//12 Maximum operating time before preventive maintenance reached 
+	Fault_05 			: BOOL ;			//13 Spare fault
+	Fault_06 			: BOOL ;			//14 Spare fault
+	Fault_07 			: BOOL ;			//15 Spare fault
+	Acknowledged 		: BOOL ;			//00 The object faultes has been acknowledged
+	
+	Acknowledgment		: BOOL ;			//01 Acknowledgment of faults
+	Bit_3_2 			: BOOL ;			//02 Spare
+	Bit_3_3 			: BOOL ;			//03 Spare
+	Bit_3_4 			: BOOL ;			//04 Spare
+	Bit_3_5 			: BOOL ;			//05 Spare
+	Bit_3_6 			: BOOL ;			//06 Spare
+	Bit_3_7 			: BOOL ;			//07 Spare
+
+   Setting : STRUCT 	
+    _00 				: INT  := 0;		//ID of the digital object  
+    _01			 		: INT  := 0;		//Manual forcing period (0 if permanent) [100ms]
+    _02			 		: INT  := 15;		//Grace period before activation output [100ms]
+    _03			 		: INT  := 30;		//Grace period before deactivation output [100ms]
+    _04				 	: INT  := 50;		//Grace period before activation output in CIP mode [100ms]
+    _05			 		: INT  := 10;		//Grace period before deactivation output in CIP mode [100ms]
+    _06			 		: INT  := 0;		//Spare [100ms]
+	Buffer : STRUCT 
+	    _00	 			: INT  := 0;		//Manual forcing period [100ms]
+	    _01		 		: INT  := 20;		//Grace period before activation output [100ms]
+	    _02		 		: INT  := 20;		//Grace period before deactivation output [100ms]
+	    _03		 		: INT  := 50;		//Spare [100ms]
+
+	END_STRUCT ;	
+   END_STRUCT ;	
+   
+   Register : STRUCT 	
+    _00		 			: REAL ;			//Object operating time [h]
+    _01					: INT ;				//Object cycle counter
+    _02		 			: INT ;				//faults counter
+    _03		 			: INT ;				//Manual mode counter
+    _04 				: INT ;				//Spare
+   END_STRUCT ;	
+   
+   AccessLevel : STRUCT 	
+    _00					: INT   := 2000;	//Access level 0 : for manual operation
+    _01					: INT   := 2050;	//Access level 1 ; for inhibition mode 
+    _02					: INT   := 7000;	//Access level 2 : for setting level 
+    _03					: INT   := 7050;	//Access level 3 : for advanced setting level
+   END_STRUCT ;
+   
+   Bit : STRUCT
+    _00					: BOOL ;			//
+    _01 				: BOOL ;			//
+    _02 				: BOOL ;			//
+    _03 				: BOOL ;			//
+    _04 				: BOOL ;			//
+    _05 				: BOOL ;			//
+    _06 				: BOOL ;			// 
+    _07 				: BOOL ;			//
+    _08 				: BOOL ;			//
+    _09 				: BOOL ;			//
+    _10 				: BOOL ;			//
+    _11 				: BOOL ;			//
+    _12 				: BOOL ;			//
+    _13 				: BOOL ;			//
+    _14 				: BOOL ;			//
+    _15 				: BOOL ;			//
+   END_STRUCT ;	
+   
+   Edge : STRUCT
+    _00					: BOOL ;			//
+    _01 				: BOOL ;			//
+    _02 				: BOOL ;			//
+    _03 				: BOOL ;			//
+    _04 				: BOOL ;			//
+    _05 				: BOOL ;			//
+    _06 				: BOOL ;			// 
+    _07 				: BOOL ;			//
+    _08 				: BOOL ;			//
+    _09 				: BOOL ;			//
+    _10 				: BOOL ;			//
+    _11 				: BOOL ;			//
+    _12 				: BOOL ;			//
+    _13 				: BOOL ;			//
+    _14 				: BOOL ;			//
+    _15 				: BOOL ;			//
+   END_STRUCT ;	
+   
+
+     
+  END_STRUCT ;	
+END_TYPE
+
