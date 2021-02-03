@@ -1,0 +1,145 @@
+TYPE "UDT_XV"
+NAME    : UDT_XV
+AUTHOR  : YACINEAA
+FAMILY  : XV
+VERSION : 1.3
+
+
+  STRUCT	
+	Feedback0			: BOOL ;			//24 Main de-energized feedback status
+	Feedback1			: BOOL ;			//25 Main energized feedback status
+	Feedback2			: BOOL ;			//26 Upper seat-lift energized or plug 2 de-energized feedback status
+	Feedback3 			: BOOL ;			//27 Lower seat-lift energized or plug 2 energized feedback status
+	
+	Output0 			: BOOL ;			//28 Valve 1 : Main valve plug output status
+	Output1 			: BOOL ;			//29 Valve 2 : Upper seat-lift or leak chamber or main plug 2 output status 
+	Output2 			: BOOL ;			//30 Valve 3 : Lower seat-lift or washing vavle output status
+	Output3 			: BOOL ;			//31 Valve 4 : Output 4 (not used yet)
+	
+	AutoOutput0 		: BOOL ;			//16 Automatic order for vavle 1 : main plug
+	AutoOutput1 		: BOOL ;			//17 Automatic order for vavle 2 : upper seat-lift or leak chamber or valve 2
+	AutoOutput2			: BOOL ;			//18 Automatic order for vavle 3 : lower seat-lift or washing valve
+	AutoOutput3			: BOOL ;			//19 Automatic order for valve 4 : not used yet
+		
+	ForceOutput0		: BOOL ;			//20 Forcing order for vavle 1 : main plug
+	ForceOutput1		: BOOL ;			//21 Forcing order for vavle 2 : upper seat-lift or leak chamber or valve 2
+	ForceOutput2		: BOOL ;			//22 Forcing order for vavle 3 : lower seat-lift or washing valve
+	ForceOutput3		: BOOL ;			//23 Forcing order for valve 4 : not used yet
+	
+	WorkinMode0			: BOOL ;			//08 Mode simulation
+	WorkinMode1			: BOOL ;			//09 Mode suppression for main valves
+	WorkinMode2			: BOOL ;			//10 Mode suppression for secondary valves
+	WorkinMode3			: BOOL ;			//11 Mode manual
+		
+	WorkinMode4			: BOOL ;			//12 Main valve normally open or air to close (only for anaimation)
+	WorkinMode5			: BOOL ;			//13 Prohibiting manual mode for main valves
+	WorkinMode6			: BOOL ;			//14 Delayed control (only for anaimation)
+
+	Fault_00 			: BOOL ;			//15 Sum of main faults
+	Fault_01 			: BOOL ;			//00 Upper seat activatdion fault (activated without feedback)
+	Fault_02			: BOOL ;			//01 Lower seat activatdion fault (activated without feedback)
+	Fault_03 			: BOOL ;			//02 Main activation fault (activated without feedback)
+	Fault_04 			: BOOL ;			//03 Main deactivation fault (deactivated without feedback)
+	Fault_05 			: BOOL ;			//04 Main Hardware fault (Both feedbacks on)
+	Fault_06 			: BOOL ;			//05 Main rebound fault 
+	Fault_07 			: BOOL ;			//06 Main maximum number of activation cycles reached
+	Acknowledged 		: BOOL ;			//07 The object faultes has been acknowledged	
+	
+	IOFeedback0	 		: BOOL ;			//Main de-energized IO feedback status
+	IOFeedback1			: BOOL ;			//Main energized IO feedback status
+	IOFeedback2 		: BOOL ;			//Upper seat-lift energized plug 2 de-energized IO feedback status
+	IOFeedback3			: BOOL ;			//Lower seat-lift energized or plug 2 energized IO feedback status
+	Acknowledgment		: BOOL ;			//Acknowledgment of faults
+	Bit_4_5 			: BOOL ;			//Spare
+	Bit_4_6 			: BOOL ;			//Spare
+	Bit_4_7 			: BOOL ;			//Spare
+	Bit_5_0 			: BOOL ;			//Spare
+	Bit_5_1 			: BOOL ;			//Spare
+	Bit_5_2 			: BOOL ;			//Spare
+	Bit_5_3 			: BOOL ;			//Spare
+	Bit_5_4 			: BOOL ;			//Spare
+	Bit_5_5 			: BOOL ;			//Spare
+	Bit_5_6 			: BOOL ;			//Spare
+	Bit_5_7 			: BOOL ;			//Spare
+	
+   
+   Setting : STRUCT 	
+    _00 				: INT  := 0;		//ID type of the valve (see function help)
+    _01 				: INT  := 6000;		//Maximum number of activation cycles before preventive maintenance fault
+    _02 				: INT  := 45;		//Grace period before fault when deenergizing main [100ms]
+    _03 				: INT  := 31;		//Grace period before fault when energizing main [100ms]
+    _04 				: INT  := 1;		//Grace period before fault for main valve reboundding  [100ms]
+  	_05					: INT  := 10;		//Grace period before fault when energizing upper seat [100ms]
+   	_06 				: INT  := 10;		//Grace period before fault when energizing lower seat [100ms]
+    _07 				: INT  := 0; 		//Delay before de-energizing main [100ms]
+    _08 				: INT  := 0; 		//Delay before energizing main [100ms]
+	Buffer : STRUCT
+		_00 			: INT ;				//Grace period before fault when energizing/de-energizing main [100ms]
+		_01 			: INT ;				//Grace period before fault for main valve reboundding  [100ms]
+		_02 			: INT ;				//Grace period before fault for main valve hardware  [100ms]
+		_03 			: INT ;				//Grace period before fault when energizing/de-energizing upper seat [100ms]
+		_04 			: INT ;				//Grace period before fault when energizing/de-energizing lower seat [100ms]
+		_05	 			: INT ;				//Delay before energizing/de-energizing main [100ms]
+	END_STRUCT ;	
+   END_STRUCT ;	
+   
+   Register : STRUCT 		
+    _00			 		: REAL ;			//Main operating time [h]
+    _01					: INT ;				//Main cycle counter
+    _02 				: INT ;				//Upper seat-lift or leak chamber cycle counter
+    _03 				: INT ;				//Lower seat-lift or washing valve cycle counter
+    _04 				: INT ;				//Main fault counter
+    _05 				: INT ;				//Manual mode counter
+    _06		 			: INT ;				//Upper/Lower seat-lift fault counter
+   END_STRUCT ;	
+   
+   AccessLevel : STRUCT 	
+    _00					: INT   := 2000;	//Access level 0 : for manual main operation
+    _01					: INT   := 2050;	//Access level 1 : for suppression mode and upper/lower seats manual
+    _02					: INT   := 7000;	//Access level 2 : for setting
+    _03					: INT   := 7050;	//Access level 3 : for advanced setting
+   END_STRUCT ;
+   
+   Bit : STRUCT
+    _00 				: BOOL ;			//Position of main valve established
+    _01					: BOOL ;			//Position of upper seat-lift established
+    _02					: BOOL ;			//Position of lower seat-lift established
+    _03 				: BOOL ;			//Position of main valve established activated buffered
+    _04 				: BOOL ;			//Position of main valve established deactivated buffered
+    _05 				: BOOL ;			//
+    _06 				: BOOL ;			// 
+    _07 				: BOOL ;			//
+    _08 				: BOOL ;			//
+    _09 				: BOOL ;			//
+    _10 				: BOOL ;			//Buffer output 0
+    _11 				: BOOL ;			//Buffer output 1
+    _12 				: BOOL ;			//Buffer output 2
+    _13 				: BOOL ;			//Buffer output 3
+    _14 				: BOOL ;			//
+    _15 				: BOOL ;			//
+   END_STRUCT ;	
+   
+   Edge : STRUCT 
+    _00 				: BOOL ;			//Positive edge position of main valve established
+    _01 				: BOOL ;			//Positif edge for position of upper seat-lift established
+    _02 				: BOOL ;			//Positive edge position of main valve established
+    _03 				: BOOL ;			//Positive edge for output 0
+    _04 				: BOOL ;			//Positive edge for output 1
+    _05 				: BOOL ;			//Positive edge for output 2
+    _06 				: BOOL ;			//Positive edge for output 3
+    _07 				: BOOL ;			//Positive edge for manuel mode
+    _08 				: BOOL ;			//Positive edge for inhibition
+    _09 				: BOOL ;			//Positive edge for faults counter
+    _10 				: BOOL ;			//
+    _11 				: BOOL ;			//
+    _12 				: BOOL ;			//
+    _13 				: BOOL ;			//
+    _14 				: BOOL ;			//
+    _15 				: BOOL ;			//
+   END_STRUCT ;	
+   
+
+     
+  END_STRUCT ;	
+END_TYPE
+
