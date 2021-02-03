@@ -33,7 +33,7 @@ VERSION : 1.3
 		
 	WorkinMode4			: BOOL ;			//12 Main valve normally open or air to close (only for anaimation)
 	WorkinMode5			: BOOL ;			//13 Prohibiting manual mode for main valves
-	WorkinMode6			: BOOL ;			//14 Prohibiting manual mode for secondary valves
+	WorkinMode6			: BOOL ;			//14 Delayed control (only for anaimation)
 
 	Fault_00 			: BOOL ;			//15 Sum of main faults
 	Fault_01 			: BOOL ;			//00 Upper seat activatdion fault (activated without feedback)
