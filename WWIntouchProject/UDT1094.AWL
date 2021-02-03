@@ -1,0 +1,101 @@
+TYPE "UDT_AO"
+NAME    : UDT_AO
+AUTHOR  : YACINEAA
+FAMILY  : AO
+VERSION : 1.3
+
+
+  STRUCT
+	WorkingMode0		: BOOL ;			//24 Mode simulation
+	WorkingMode1		: BOOL ;			//25 Mode suppression
+	WorkingMode2		: BOOL ;			//26 Interdiction suppression mode
+	WorkingMode3		: BOOL ;			//27 Mode manual	
+	WorkingMode4	 	: BOOL ;			//28 Interdiction manual mode
+	WorkingMode5	 	: BOOL ;			//29 Limitation mode
+	WorkingMode6	 	: BOOL ;			//30 Spare mode
+	WorkingMode7	 	: BOOL ;			//31 Spare mode
+
+	Fault_00 			: BOOL ;			//16 Sum of object faults
+	Fault_01 			: BOOL ;			//17 Overrange fault
+	Fault_02			: BOOL ;			//18 Spare fault
+	Fault_03 			: BOOL ;			//19 Spare fault
+	Fault_04 			: BOOL ;			//20 Underrange fault
+	Fault_05 			: BOOL ;			//21 Hardware fault
+	Fault_06 			: BOOL ;			//22 Setting fault
+	Fault_07 			: BOOL ;			//23 Out of specification fault (internal temperature too high or too low)
+	
+	Acknowledged 		: BOOL ;			//08 The object faultes has been acknowledged
+	Acknowledgment		: BOOL ;			//09 Acknowledgment of faults
+	Bit_2_2 			: BOOL ;			//10 Spare
+	Bit_2_3 			: BOOL ;			//11 Spare
+	Bit_2_4 			: BOOL ;			//12 Spare
+	Bit_2_5 			: BOOL ;			//13 Spare
+	Bit_2_6 			: BOOL ;			//14 Spare
+	Bit_2_7 			: BOOL ;			//15 Spare
+
+	Bit_3_1				: BOOL ;			//00 Spare
+	Bit_3_0				: BOOL ;			//01 Spare
+	Bit_3_2 			: BOOL ;			//02 Spare
+	Bit_3_3 			: BOOL ;			//03 Spare
+	Bit_3_4 			: BOOL ;			//04 Spare
+	Bit_3_5 			: BOOL ;			//05 Spare
+	Bit_3_6 			: BOOL ;			//06 Spare
+	Bit_3_7 			: BOOL ;			//07 Spare
+ 
+	Output			 	: INT ;		    	//Raw peripheral output unscaled value
+	Input	 			: REAL ;			//Physical value in engineering unit 
+	Value			 	: REAL ;			//Physical value in engineering unit 
+   
+   Setting : STRUCT 	
+    _00 				: INT  := 0;		//ID type of the object (see function help)
+    _01 				: INT  := 1;		//Grace period before fault [100ms]
+    _02 				: INT  := 0;		//Spare integer
+    _03 				: INT  := 0;		//Analog output minimum raw value
+    _04 				: INT  := 27648;	//Analog output maximum raw value
+  	_05					: REAL := 0.0;		//Engineering units input minimum Value [EU]
+   	_06 				: REAL := 100.0;	//Engineering units input maximum Value [EU]
+    _07 				: REAL := 0.0; 		//Engineering units input minimum limit [EU]
+    _08 				: REAL := 100.0; 	//Engineering units input maximum limit [EU]
+	Buffer : STRUCT
+		_00 			: INT ;				//Grace period before fault [100ms]
+		_01 			: REAL ;			//Old physical value in engineering unit [EU]
+	END_STRUCT ;	
+   END_STRUCT ;	
+   
+   Register : STRUCT 		
+    _00			 		: INT ;				//Fault counter
+    _01					: INT ;				//Manual mode counter
+    _02 				: INT ;				//Suppression mode counter
+    _03 				: INT ;				//Spare register
+   END_STRUCT ;	
+   
+   AccessLevel : STRUCT 	
+    _00					: INT   := 2000;	//Access level 0 : for manual main operation
+    _01					: INT   := 2050;	//Access level 1 : for suppression mode 
+    _02					: INT   := 7000;	//Access level 2 : for setting
+    _03					: INT   := 7050;	//Access level 3 : for advanced setting
+   END_STRUCT ;
+   
+   Bit : STRUCT
+    _00 				: BOOL ;			//
+    _01					: BOOL ;			//
+    _02					: BOOL ;			//
+    _03 				: BOOL ;			//
+    _04 				: BOOL ;			//
+    _05 				: BOOL ;			//
+    _06 				: BOOL ;			// 
+    _07 				: BOOL ;			//
+    _08 				: BOOL ;			//
+    _09 				: BOOL ;			//
+    _10 				: BOOL ;			//
+    _11 				: BOOL ;			//
+    _12 				: BOOL ;			//
+    _13 				: BOOL ;			//
+    _14 				: BOOL ;			//
+    _15 				: BOOL ;			//
+   END_STRUCT ;	
+   
+  END_STRUCT ;	
+  
+END_TYPE
+
