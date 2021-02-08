@@ -1,0 +1,29 @@
+:mode=replace
+
+:AlarmGroup;Group;Comment;EventLogged;EventLoggingPriority;LoLoAlarmDisable;LoAlarmDisable;HiAlarmDisable;HiHiAlarmDisable;MinDevAlarmDisable;MajDevAlarmDisable;RocAlarmDisable;DSCAlarmDisable;LoLoAlarmInhibitor;LoAlarmInhibitor;HiAlarmInhibitor;HiHiAlarmInhibitor;MinDevAlarmInhibitor;MajDevAlarmInhibitor;RocAlarmInhibitor;DSCAlarmInhibitor
+
+Alarms;$System;;Yes;0;0;0;0;0;0;0;0;0;;;;;;;;
+Alarms_MM;Alarms;Alarmes moteurs;Yes;0;0;0;0;0;0;0;0;0;;;;;;;;
+Alarms_XV;Alarms;Alarmes vannes;Yes;0;0;0;0;0;0;0;0;0;;;;;;;;
+Alarms_Ax;Alarms;Alarmes analogiques;Yes;0;0;0;0;0;0;0;0;0;;;;;;;;
+Alarms_Dx;Alarms;Alarmes E/S;Yes;0;0;0;0;0;0;0;0;0;;;;;;;;
+
+Events;$System;;Yes;103;0;0;0;0;0;0;0;0;;;;;;;;
+Events_MM;Events;Evenementss moteurs;Yes;103;0;0;0;0;0;0;0;0;;;;;;;;
+Events_XV;Events;Evenementss vannes;Yes;103;0;0;0;0;0;0;0;0;;;;;;;;
+Events_Ax;Events;Evenementss analogiques;Yes;103;0;0;0;0;0;0;0;0;;;;;;;;
+Events_Dx;Events;Evenementss E/S;Yes;103;0;0;0;0;0;0;0;0;;;;;;;;
+
+Functions;$System;;Yes;100;0;0;0;0;0;0;0;0;;;;;;;;
+
+Parameters;$System;;Yes;101;0;0;0;0;0;0;0;0;;;;;;;;
+Parameters_MM;Parameters;Parameters moteurs;Yes;103;0;0;0;0;0;0;0;0;;;;;;;;
+Parameters_XV;Parameters;Parameters vannes;Yes;103;0;0;0;0;0;0;0;0;;;;;;;;
+Parameters_Ax;Parameters;Parameters analogiques;Yes;103;0;0;0;0;0;0;0;0;;;;;;;;
+Parameters_Dx;Parameters;Parameters E/S;Yes;103;0;0;0;0;0;0;0;0;;;;;;;;
+
+Variables;$System;;Yes;102;0;0;0;0;0;0;0;0;;;;;;;;
+Variables_MM;Variables;Variables moteurs;Yes;103;0;0;0;0;0;0;0;0;;;;;;;;
+Variables_XV;Variables;Variables vannes;Yes;103;0;0;0;0;0;0;0;0;;;;;;;;
+Variables_Ax;Variables;Variables analogiques;Yes;103;0;0;0;0;0;0;0;0;;;;;;;;
+Variables_Dx;Variables;Variables E/S;Yes;103;0;0;0;0;0;0;0;0;;;;;;;;

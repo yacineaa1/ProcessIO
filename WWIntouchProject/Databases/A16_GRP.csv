@@ -1,0 +1,64 @@
+:mode=replace
+
+:AlarmGroup;Group;Comment;EventLogged;EventLoggingPriority;LoLoAlarmDisable;LoAlarmDisable;HiAlarmDisable;HiHiAlarmDisable;MinDevAlarmDisable;MajDevAlarmDisable;RocAlarmDisable;DSCAlarmDisable;LoLoAlarmInhibitor;LoAlarmInhibitor;HiAlarmInhibitor;HiHiAlarmInhibitor;MinDevAlarmInhibitor;MajDevAlarmInhibitor;RocAlarmInhibitor;DSCAlarmInhibitor
+
+A16_Alarms;Alarms;Alarmes A16;Yes;0;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Alarms_SYS;A16_Alarms;Alarmes systeme;Yes;0;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Alarms_G1;A16_Alarms;Tanks tampon jus TTJx;Yes;0;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Alarms_G1_PR;A16_Alarms_G1;Alarmes process ;Yes;0;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Alarms_G1_MM;A16_Alarms_G1;Alarmes moteurs;Yes;0;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Alarms_G1_XV;A16_Alarms_G1;Alarmes vannes;Yes;0;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Alarms_G1_Ax;A16_Alarms_G1;Alarmes analogiques;Yes;0;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Alarms_G1_Dx;A16_Alarms_G1;Alarmes E/S;Yes;0;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Alarms_G2;A16_Alarms;Pasteurisateur jus P21;Yes;0;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Alarms_G2_PR;A16_Alarms_G2;Alarmes process;Yes;0;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Alarms_G2_MM;A16_Alarms_G2;Alarmes moteurs;Yes;0;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Alarms_G2_XV;A16_Alarms_G2;Alarmes vannes;Yes;0;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Alarms_G2_Ax;A16_Alarms_G2;Alarmes analogiques;Yes;0;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Alarms_G2_Dx;A16_Alarms_G2;Alarmes E/S;Yes;0;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Alarms_G3;A16_Alarms;Tanks tampon jus TTJ1x;Yes;0;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Alarms_G3_PR;A16_Alarms_G3;Alarmes process;Yes;0;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Alarms_G3_MM;A16_Alarms_G3;Alarmes moteurs;Yes;0;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Alarms_G3_XV;A16_Alarms_G3;Alarmes vannes;Yes;0;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Alarms_G3_Ax;A16_Alarms_G3;Alarmes analogiques;Yes;0;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Alarms_G3_Dx;A16_Alarms_G3;Alarmes E/S;Yes;0;0;0;0;0;0;0;0;0;;;;;;;;
+
+A16_Events;Events;Evenementss A16;Yes;103;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Events_G1;A16_Events;Tanks tampon jus TTJx;Yes;103;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Events_G1_PR;A16_Events_G1;Evenementss process;Yes;103;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Events_G1_MM;A16_Events_G1;Evenementss moteurs;Yes;103;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Events_G1_XV;A16_Events_G1;Evenementss vannes;Yes;103;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Events_G1_Ax;A16_Events_G1;Evenementss analogiques;Yes;103;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Events_G1_Dx;A16_Events_G1;Evenementss E/S;Yes;103;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Events_G2;A16_Events;Pasteurisateur jus P21;Yes;103;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Events_G2_PR;A16_Events_G2;Evenementss process;Yes;103;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Events_G2_MM;A16_Events_G2;Evenementss moteurs;Yes;103;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Events_G2_XV;A16_Events_G2;Evenementss vannes;Yes;103;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Events_G2_Ax;A16_Events_G2;Evenementss analogiques;Yes;103;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Events_G2_Dx;A16_Events_G2;Evenementss E/S;Yes;103;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Events_G3;A16_Events;Tanks tampon jus TTJ1x;Yes;103;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Events_G3_PR;A16_Events_G3;Evenementss process;Yes;103;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Events_G3_MM;A16_Events_G3;Evenementss moteurs;Yes;103;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Events_G3_XV;A16_Events_G3;Evenementss vannes;Yes;103;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Events_G3_Ax;A16_Events_G3;Evenementss analogiques;Yes;103;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Events_G3_Dx;A16_Events_G3;Evenementss E/S;Yes;103;0;0;0;0;0;0;0;0;;;;;;;;
+
+A16_Functions;Functions;Fonctions A16 ;Yes;100;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Functions_G1;A16_Functions;Tanks tampon jus TTJx;Yes;100;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Functions_G2;A16_Functions;Pasteurisateur jus P21;Yes;100;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Functions_G3;A16_Functions;Tanks tampon jus TTJ1x;Yes;100;0;0;0;0;0;0;0;0;;;;;;;;
+
+A16_Parameters;Parameters;Parameters A16 ;Yes;101;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Parameters_G1;A16_Parameters;Tanks tampon jus TTJx;Yes;101;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Parameters_G2;A16_Parameters;Pasteurisateur jus P21;Yes;101;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Parameters_G3;A16_Parameters;Tanks tampon jus TTJ1x;Yes;101;0;0;0;0;0;0;0;0;;;;;;;;
+
+A16_Recipes;Recipes;Recettes A16 ;Yes;101;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Recipes_G1;A16_Recipes;Tanks tampon jus TTJx;Yes;101;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Recipes_G2;A16_Recipes;Pasteurisateur jus P21;Yes;101;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Recipes_G3;A16_Recipes;Tanks tampon jus TTJ1x;Yes;101;0;0;0;0;0;0;0;0;;;;;;;;
+
+A16_Variables;Variables;Variables A16 ;No;102;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Variables_G1;A16_Variables;Tanks tampon jus TTJx;No;102;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Variables_G2;A16_Variables;Pasteurisateur jus P21;No;102;0;0;0;0;0;0;0;0;;;;;;;;
+A16_Variables_G3;A16_Variables;Tanks tampon jus TTJ1x;No;102;0;0;0;0;0;0;0;0;;;;;;;;

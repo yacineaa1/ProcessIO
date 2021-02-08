@@ -1,0 +1,87 @@
+:mode=replace
+
+:AlarmGroup;Group;Comment;EventLogged;EventLoggingPriority;LoLoAlarmDisable;LoAlarmDisable;HiAlarmDisable;HiHiAlarmDisable;MinDevAlarmDisable;MajDevAlarmDisable;RocAlarmDisable;DSCAlarmDisable;LoLoAlarmInhibitor;LoAlarmInhibitor;HiAlarmInhibitor;HiHiAlarmInhibitor;MinDevAlarmInhibitor;MajDevAlarmInhibitor;RocAlarmInhibitor;DSCAlarmInhibitor;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+Variables_Dx;Variables;DIO objects variables;Yes;103;0;0;0;0;0;0;0;0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+Parameters_Dx;Parameters;DIO objects parameters;Yes;103;0;0;0;0;0;0;0;0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+Events_Dx;Events;DIO objects events;Yes;999;0;0;0;0;0;0;0;0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+Alarms_Dx;Alarms;DIO objects alarms;Yes;1;0;0;0;0;0;0;0;0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+:MemoryDisc;Group;Comment;Logged;EventLogged;EventLoggingPriority;RetentiveValue;InitialDisc;OffMsg;OnMsg;AlarmState;AlarmPri;AlarmComment;AlarmAckModel;DSCAlarmDisable;DSCAlarmInhibitor;SymbolicName;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+STD_DIO_Disable;Variables_Dx;Disable DIO control for this station (Not used yet);No;No;0;No;Off;Enable;Disable;None;1;;0;0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+STD_DIO_ReferenceComplete;Variables_Dx;Reference change completed;No;No;0;No;Off;Not completed;Completed;None;1;;0;0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+STD_DIO_ModificationMade;Variables_Dx;A modification was made to the current DW;No;No;0;No;Off;No Modification;Modifications;None;1;;0;0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+:IODisc;Group;Comment;Logged;EventLogged;EventLoggingPriority;RetentiveValue;InitialDisc;OffMsg;OnMsg;AlarmState;AlarmPri;DConversion;AccessName;ItemUseTagname;ItemName;ReadOnly;AlarmComment;AlarmAckModel;DSCAlarmDisable;DSCAlarmInhibitor;SymbolicName;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+STD_DIO_ACK;Variables_Dx;Acknowledgment of faults from object window;No;No;0;No;Off;UnAck;Ack;None;1;Direct;AxxFAST;No;DB1092.DBX3.1;No;;0;0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+:MemoryInt;Group;Comment;Logged;EventLogged;EventLoggingPriority;RetentiveValue;RetentiveAlarmParameters;AlarmValueDeadband;AlarmDevDeadband;EngUnits;InitialValue;MinValue;Maxvalue;Deadband;LogDeadband;LoLoAlarmState;LoLoAlarmValue;LoLoAlarmPri;LoAlarmState;LoAlarmValue;LoAlarmPri;HiAlarmState;HiAlarmValue;HiAlarmPri;HiHiAlarmState;HiHiAlarmValue;HiHiAlarmPri;MinorDevAlarmState;MinorDevAlarmValue;MinorDevAlarmPri;MajorDevAlarmState;MajorDevAlarmValue;MajorDevAlarmPri;DevTarget;ROCAlarmState;ROCAlarmValue;ROCAlarmPri;ROCTimeBase;AlarmComment;AlarmAckModel;LoLoAlarmDisable;LoAlarmDisable;HiAlarmDisable;HiHiAlarmDisable;MinDevAlarmDisable;MajDevAlarmDisable;RocAlarmDisable;LoLoAlarmInhibitor;LoAlarmInhibitor;HiAlarmInhibitor;HiHiAlarmInhibitor;MinDevAlarmInhibitor;MajDevAlarmInhibitor;RocAlarmInhibitor;SymbolicName;;;;;;;
+STD_DIO_IDInt;Variables_Dx;ID of selected object for window control or lookup;No;No;0;No;No;0;0;Axx;9999;0;10000;0;0;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;0;Off;0;1;Min;ID of selected object for window control or lookup;0;0;0;0;0;0;0;0;;;;;;;;;;;;;;;
+BUF_DIO_ID;Variables_Dx;Used to buffer the DIO DW;No;No;0;No;No;0;0;;0;-2147483648;2147483647;0;0;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;0;Off;0;1;Min;Used to buffer the DIO DW;0;0;0;0;0;0;0;0;;;;;;;;;;;;;;;
+TXT_DIO_WinName;Variables_Dx;Object control window name;No;No;0;No;No;0;0;DIO;415;255;415;0;0;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;0;Off;0;1;Min;STD - DIO;0;0;0;0;0;0;0;0;;;;;;;;;;;;;;;
+BUF_DIO_Setting_01;Variables_Dx;Manual forcing period (0 if permanent);No;No;0;No;No;0;0;h;0;0;2147483647;0;0;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;0;Off;0;1;Min;Manual forcing period (0 if permanent);0;0;0;0;0;0;0;0;;;;;;;;;;;;;;;
+BUF_DIO_Setting_02;Variables_Dx;Grace period before activation output;No;No;0;No;No;0;0;s;0;0;2147483647;0;0;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;0;Off;0;1;Min;Grace period before activation output;0;0;0;0;0;0;0;0;;;;;;;;;;;;;;;
+BUF_DIO_Setting_03;Variables_Dx;Grace period before deactivation output;No;No;0;No;No;0;0;s;0;0;2147483647;0;0;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;0;Off;0;1;Min;Grace period before deactivation output;0;0;0;0;0;0;0;0;;;;;;;;;;;;;;;
+BUF_DIO_Setting_04;Variables_Dx;Grace period before activation output (CIPM);No;No;0;No;No;0;0;s;0;0;2147483647;0;0;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;0;Off;0;1;Min;Grace period before activation output (CIPM);0;0;0;0;0;0;0;0;;;;;;;;;;;;;;;
+BUF_DIO_Setting_05;Variables_Dx;Grace period before deactivation output (CIPM);No;No;0;No;No;0;0;s;0;0;2147483647;0;0;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;0;Off;0;1;Min;Grace period before deactivation output (CIPM);0;0;0;0;0;0;0;0;;;;;;;;;;;;;;;
+BUF_DIO_Setting_06;Variables_Dx;Spare;No;No;0;No;No;0;0;s;0;0;2147483647;0;0;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;0;Off;0;1;Min;Spare;0;0;0;0;0;0;0;0;;;;;;;;;;;;;;;
+BUF_DIO_AccessLevel_00;Variables_Dx;AL0 : for manual operation;No;No;0;No;No;0;0;;0;-2147483648;2147483647;0;0;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;0;Off;0;1;Min;AL0 : for manual operation;0;0;0;0;0;0;0;0;;;;;;;;;;;;;;;
+BUF_DIO_AccessLevel_01;Variables_Dx;AL1 : for suppression mode;No;No;0;No;No;0;0;;0;-2147483648;2147483647;0;0;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;0;Off;0;1;Min;AL1 : for suppression mode;0;0;0;0;0;0;0;0;;;;;;;;;;;;;;;
+BUF_DIO_AccessLevel_02;Variables_Dx;AL2 : for setting;No;No;0;No;No;0;0;;0;-2147483648;2147483647;0;0;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;0;Off;0;1;Min;AL2 : for setting;0;0;0;0;0;0;0;0;;;;;;;;;;;;;;;
+BUF_DIO_AccessLevel_03;Variables_Dx;AL3 : for advanced setting;No;No;0;No;No;0;0;;0;-2147483648;2147483647;0;0;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;0;Off;0;1;Min;AL3 : for advanced setting;0;0;0;0;0;0;0;0;;;;;;;;;;;;;;;
+
+:IOInt;Group;Comment;Logged;EventLogged;EventLoggingPriority;RetentiveValue;RetentiveAlarmParameters;AlarmValueDeadband;AlarmDevDeadband;EngUnits;InitialValue;MinEU;MaxEU;Deadband;LogDeadband;LoLoAlarmState;LoLoAlarmValue;LoLoAlarmPri;LoAlarmState;LoAlarmValue;LoAlarmPri;HiAlarmState;HiAlarmValue;HiAlarmPri;HiHiAlarmState;HiHiAlarmValue;HiHiAlarmPri;MinorDevAlarmState;MinorDevAlarmValue;MinorDevAlarmPri;MajorDevAlarmState;MajorDevAlarmValue;MajorDevAlarmPri;DevTarget;ROCAlarmState;ROCAlarmValue;ROCAlarmPri;ROCTimeBase;MinRaw;MaxRaw;Conversion;AccessName;ItemUseTagname;ItemName;ReadOnly;AlarmComment;AlarmAckModel;LoLoAlarmDisable;LoAlarmDisable;HiAlarmDisable;HiHiAlarmDisable;MinDevAlarmDisable;MajDevAlarmDisable;RocAlarmDisable;LoLoAlarmInhibitor;LoAlarmInhibitor;HiAlarmInhibitor;HiHiAlarmInhibitor;MinDevAlarmInhibitor;MajDevAlarmInhibitor;RocAlarmInhibitor;SymbolicName
+STD_DIO_AccessLevel_00;Variables_Dx;AL0 : for manual operation;No;No;0;No;No;0;0;LVL0;0;-2147483648;2147483647;0;0;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;0;Off;0;1;Min;-2147483648;2147483647;Linear;AxxFAST;No;DB1092.DBW38;No;AL0 : for manual operation;0;0;0;0;0;0;0;0;;;;;;;;
+STD_DIO_AccessLevel_01;Variables_Dx;AL1 : for suppression mode;No;No;0;No;No;0;0;LVL1;0;-2147483648;2147483647;0;0;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;0;Off;0;1;Min;-2147483648;2147483647;Linear;AxxFAST;No;DB1092.DBW40;No;AL1 : for suppression mode;0;0;0;0;0;0;0;0;;;;;;;;
+STD_DIO_AccessLevel_02;Variables_Dx;AL2 : for setting;No;No;0;No;No;0;0;LVL2;0;-2147483648;2147483647;0;0;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;0;Off;0;1;Min;-2147483648;2147483647;Linear;AxxFAST;No;DB1092.DBW42;No;AL2 : for setting;0;0;0;0;0;0;0;0;;;;;;;;
+STD_DIO_AccessLevel_03;Variables_Dx;AL3 : for advanced setting;No;No;0;No;No;0;0;LVL3;0;-2147483648;2147483647;0;0;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;0;Off;0;1;Min;-2147483648;2147483647;Linear;AxxFAST;No;DB1092.DBW44;No;AL3 : for advanced setting;0;0;0;0;0;0;0;0;;;;;;;;
+STD_DIO_Setting_00;Variables_Dx;ID type of the Digital IO (see function help);No;No;0;No;No;0;0;ID;0;-2147483648;2147483647;0;0;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;0;Off;0;1;Min;-2147483648;2147483647;Linear;AxxFAST;No;DB1092.DBW4;No;ID type of the Digital IO (see function help);0;0;0;0;0;0;0;0;;;;;;;;
+STD_DIO_Setting_01;Variables_Dx;Manual forcing period (0 if permanent);No;No;0;No;No;0;0;;0;-2147483648;2147483647;0;0;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;0;Off;0;1;Min;-2147483648;2147483647;Linear;AxxFAST;No;DB1092.DBW6;No;Manual forcing period (0 if permanent);0;0;0;0;0;0;0;0;;;;;;;;
+STD_DIO_Setting_02;Variables_Dx;Grace period before activation output;No;No;0;No;No;0;0;s;0;0;10000000;0;0;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;0;Off;0;1;Min;0;10000000;Linear;AxxFAST;No;DB1092.DBW8;No;Grace period before activation output;0;0;0;0;0;0;0;0;;;;;;;;
+STD_DIO_Setting_03;Variables_Dx;Grace period before deactivation output;No;No;0;No;No;0;0;s;0;0;10000000;0;0;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;0;Off;0;1;Min;0;10000000;Linear;AxxFAST;No;DB1092.DBW10;No;Grace period before deactivation output;0;0;0;0;0;0;0;0;;;;;;;;
+STD_DIO_Setting_04;Variables_Dx;Grace period before activation output (CIPM);No;No;0;No;No;0;0;s;0;0;10000000;0;0;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;0;Off;0;1;Min;0;10000000;Linear;AxxFAST;No;DB1092.DBW12;No;Grace period before activation output (CIPM);0;0;0;0;0;0;0;0;;;;;;;;
+STD_DIO_Setting_05;Variables_Dx;Grace period before deactivation output (CIPM);No;No;0;No;No;0;0;s;0;0;10000000;0;0;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;0;Off;0;1;Min;0;10000000;Linear;AxxFAST;No;DB1092.DBW14;No;Grace period before deactivation output (CIPM);0;0;0;0;0;0;0;0;;;;;;;;
+STD_DIO_Setting_06;Variables_Dx;Spare;No;No;0;No;No;0;0;s;0;0;10000000;0;0;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;0;Off;0;1;Min;0;10000000;Linear;AxxFAST;No;DB1092.DBW16;No;Spare;0;0;0;0;0;0;0;0;;;;;;;;
+STD_DIO_Buffer_00;Variables_Dx;Manual forcing period;No;No;0;No;No;0;0;100ms;0;0;10000000;0;0;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;0;Off;0;1;Min;0;10000000;Linear;AxxFAST;No;DB1092.DBW18;No;Manual forcing period;0;0;0;0;0;0;0;0;;;;;;;;
+STD_DIO_Buffer_01;Variables_Dx;Grace period before activation output;No;No;0;No;No;0;0;100ms;0;0;10000000;0;0;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;0;Off;0;1;Min;0;10000000;Linear;AxxFAST;No;DB1092.DBW20;No;Grace period before activation output;0;0;0;0;0;0;0;0;;;;;;;;
+STD_DIO_Buffer_02;Variables_Dx;Grace period before deactivation output;No;No;0;No;No;0;0;100ms;0;0;10000000;0;0;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;0;Off;0;1;Min;0;10000000;Linear;AxxFAST;No;DB1092.DBW22;No;Grace period before deactivation output;0;0;0;0;0;0;0;0;;;;;;;;
+STD_DIO_Buffer_03;Variables_Dx;Spare ;No;No;0;No;No;0;0;100ms;0;0;10000000;0;0;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;0;Off;0;1;Min;0;10000000;Linear;AxxFAST;No;DB1092.DBW24;No;Spare ;0;0;0;0;0;0;0;0;;;;;;;;
+STD_DIO_Register_01;Variables_Dx;Object cycle counter;No;No;0;No;No;0;0;;0;0;2147483647;0;0;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;0;Off;0;1;Min;0;2147483647;Linear;AxxFAST;No;DB1092.DBW30;No;Object cycle counter;0;0;0;0;0;0;0;0;;;;;;;;
+STD_DIO_Register_02;Variables_Dx;faults counter;No;No;0;No;No;0;0;;0;0;2147483647;0;0;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;0;Off;0;1;Min;0;2147483647;Linear;AxxFAST;No;DB1092.DBW32;No;faults counter;0;0;0;0;0;0;0;0;;;;;;;;
+STD_DIO_Register_03;Variables_Dx;Manual mode counter;No;No;0;No;No;0;0;;0;0;2147483647;0;0;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;0;Off;0;1;Min;0;2147483647;Linear;AxxFAST;No;DB1092.DBW34;No;Manual mode counter;0;0;0;0;0;0;0;0;;;;;;;;
+STD_DIO_Register_04;Variables_Dx;Spare;No;No;0;No;No;0;0;;0;0;2147483647;0;0;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;0;Off;0;1;Min;0;2147483647;Linear;AxxFAST;No;DB1092.DBW36;No;Spare;0;0;0;0;0;0;0;0;;;;;;;;
+
+:IOReal;Group;Comment;Logged;EventLogged;EventLoggingPriority;RetentiveValue;RetentiveAlarmParameters;AlarmValueDeadband;AlarmDevDeadband;EngUnits;InitialValue;MinEU;MaxEU;Deadband;LogDeadband;LoLoAlarmState;LoLoAlarmValue;LoLoAlarmPri;LoAlarmState;LoAlarmValue;LoAlarmPri;HiAlarmState;HiAlarmValue;HiAlarmPri;HiHiAlarmState;HiHiAlarmValue;HiHiAlarmPri;MinorDevAlarmState;MinorDevAlarmValue;MinorDevAlarmPri;MajorDevAlarmState;MajorDevAlarmValue;MajorDevAlarmPri;DevTarget;ROCAlarmState;ROCAlarmValue;ROCAlarmPri;ROCTimeBase;MinRaw;MaxRaw;Conversion;AccessName;ItemUseTagname;ItemName;ReadOnly;AlarmComment;AlarmAckModel;LoLoAlarmDisable;LoAlarmDisable;HiAlarmDisable;HiHiAlarmDisable;MinDevAlarmDisable;MajDevAlarmDisable;RocAlarmDisable;LoLoAlarmInhibitor;LoAlarmInhibitor;HiAlarmInhibitor;HiHiAlarmInhibitor;MinDevAlarmInhibitor;MajDevAlarmInhibitor;RocAlarmInhibitor;SymbolicName
+STD_DIO_Register_00;Variables_Dx;Main operating time;No;No;0;No;No;0;0;h;0;-3,40E+38;3,40E+38;0;0;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;Off;0;1;0;Off;0;1;Min;-3,40E+38;3,40E+38;Linear;AxxFAST;No;DB1092.DBD24F;No;;0;0;0;0;0;0;0;0;;;;;;;;
+
+:MemoryMsg;Group;Comment;Logged;EventLogged;EventLoggingPriority;RetentiveValue;MaxLength;InitialMessage;AlarmComment;SymbolicName;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+STD_DIO_DataBlock;Variables_Dx;Data block for item;No;No;0;No;131;DB1092;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+STD_DIO_PreLogger;Variables_Dx;Prefix for logger message;No;No;0;No;131;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+BUF_DIO_17Logger;Events_Dx;Buffer string logger of 17th bit of the DIO DW;No;No;0;No;131;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+BUF_DIO_19Logger;Events_Dx;Buffer string logger of 19th bit of the DIO DW;No;No;0;No;131;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+BUF_DIO_20Logger;Events_Dx;Buffer string logger of 20th bit of the DIO DW;No;No;0;No;131;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+BUF_DIO_21Logger;Events_Dx;Buffer string logger of 21th bit of the DIO DW;No;No;0;No;131;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+BUF_DIO_22Logger;Events_Dx;Buffer string logger of 22th bit of the DIO DW;No;No;0;No;131;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+BUF_DIO_23Logger;Events_Dx;Buffer string logger of 23th bit of the DIO DW;No;No;0;No;131;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+BUF_DIO_26Logger;Events_Dx;Buffer string logger of 26th bit of the DIO DW;No;No;0;No;131;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+TXT_DIO_17Logger;Events_Dx;String logger of 17th bit of the DIO DW;No;Yes;1;No;131;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+TXT_DIO_19Logger;Events_Dx;String logger of 19th bit of the DIO DW;No;Yes;1;No;131;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+TXT_DIO_20Logger;Events_Dx;String logger of 20th bit of the DIO DW;No;Yes;1;No;131;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+TXT_DIO_21Logger;Events_Dx;String logger of 21th bit of the DIO DW;No;Yes;1;No;131;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+TXT_DIO_22Logger;Events_Dx;String logger of 22th bit of the DIO DW;No;Yes;1;No;131;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+TXT_DIO_23Logger;Events_Dx;String logger of 23th bit of the DIO DW;No;Yes;1;No;131;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+TXT_DIO_26Logger;Events_Dx;String logger of 26th bit of the DIO DW;No;Yes;1;No;131;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+TXT_DIO_Setting_01_Logger;Events_Dx;String logger for DIO's 1st setting;No;Yes;1;No;131;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+TXT_DIO_Setting_02_Logger;Events_Dx;String logger for DIO's 2nd setting;No;Yes;1;No;131;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+TXT_DIO_Setting_03_Logger;Events_Dx;String logger for DIO's 3th setting;No;Yes;1;No;131;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+TXT_DIO_Setting_04_Logger;Events_Dx;String logger for DIO's 4th setting;No;Yes;1;No;131;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+TXT_DIO_Setting_05_Logger;Events_Dx;String logger for DIO's 5th setting;No;Yes;1;No;131;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+TXT_DIO_Setting_06_Logger;Events_Dx;String logger for DIO's 6th setting;No;Yes;1;No;131;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+BUF_DIO_Setting_01_Logger;Events_Dx;Buffer string logger for DIO's 1st setting;No;No;0;No;131;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+BUF_DIO_Setting_02_Logger;Events_Dx;Buffer string logger for DIO's 2nd setting;No;No;0;No;131;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+BUF_DIO_Setting_03_Logger;Events_Dx;Buffer string logger for DIO's 3th setting;No;No;0;No;131;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+BUF_DIO_Setting_04_Logger;Events_Dx;Buffer string logger for DIO's 4th setting;No;No;0;No;131;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+BUF_DIO_Setting_05_Logger;Events_Dx;Buffer string logger for DIO's 5th setting;No;No;0;No;131;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+BUF_DIO_Setting_06_Logger;Events_Dx;Buffer string logger for DIO's 6th setting;No;No;0;No;131;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+:IndirectAnalog;Group;Comment;EventLogged;EventLoggingPriority;RetentiveValue;SymbolicName;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+STD_DIO_ID;Variables_Dx;Indircet DIO double word;No;0;No;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
