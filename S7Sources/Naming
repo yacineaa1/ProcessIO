@@ -1,0 +1,26 @@
+DB_XV	DB  1090	DB  1090	Data block of valves (max 463)
+DB_MM	DB  1091	DB  1091	Data block of motors (max 463)
+DB_DIO	DB  1092	DB  1092	Data block of digital inputs/outputs (max 531)
+DB_AI	DB   1093	DB   1093	Data block of analog inputs (max 536)
+DB_AO	DB   1094	DB   1094	Data block of analog outputs (max 536)
+
+FC_XV	FC   1090	FC   1090	Management of valves
+FC_MM	FC   1091	FC   1091	Management of motors
+FC_DIO	FC   1092	FC   1092	Management of digital inputs/outputs
+FC_AI	FC   1093	FC   1093	Management of analog inputs
+FC_AO	FC   1094	FC   1094	Management of analog outputs
+UDT_XV	UDT  1090	UDT  1090	User data type for valves
+UDT_MM	UDT  1091	UDT  1091	User data type for motors
+UDT_DIO	UDT  1092	UDT  1092	User data type for digital inputs/outputs
+UDT_AI	UDT  1093	UDT  1093	User data type for analog inputs
+UDT_AO	UDT  1094	UDT  1094	User data type for analog outputrs
+FC_IO_XV	FC   1070	FC   1070	Physical assignment of valves
+FC_IO_MM	FC   1071	FC   1071	Physical assignment of motors
+FC_IO_DIO	FC   1072	FC   1072	Physical assignment of digital inputs/outputs
+FC_IO_AI	FC   1073	FC   1073	Physical assignment of analog inputs
+FC_IO_AO	FC   1074	FC   1074	Physical assignment of analog outputs
+FC_CALL_XV	FC   1080	FC   1080	Calling of valves
+FC_CALL_MM	FC   1081	FC   1081	Calling of motors
+FC_CALL_DIO	FC   1082	FC   1082	Calling of digital inputs/outputs
+FC_CALL_AI	FC   1083	FC   1083	Calling of analog inputs
+FC_CALL_AO	FC   1084	FC   1084	Calling of analog outputs
