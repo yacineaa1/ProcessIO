@@ -1,0 +1,4080 @@
+FUNCTION "FC_IO_XV" : VOID
+TITLE =
+VERSION : 0.1
+
+BEGIN
+
+NETWORK
+TITLE = IO assignment for XV object
+//For diagnostic purposes only, to edit use the AWL source code
+//-------------------------------------------------------------
+//--History
+//--[Version]   [Name]      [DATE]      [Comments]
+//--1.00        Yacine AA   05-01-21    Creation
+NETWORK
+TITLE =16XV0111 P21 : Arrivée vapeur boucle section 1er traitement HE01
+U     E_16XV0111_0 ;
+=     DB_XV._16XV0111.IOFeedback0 ;
+U     E_16XV0111_1 ;
+=     DB_XV._16XV0111.IOFeedback1 ;
+U     E_16XV0111_2 ;
+=     DB_XV._16XV0111.IOFeedback2 ;
+U     E_16XV0111_3 ;
+=     DB_XV._16XV0111.IOFeedback3 ;
+
+U     DB_XV._16XV0111.Output0 ;
+=     A_16XV0111_0 ;
+U     DB_XV._16XV0111.Output1 ;
+=     A_16XV0111_1 ;
+U     DB_XV._16XV0111.Output2 ;
+=     A_16XV0111_2 ;
+U     DB_XV._16XV0111.Output3 ;
+=     A_16XV0111_3 ;
+
+NETWORK
+TITLE =16XV0112 P21 : Arrivée eau boucle section 1er traitement HE01
+U     E_16XV0112_0 ;
+=     DB_XV._16XV0112.IOFeedback0 ;
+U     E_16XV0112_1 ;
+=     DB_XV._16XV0112.IOFeedback1 ;
+U     E_16XV0112_2 ;
+=     DB_XV._16XV0112.IOFeedback2 ;
+U     E_16XV0112_3 ;
+=     DB_XV._16XV0112.IOFeedback3 ;
+
+U     DB_XV._16XV0112.Output0 ;
+=     A_16XV0112_0 ;
+U     DB_XV._16XV0112.Output1 ;
+=     A_16XV0112_1 ;
+U     DB_XV._16XV0112.Output2 ;
+=     A_16XV0112_2 ;
+U     DB_XV._16XV0112.Output3 ;
+=     A_16XV0112_3 ;
+
+NETWORK
+TITLE =16XV0114 P21 : Arrivée NEP 1er boule latérale BL01
+U     E_16XV0114_0 ;
+=     DB_XV._16XV0114.IOFeedback0 ;
+U     E_16XV0114_1 ;
+=     DB_XV._16XV0114.IOFeedback1 ;
+U     E_16XV0114_2 ;
+=     DB_XV._16XV0114.IOFeedback2 ;
+U     E_16XV0114_3 ;
+=     DB_XV._16XV0114.IOFeedback3 ;
+
+U     DB_XV._16XV0114.Output0 ;
+=     A_16XV0114_0 ;
+U     DB_XV._16XV0114.Output1 ;
+=     A_16XV0114_1 ;
+U     DB_XV._16XV0114.Output2 ;
+=     A_16XV0114_2 ;
+U     DB_XV._16XV0114.Output3 ;
+=     A_16XV0114_3 ;
+
+NETWORK
+TITLE =16XV0115 P21 : Arrivée NEP 2eme boule latérale BL01
+U     E_16XV0115_0 ;
+=     DB_XV._16XV0115.IOFeedback0 ;
+U     E_16XV0115_1 ;
+=     DB_XV._16XV0115.IOFeedback1 ;
+U     E_16XV0115_2 ;
+=     DB_XV._16XV0115.IOFeedback2 ;
+U     E_16XV0115_3 ;
+=     DB_XV._16XV0115.IOFeedback3 ;
+
+U     DB_XV._16XV0115.Output0 ;
+=     A_16XV0115_0 ;
+U     DB_XV._16XV0115.Output1 ;
+=     A_16XV0115_1 ;
+U     DB_XV._16XV0115.Output2 ;
+=     A_16XV0115_2 ;
+U     DB_XV._16XV0115.Output3 ;
+=     A_16XV0115_3 ;
+
+NETWORK
+TITLE =16XV0121 P21 : By-pass dégazeur DA01
+U     E_16XV0121_0 ;
+=     DB_XV._16XV0121.IOFeedback0 ;
+U     E_16XV0121_1 ;
+=     DB_XV._16XV0121.IOFeedback1 ;
+U     E_16XV0121_2 ;
+=     DB_XV._16XV0121.IOFeedback2 ;
+U     E_16XV0121_3 ;
+=     DB_XV._16XV0121.IOFeedback3 ;
+
+U     DB_XV._16XV0121.Output0 ;
+=     A_16XV0121_0 ;
+U     DB_XV._16XV0121.Output1 ;
+=     A_16XV0121_1 ;
+U     DB_XV._16XV0121.Output2 ;
+=     A_16XV0121_2 ;
+U     DB_XV._16XV0121.Output3 ;
+=     A_16XV0121_3 ;
+
+NETWORK
+TITLE =16XV0122 P21 : By-pass dégazeur DA01
+U     E_16XV0122_0 ;
+=     DB_XV._16XV0122.IOFeedback0 ;
+U     E_16XV0122_1 ;
+=     DB_XV._16XV0122.IOFeedback1 ;
+U     E_16XV0122_2 ;
+=     DB_XV._16XV0122.IOFeedback2 ;
+U     E_16XV0122_3 ;
+=     DB_XV._16XV0122.IOFeedback3 ;
+
+U     DB_XV._16XV0122.Output0 ;
+=     A_16XV0122_0 ;
+U     DB_XV._16XV0122.Output1 ;
+=     A_16XV0122_1 ;
+U     DB_XV._16XV0122.Output2 ;
+=     A_16XV0122_2 ;
+U     DB_XV._16XV0122.Output3 ;
+=     A_16XV0122_3 ;
+
+NETWORK
+TITLE =16XV0123 P21 : Arrivée NEP dégazeur DA01
+U     E_16XV0123_0 ;
+=     DB_XV._16XV0123.IOFeedback0 ;
+U     E_16XV0123_1 ;
+=     DB_XV._16XV0123.IOFeedback1 ;
+U     E_16XV0123_2 ;
+=     DB_XV._16XV0123.IOFeedback2 ;
+U     E_16XV0123_3 ;
+=     DB_XV._16XV0123.IOFeedback3 ;
+
+U     DB_XV._16XV0123.Output0 ;
+=     A_16XV0123_0 ;
+U     DB_XV._16XV0123.Output1 ;
+=     A_16XV0123_1 ;
+U     DB_XV._16XV0123.Output2 ;
+=     A_16XV0123_2 ;
+U     DB_XV._16XV0123.Output3 ;
+=     A_16XV0123_3 ;
+
+NETWORK
+TITLE =16XV0124 P21 : Arrivée NEP condenseur CD01
+U     E_16XV0124_0 ;
+=     DB_XV._16XV0124.IOFeedback0 ;
+U     E_16XV0124_1 ;
+=     DB_XV._16XV0124.IOFeedback1 ;
+U     E_16XV0124_2 ;
+=     DB_XV._16XV0124.IOFeedback2 ;
+U     E_16XV0124_3 ;
+=     DB_XV._16XV0124.IOFeedback3 ;
+
+U     DB_XV._16XV0124.Output0 ;
+=     A_16XV0124_0 ;
+U     DB_XV._16XV0124.Output1 ;
+=     A_16XV0124_1 ;
+U     DB_XV._16XV0124.Output2 ;
+=     A_16XV0124_2 ;
+U     DB_XV._16XV0124.Output3 ;
+=     A_16XV0124_3 ;
+
+NETWORK
+TITLE =16XV0126 P21 : Arrivée eau glacée boucle eau froid CD01 et HE5
+U     E_16XV0126_0 ;
+=     DB_XV._16XV0126.IOFeedback0 ;
+U     E_16XV0126_1 ;
+=     DB_XV._16XV0126.IOFeedback1 ;
+U     E_16XV0126_2 ;
+=     DB_XV._16XV0126.IOFeedback2 ;
+U     E_16XV0126_3 ;
+=     DB_XV._16XV0126.IOFeedback3 ;
+
+U     DB_XV._16XV0126.Output0 ;
+=     A_16XV0126_0 ;
+U     DB_XV._16XV0126.Output1 ;
+=     A_16XV0126_1 ;
+U     DB_XV._16XV0126.Output2 ;
+=     A_16XV0126_2 ;
+U     DB_XV._16XV0126.Output3 ;
+=     A_16XV0126_3 ;
+
+NETWORK
+TITLE =16XV0127 P21 : Arrivée eau boucle eau froid BA01
+U     E_16XV0127_0 ;
+=     DB_XV._16XV0127.IOFeedback0 ;
+U     E_16XV0127_1 ;
+=     DB_XV._16XV0127.IOFeedback1 ;
+U     E_16XV0127_2 ;
+=     DB_XV._16XV0127.IOFeedback2 ;
+U     E_16XV0127_3 ;
+=     DB_XV._16XV0127.IOFeedback3 ;
+
+U     DB_XV._16XV0127.Output0 ;
+=     A_16XV0127_0 ;
+U     DB_XV._16XV0127.Output1 ;
+=     A_16XV0127_1 ;
+U     DB_XV._16XV0127.Output2 ;
+=     A_16XV0127_2 ;
+U     DB_XV._16XV0127.Output3 ;
+=     A_16XV0127_3 ;
+
+NETWORK
+TITLE =16XV0131 P21 : Arrivée vapeur boucle section 2eme traitement HE2
+U     E_16XV0131_0 ;
+=     DB_XV._16XV0131.IOFeedback0 ;
+U     E_16XV0131_1 ;
+=     DB_XV._16XV0131.IOFeedback1 ;
+U     E_16XV0131_2 ;
+=     DB_XV._16XV0131.IOFeedback2 ;
+U     E_16XV0131_3 ;
+=     DB_XV._16XV0131.IOFeedback3 ;
+
+U     DB_XV._16XV0131.Output0 ;
+=     A_16XV0131_0 ;
+U     DB_XV._16XV0131.Output1 ;
+=     A_16XV0131_1 ;
+U     DB_XV._16XV0131.Output2 ;
+=     A_16XV0131_2 ;
+U     DB_XV._16XV0131.Output3 ;
+=     A_16XV0131_3 ;
+
+NETWORK
+TITLE =16XV0132 P21 : Arrivée eau boucle section 2eme traitement HE2
+U     E_16XV0132_0 ;
+=     DB_XV._16XV0132.IOFeedback0 ;
+U     E_16XV0132_1 ;
+=     DB_XV._16XV0132.IOFeedback1 ;
+U     E_16XV0132_2 ;
+=     DB_XV._16XV0132.IOFeedback2 ;
+U     E_16XV0132_3 ;
+=     DB_XV._16XV0132.IOFeedback3 ;
+
+U     DB_XV._16XV0132.Output0 ;
+=     A_16XV0132_0 ;
+U     DB_XV._16XV0132.Output1 ;
+=     A_16XV0132_1 ;
+U     DB_XV._16XV0132.Output2 ;
+=     A_16XV0132_2 ;
+U     DB_XV._16XV0132.Output3 ;
+=     A_16XV0132_3 ;
+
+NETWORK
+TITLE =16XV0156 CR00 : Aiguillage RNEP cuve
+U     E_16XV0156_0 ;
+=     DB_XV._16XV0156.IOFeedback0 ;
+U     E_16XV0156_1 ;
+=     DB_XV._16XV0156.IOFeedback1 ;
+U     E_16XV0156_2 ;
+=     DB_XV._16XV0156.IOFeedback2 ;
+U     E_16XV0156_3 ;
+=     DB_XV._16XV0156.IOFeedback3 ;
+
+U     DB_XV._16XV0156.Output0 ;
+=     A_16XV0156_0 ;
+U     DB_XV._16XV0156.Output1 ;
+=     A_16XV0156_1 ;
+U     DB_XV._16XV0156.Output2 ;
+=     A_16XV0156_2 ;
+U     DB_XV._16XV0156.Output3 ;
+=     A_16XV0156_3 ;
+
+NETWORK
+TITLE =16XV0158 CR01 : Arrivée NEP 1er boule latérale cuve
+U     E_16XV0158_0 ;
+=     DB_XV._16XV0158.IOFeedback0 ;
+U     E_16XV0158_1 ;
+=     DB_XV._16XV0158.IOFeedback1 ;
+U     E_16XV0158_2 ;
+=     DB_XV._16XV0158.IOFeedback2 ;
+U     E_16XV0158_3 ;
+=     DB_XV._16XV0158.IOFeedback3 ;
+
+U     DB_XV._16XV0158.Output0 ;
+=     A_16XV0158_0 ;
+U     DB_XV._16XV0158.Output1 ;
+=     A_16XV0158_1 ;
+U     DB_XV._16XV0158.Output2 ;
+=     A_16XV0158_2 ;
+U     DB_XV._16XV0158.Output3 ;
+=     A_16XV0158_3 ;
+
+NETWORK
+TITLE =16XV0159 CR01 : Arrivée NEP 2eme boule latérale cuve
+U     E_16XV0159_0 ;
+=     DB_XV._16XV0159.IOFeedback0 ;
+U     E_16XV0159_1 ;
+=     DB_XV._16XV0159.IOFeedback1 ;
+U     E_16XV0159_2 ;
+=     DB_XV._16XV0159.IOFeedback2 ;
+U     E_16XV0159_3 ;
+=     DB_XV._16XV0159.IOFeedback3 ;
+
+U     DB_XV._16XV0159.Output0 ;
+=     A_16XV0159_0 ;
+U     DB_XV._16XV0159.Output1 ;
+=     A_16XV0159_1 ;
+U     DB_XV._16XV0159.Output2 ;
+=     A_16XV0159_2 ;
+U     DB_XV._16XV0159.Output3 ;
+=     A_16XV0159_3 ;
+
+NETWORK
+TITLE =16XV0163 CR01 : Aiguillage vidange cuve vers contenaire
+U     E_16XV0163_0 ;
+=     DB_XV._16XV0163.IOFeedback0 ;
+U     E_16XV0163_1 ;
+=     DB_XV._16XV0163.IOFeedback1 ;
+U     E_16XV0163_2 ;
+=     DB_XV._16XV0163.IOFeedback2 ;
+U     E_16XV0163_3 ;
+=     DB_XV._16XV0163.IOFeedback3 ;
+
+U     DB_XV._16XV0163.Output0 ;
+=     A_16XV0163_0 ;
+U     DB_XV._16XV0163.Output1 ;
+=     A_16XV0163_1 ;
+U     DB_XV._16XV0163.Output2 ;
+=     A_16XV0163_2 ;
+U     DB_XV._16XV0163.Output3 ;
+=     A_16XV0163_3 ;
+
+NETWORK
+TITLE =16XV0170 CR01 : Arrivée eau glacée refroidissement cuve HE7
+U     E_16XV0170_0 ;
+=     DB_XV._16XV0170.IOFeedback0 ;
+U     E_16XV0170_1 ;
+=     DB_XV._16XV0170.IOFeedback1 ;
+U     E_16XV0170_2 ;
+=     DB_XV._16XV0170.IOFeedback2 ;
+U     E_16XV0170_3 ;
+=     DB_XV._16XV0170.IOFeedback3 ;
+
+U     DB_XV._16XV0170.Output0 ;
+=     A_16XV0170_0 ;
+U     DB_XV._16XV0170.Output1 ;
+=     A_16XV0170_1 ;
+U     DB_XV._16XV0170.Output2 ;
+=     A_16XV0170_2 ;
+U     DB_XV._16XV0170.Output3 ;
+=     A_16XV0170_3 ;
+
+NETWORK
+TITLE =16XV0175 P21 : Egout retour eau glacé
+U     E_16XV0175_0 ;
+=     DB_XV._16XV0175.IOFeedback0 ;
+U     E_16XV0175_1 ;
+=     DB_XV._16XV0175.IOFeedback1 ;
+U     E_16XV0175_2 ;
+=     DB_XV._16XV0175.IOFeedback2 ;
+U     E_16XV0175_3 ;
+=     DB_XV._16XV0175.IOFeedback3 ;
+
+U     DB_XV._16XV0175.Output0 ;
+=     A_16XV0175_0 ;
+U     DB_XV._16XV0175.Output1 ;
+=     A_16XV0175_1 ;
+U     DB_XV._16XV0175.Output2 ;
+=     A_16XV0175_2 ;
+U     DB_XV._16XV0175.Output3 ;
+=     A_16XV0175_3 ;
+
+NETWORK
+TITLE =16XV0178 P21 : Aiguillage récupération eau
+U     E_16XV0178_0 ;
+=     DB_XV._16XV0178.IOFeedback0 ;
+U     E_16XV0178_1 ;
+=     DB_XV._16XV0178.IOFeedback1 ;
+U     E_16XV0178_2 ;
+=     DB_XV._16XV0178.IOFeedback2 ;
+U     E_16XV0178_3 ;
+=     DB_XV._16XV0178.IOFeedback3 ;
+
+U     DB_XV._16XV0178.Output0 ;
+=     A_16XV0178_0 ;
+U     DB_XV._16XV0178.Output1 ;
+=     A_16XV0178_1 ;
+U     DB_XV._16XV0178.Output2 ;
+=     A_16XV0178_2 ;
+U     DB_XV._16XV0178.Output3 ;
+=     A_16XV0178_3 ;
+
+NETWORK
+TITLE =16XV2110 TTJ11 : Fond cuve
+U     E_16XV2110_0 ;
+=     DB_XV._16XV2110.IOFeedback0 ;
+U     E_16XV2110_1 ;
+=     DB_XV._16XV2110.IOFeedback1 ;
+U     E_16XV2110_2 ;
+=     DB_XV._16XV2110.IOFeedback2 ;
+U     E_16XV2110_3 ;
+=     DB_XV._16XV2110.IOFeedback3 ;
+
+U     DB_XV._16XV2110.Output0 ;
+=     A_16XV2110_0 ;
+U     DB_XV._16XV2110.Output1 ;
+=     A_16XV2110_1 ;
+U     DB_XV._16XV2110.Output2 ;
+=     A_16XV2110_2 ;
+U     DB_XV._16XV2110.Output3 ;
+=     A_16XV2110_3 ;
+
+NETWORK
+TITLE =16XV2112 TTJ11 : Manifold MDL20 - LSO22
+U     E_16XV2112_0 ;
+=     DB_XV._16XV2112.IOFeedback0 ;
+U     E_16XV2112_1 ;
+=     DB_XV._16XV2112.IOFeedback1 ;
+U     E_16XV2112_2 ;
+=     DB_XV._16XV2112.IOFeedback2 ;
+U     E_16XV2112_3 ;
+=     DB_XV._16XV2112.IOFeedback3 ;
+
+U     DB_XV._16XV2112.Output0 ;
+=     A_16XV2112_0 ;
+U     DB_XV._16XV2112.Output1 ;
+=     A_16XV2112_1 ;
+U     DB_XV._16XV2112.Output2 ;
+=     A_16XV2112_2 ;
+U     DB_XV._16XV2112.Output3 ;
+=     A_16XV2112_3 ;
+
+NETWORK
+TITLE =16XV2151 TTJ11 : Arrivée vapeur stérilisation filtre
+U     E_16XV2151_0 ;
+=     DB_XV._16XV2151.IOFeedback0 ;
+U     E_16XV2151_1 ;
+=     DB_XV._16XV2151.IOFeedback1 ;
+U     E_16XV2151_2 ;
+=     DB_XV._16XV2151.IOFeedback2 ;
+U     E_16XV2151_3 ;
+=     DB_XV._16XV2151.IOFeedback3 ;
+
+U     DB_XV._16XV2151.Output0 ;
+=     A_16XV2151_0 ;
+U     DB_XV._16XV2151.Output1 ;
+=     A_16XV2151_1 ;
+U     DB_XV._16XV2151.Output2 ;
+=     A_16XV2151_2 ;
+U     DB_XV._16XV2151.Output3 ;
+=     A_16XV2151_3 ;
+
+NETWORK
+TITLE =16XV2152 TTJ11 : Purge filtre air
+U     E_16XV2152_0 ;
+=     DB_XV._16XV2152.IOFeedback0 ;
+U     E_16XV2152_1 ;
+=     DB_XV._16XV2152.IOFeedback1 ;
+U     E_16XV2152_2 ;
+=     DB_XV._16XV2152.IOFeedback2 ;
+U     E_16XV2152_3 ;
+=     DB_XV._16XV2152.IOFeedback3 ;
+
+U     DB_XV._16XV2152.Output0 ;
+=     A_16XV2152_0 ;
+U     DB_XV._16XV2152.Output1 ;
+=     A_16XV2152_1 ;
+U     DB_XV._16XV2152.Output2 ;
+=     A_16XV2152_2 ;
+U     DB_XV._16XV2152.Output3 ;
+=     A_16XV2152_3 ;
+
+NETWORK
+TITLE =16XV2153 TTJ11 : Purge ligne air
+U     E_16XV2153_0 ;
+=     DB_XV._16XV2153.IOFeedback0 ;
+U     E_16XV2153_1 ;
+=     DB_XV._16XV2153.IOFeedback1 ;
+U     E_16XV2153_2 ;
+=     DB_XV._16XV2153.IOFeedback2 ;
+U     E_16XV2153_3 ;
+=     DB_XV._16XV2153.IOFeedback3 ;
+
+U     DB_XV._16XV2153.Output0 ;
+=     A_16XV2153_0 ;
+U     DB_XV._16XV2153.Output1 ;
+=     A_16XV2153_1 ;
+U     DB_XV._16XV2153.Output2 ;
+=     A_16XV2153_2 ;
+U     DB_XV._16XV2153.Output3 ;
+=     A_16XV2153_3 ;
+
+NETWORK
+TITLE =16XV2161 TTJ11 : Arrivée air filtre
+U     E_16XV2161_0 ;
+=     DB_XV._16XV2161.IOFeedback0 ;
+U     E_16XV2161_1 ;
+=     DB_XV._16XV2161.IOFeedback1 ;
+U     E_16XV2161_2 ;
+=     DB_XV._16XV2161.IOFeedback2 ;
+U     E_16XV2161_3 ;
+=     DB_XV._16XV2161.IOFeedback3 ;
+
+U     DB_XV._16XV2161.Output0 ;
+=     A_16XV2161_0 ;
+U     DB_XV._16XV2161.Output1 ;
+=     A_16XV2161_1 ;
+U     DB_XV._16XV2161.Output2 ;
+=     A_16XV2161_2 ;
+U     DB_XV._16XV2161.Output3 ;
+=     A_16XV2161_3 ;
+
+NETWORK
+TITLE =16XV2162 TTJ11 : Arrivée air vers cuve
+U     E_16XV2162_0 ;
+=     DB_XV._16XV2162.IOFeedback0 ;
+U     E_16XV2162_1 ;
+=     DB_XV._16XV2162.IOFeedback1 ;
+U     E_16XV2162_2 ;
+=     DB_XV._16XV2162.IOFeedback2 ;
+U     E_16XV2162_3 ;
+=     DB_XV._16XV2162.IOFeedback3 ;
+
+U     DB_XV._16XV2162.Output0 ;
+=     A_16XV2162_0 ;
+U     DB_XV._16XV2162.Output1 ;
+=     A_16XV2162_1 ;
+U     DB_XV._16XV2162.Output2 ;
+=     A_16XV2162_2 ;
+U     DB_XV._16XV2162.Output3 ;
+=     A_16XV2162_3 ;
+
+NETWORK
+TITLE =16XV2176 TTJ11 : NEP ligne air cuve
+U     E_16XV2176_0 ;
+=     DB_XV._16XV2176.IOFeedback0 ;
+U     E_16XV2176_1 ;
+=     DB_XV._16XV2176.IOFeedback1 ;
+U     E_16XV2176_2 ;
+=     DB_XV._16XV2176.IOFeedback2 ;
+U     E_16XV2176_3 ;
+=     DB_XV._16XV2176.IOFeedback3 ;
+
+U     DB_XV._16XV2176.Output0 ;
+=     A_16XV2176_0 ;
+U     DB_XV._16XV2176.Output1 ;
+=     A_16XV2176_1 ;
+U     DB_XV._16XV2176.Output2 ;
+=     A_16XV2176_2 ;
+U     DB_XV._16XV2176.Output3 ;
+=     A_16XV2176_3 ;
+
+NETWORK
+TITLE =16XV2178 TTJ11 : Retour NEP cuve
+U     E_16XV2178_0 ;
+=     DB_XV._16XV2178.IOFeedback0 ;
+U     E_16XV2178_1 ;
+=     DB_XV._16XV2178.IOFeedback1 ;
+U     E_16XV2178_2 ;
+=     DB_XV._16XV2178.IOFeedback2 ;
+U     E_16XV2178_3 ;
+=     DB_XV._16XV2178.IOFeedback3 ;
+
+U     DB_XV._16XV2178.Output0 ;
+=     A_16XV2178_0 ;
+U     DB_XV._16XV2178.Output1 ;
+=     A_16XV2178_1 ;
+U     DB_XV._16XV2178.Output2 ;
+=     A_16XV2178_2 ;
+U     DB_XV._16XV2178.Output3 ;
+=     A_16XV2178_3 ;
+
+NETWORK
+TITLE =16XV2210 TTJ12 : Fond cuve
+U     E_16XV2210_0 ;
+=     DB_XV._16XV2210.IOFeedback0 ;
+U     E_16XV2210_1 ;
+=     DB_XV._16XV2210.IOFeedback1 ;
+U     E_16XV2210_2 ;
+=     DB_XV._16XV2210.IOFeedback2 ;
+U     E_16XV2210_3 ;
+=     DB_XV._16XV2210.IOFeedback3 ;
+
+U     DB_XV._16XV2210.Output0 ;
+=     A_16XV2210_0 ;
+U     DB_XV._16XV2210.Output1 ;
+=     A_16XV2210_1 ;
+U     DB_XV._16XV2210.Output2 ;
+=     A_16XV2210_2 ;
+U     DB_XV._16XV2210.Output3 ;
+=     A_16XV2210_3 ;
+
+NETWORK
+TITLE =16XV2212 TTJ12 : Manifold MDL20 - LSO22
+U     E_16XV2212_0 ;
+=     DB_XV._16XV2212.IOFeedback0 ;
+U     E_16XV2212_1 ;
+=     DB_XV._16XV2212.IOFeedback1 ;
+U     E_16XV2212_2 ;
+=     DB_XV._16XV2212.IOFeedback2 ;
+U     E_16XV2212_3 ;
+=     DB_XV._16XV2212.IOFeedback3 ;
+
+U     DB_XV._16XV2212.Output0 ;
+=     A_16XV2212_0 ;
+U     DB_XV._16XV2212.Output1 ;
+=     A_16XV2212_1 ;
+U     DB_XV._16XV2212.Output2 ;
+=     A_16XV2212_2 ;
+U     DB_XV._16XV2212.Output3 ;
+=     A_16XV2212_3 ;
+
+NETWORK
+TITLE =16XV2251 TTJ12 : Arrivée vapeur stérilisation filtre
+U     E_16XV2251_0 ;
+=     DB_XV._16XV2251.IOFeedback0 ;
+U     E_16XV2251_1 ;
+=     DB_XV._16XV2251.IOFeedback1 ;
+U     E_16XV2251_2 ;
+=     DB_XV._16XV2251.IOFeedback2 ;
+U     E_16XV2251_3 ;
+=     DB_XV._16XV2251.IOFeedback3 ;
+
+U     DB_XV._16XV2251.Output0 ;
+=     A_16XV2251_0 ;
+U     DB_XV._16XV2251.Output1 ;
+=     A_16XV2251_1 ;
+U     DB_XV._16XV2251.Output2 ;
+=     A_16XV2251_2 ;
+U     DB_XV._16XV2251.Output3 ;
+=     A_16XV2251_3 ;
+
+NETWORK
+TITLE =16XV2252 TTJ12 : Purge filtre air
+U     E_16XV2252_0 ;
+=     DB_XV._16XV2252.IOFeedback0 ;
+U     E_16XV2252_1 ;
+=     DB_XV._16XV2252.IOFeedback1 ;
+U     E_16XV2252_2 ;
+=     DB_XV._16XV2252.IOFeedback2 ;
+U     E_16XV2252_3 ;
+=     DB_XV._16XV2252.IOFeedback3 ;
+
+U     DB_XV._16XV2252.Output0 ;
+=     A_16XV2252_0 ;
+U     DB_XV._16XV2252.Output1 ;
+=     A_16XV2252_1 ;
+U     DB_XV._16XV2252.Output2 ;
+=     A_16XV2252_2 ;
+U     DB_XV._16XV2252.Output3 ;
+=     A_16XV2252_3 ;
+
+NETWORK
+TITLE =16XV2253 TTJ12 : Purge ligne air
+U     E_16XV2253_0 ;
+=     DB_XV._16XV2253.IOFeedback0 ;
+U     E_16XV2253_1 ;
+=     DB_XV._16XV2253.IOFeedback1 ;
+U     E_16XV2253_2 ;
+=     DB_XV._16XV2253.IOFeedback2 ;
+U     E_16XV2253_3 ;
+=     DB_XV._16XV2253.IOFeedback3 ;
+
+U     DB_XV._16XV2253.Output0 ;
+=     A_16XV2253_0 ;
+U     DB_XV._16XV2253.Output1 ;
+=     A_16XV2253_1 ;
+U     DB_XV._16XV2253.Output2 ;
+=     A_16XV2253_2 ;
+U     DB_XV._16XV2253.Output3 ;
+=     A_16XV2253_3 ;
+
+NETWORK
+TITLE =16XV2261 TTJ12 : Arrivée air filtre
+U     E_16XV2261_0 ;
+=     DB_XV._16XV2261.IOFeedback0 ;
+U     E_16XV2261_1 ;
+=     DB_XV._16XV2261.IOFeedback1 ;
+U     E_16XV2261_2 ;
+=     DB_XV._16XV2261.IOFeedback2 ;
+U     E_16XV2261_3 ;
+=     DB_XV._16XV2261.IOFeedback3 ;
+
+U     DB_XV._16XV2261.Output0 ;
+=     A_16XV2261_0 ;
+U     DB_XV._16XV2261.Output1 ;
+=     A_16XV2261_1 ;
+U     DB_XV._16XV2261.Output2 ;
+=     A_16XV2261_2 ;
+U     DB_XV._16XV2261.Output3 ;
+=     A_16XV2261_3 ;
+
+NETWORK
+TITLE =16XV2262 TTJ12 : Arrivée air vers cuve
+U     E_16XV2262_0 ;
+=     DB_XV._16XV2262.IOFeedback0 ;
+U     E_16XV2262_1 ;
+=     DB_XV._16XV2262.IOFeedback1 ;
+U     E_16XV2262_2 ;
+=     DB_XV._16XV2262.IOFeedback2 ;
+U     E_16XV2262_3 ;
+=     DB_XV._16XV2262.IOFeedback3 ;
+
+U     DB_XV._16XV2262.Output0 ;
+=     A_16XV2262_0 ;
+U     DB_XV._16XV2262.Output1 ;
+=     A_16XV2262_1 ;
+U     DB_XV._16XV2262.Output2 ;
+=     A_16XV2262_2 ;
+U     DB_XV._16XV2262.Output3 ;
+=     A_16XV2262_3 ;
+
+NETWORK
+TITLE =16XV2276 TTJ12 : NEP ligne air cuve
+U     E_16XV2276_0 ;
+=     DB_XV._16XV2276.IOFeedback0 ;
+U     E_16XV2276_1 ;
+=     DB_XV._16XV2276.IOFeedback1 ;
+U     E_16XV2276_2 ;
+=     DB_XV._16XV2276.IOFeedback2 ;
+U     E_16XV2276_3 ;
+=     DB_XV._16XV2276.IOFeedback3 ;
+
+U     DB_XV._16XV2276.Output0 ;
+=     A_16XV2276_0 ;
+U     DB_XV._16XV2276.Output1 ;
+=     A_16XV2276_1 ;
+U     DB_XV._16XV2276.Output2 ;
+=     A_16XV2276_2 ;
+U     DB_XV._16XV2276.Output3 ;
+=     A_16XV2276_3 ;
+
+NETWORK
+TITLE =16XV2278 TTJ12 : Retour NEP cuve
+U     E_16XV2278_0 ;
+=     DB_XV._16XV2278.IOFeedback0 ;
+U     E_16XV2278_1 ;
+=     DB_XV._16XV2278.IOFeedback1 ;
+U     E_16XV2278_2 ;
+=     DB_XV._16XV2278.IOFeedback2 ;
+U     E_16XV2278_3 ;
+=     DB_XV._16XV2278.IOFeedback3 ;
+
+U     DB_XV._16XV2278.Output0 ;
+=     A_16XV2278_0 ;
+U     DB_XV._16XV2278.Output1 ;
+=     A_16XV2278_1 ;
+U     DB_XV._16XV2278.Output2 ;
+=     A_16XV2278_2 ;
+U     DB_XV._16XV2278.Output3 ;
+=     A_16XV2278_3 ;
+
+NETWORK
+TITLE =16XV1051 TTJ1x : Purge arrivée vapeur
+U     E_16XV1051_0 ;
+=     DB_XV._16XV1051.IOFeedback0 ;
+U     E_16XV1051_1 ;
+=     DB_XV._16XV1051.IOFeedback1 ;
+U     E_16XV1051_2 ;
+=     DB_XV._16XV1051.IOFeedback2 ;
+U     E_16XV1051_3 ;
+=     DB_XV._16XV1051.IOFeedback3 ;
+
+U     DB_XV._16XV1051.Output0 ;
+=     A_16XV1051_0 ;
+U     DB_XV._16XV1051.Output1 ;
+=     A_16XV1051_1 ;
+U     DB_XV._16XV1051.Output2 ;
+=     A_16XV1051_2 ;
+U     DB_XV._16XV1051.Output3 ;
+=     A_16XV1051_3 ;
+
+NETWORK
+TITLE =16XV1072 TTJ1x : Retour NEP cuves
+U     E_16XV1072_0 ;
+=     DB_XV._16XV1072.IOFeedback0 ;
+U     E_16XV1072_1 ;
+=     DB_XV._16XV1072.IOFeedback1 ;
+U     E_16XV1072_2 ;
+=     DB_XV._16XV1072.IOFeedback2 ;
+U     E_16XV1072_3 ;
+=     DB_XV._16XV1072.IOFeedback3 ;
+
+U     DB_XV._16XV1072.Output0 ;
+=     A_16XV1072_0 ;
+U     DB_XV._16XV1072.Output1 ;
+=     A_16XV1072_1 ;
+U     DB_XV._16XV1072.Output2 ;
+=     A_16XV1072_2 ;
+U     DB_XV._16XV1072.Output3 ;
+=     A_16XV1072_3 ;
+
+NETWORK
+TITLE =16XV9882 LSO22 : Break arrivée NEP
+U     E_16XV9882_0 ;
+=     DB_XV._16XV9882.IOFeedback0 ;
+U     E_16XV9882_1 ;
+=     DB_XV._16XV9882.IOFeedback1 ;
+U     E_16XV9882_2 ;
+=     DB_XV._16XV9882.IOFeedback2 ;
+U     E_16XV9882_3 ;
+=     DB_XV._16XV9882.IOFeedback3 ;
+
+U     DB_XV._16XV9882.Output0 ;
+=     A_16XV9882_0 ;
+U     DB_XV._16XV9882.Output1 ;
+=     A_16XV9882_1 ;
+U     DB_XV._16XV9882.Output2 ;
+=     A_16XV9882_2 ;
+U     DB_XV._16XV9882.Output3 ;
+=     A_16XV9882_3 ;
+
+NETWORK
+TITLE =16XV9952 LSO22 : Arrivée eau de pousse
+U     E_16XV9952_0 ;
+=     DB_XV._16XV9952.IOFeedback0 ;
+U     E_16XV9952_1 ;
+=     DB_XV._16XV9952.IOFeedback1 ;
+U     E_16XV9952_2 ;
+=     DB_XV._16XV9952.IOFeedback2 ;
+U     E_16XV9952_3 ;
+=     DB_XV._16XV9952.IOFeedback3 ;
+
+U     DB_XV._16XV9952.Output0 ;
+=     A_16XV9952_0 ;
+U     DB_XV._16XV9952.Output1 ;
+=     A_16XV9952_1 ;
+U     DB_XV._16XV9952.Output2 ;
+=     A_16XV9952_2 ;
+U     DB_XV._16XV9952.Output3 ;
+=     A_16XV9952_3 ;
+
+NETWORK
+TITLE =16XV9922 LSO22 : Break eau de pousse
+U     E_16XV9922_0 ;
+=     DB_XV._16XV9922.IOFeedback0 ;
+U     E_16XV9922_1 ;
+=     DB_XV._16XV9922.IOFeedback1 ;
+U     E_16XV9922_2 ;
+=     DB_XV._16XV9922.IOFeedback2 ;
+U     E_16XV9922_3 ;
+=     DB_XV._16XV9922.IOFeedback3 ;
+
+U     DB_XV._16XV9922.Output0 ;
+=     A_16XV9922_0 ;
+U     DB_XV._16XV9922.Output1 ;
+=     A_16XV9922_1 ;
+U     DB_XV._16XV9922.Output2 ;
+=     A_16XV9922_2 ;
+U     DB_XV._16XV9922.Output3 ;
+=     A_16XV9922_3 ;
+
+NETWORK
+TITLE =16XV0101 P21 : Arrivée eau bac BL01
+U     E_16XV0101_0 ;
+=     DB_XV._16XV0101.IOFeedback0 ;
+U     E_16XV0101_1 ;
+=     DB_XV._16XV0101.IOFeedback1 ;
+U     E_16XV0101_2 ;
+=     DB_XV._16XV0101.IOFeedback2 ;
+U     E_16XV0101_3 ;
+=     DB_XV._16XV0101.IOFeedback3 ;
+
+U     DB_XV._16XV0101.Output0 ;
+=     A_16XV0101_0 ;
+U     DB_XV._16XV0101.Output1 ;
+=     A_16XV0101_1 ;
+U     DB_XV._16XV0101.Output2 ;
+=     A_16XV0101_2 ;
+U     DB_XV._16XV0101.Output3 ;
+=     A_16XV0101_3 ;
+
+NETWORK
+TITLE =16XV0103 P21 : Arrivée NEP bac BL01
+U     E_16XV0103_0 ;
+=     DB_XV._16XV0103.IOFeedback0 ;
+U     E_16XV0103_1 ;
+=     DB_XV._16XV0103.IOFeedback1 ;
+U     E_16XV0103_2 ;
+=     DB_XV._16XV0103.IOFeedback2 ;
+U     E_16XV0103_3 ;
+=     DB_XV._16XV0103.IOFeedback3 ;
+
+U     DB_XV._16XV0103.Output0 ;
+=     A_16XV0103_0 ;
+U     DB_XV._16XV0103.Output1 ;
+=     A_16XV0103_1 ;
+U     DB_XV._16XV0103.Output2 ;
+=     A_16XV0103_2 ;
+U     DB_XV._16XV0103.Output3 ;
+=     A_16XV0103_3 ;
+
+NETWORK
+TITLE =16XV0104 P21 : Break boucle appareil
+U     E_16XV0104_0 ;
+=     DB_XV._16XV0104.IOFeedback0 ;
+U     E_16XV0104_1 ;
+=     DB_XV._16XV0104.IOFeedback1 ;
+U     E_16XV0104_2 ;
+=     DB_XV._16XV0104.IOFeedback2 ;
+U     E_16XV0104_3 ;
+=     DB_XV._16XV0104.IOFeedback3 ;
+
+U     DB_XV._16XV0104.Output0 ;
+=     A_16XV0104_0 ;
+U     DB_XV._16XV0104.Output1 ;
+=     A_16XV0104_1 ;
+U     DB_XV._16XV0104.Output2 ;
+=     A_16XV0104_2 ;
+U     DB_XV._16XV0104.Output3 ;
+=     A_16XV0104_3 ;
+
+NETWORK
+TITLE =16XV0105 P21 : Mise à l'égout avant BL01
+U     E_16XV0105_0 ;
+=     DB_XV._16XV0105.IOFeedback0 ;
+U     E_16XV0105_1 ;
+=     DB_XV._16XV0105.IOFeedback1 ;
+U     E_16XV0105_2 ;
+=     DB_XV._16XV0105.IOFeedback2 ;
+U     E_16XV0105_3 ;
+=     DB_XV._16XV0105.IOFeedback3 ;
+
+U     DB_XV._16XV0105.Output0 ;
+=     A_16XV0105_0 ;
+U     DB_XV._16XV0105.Output1 ;
+=     A_16XV0105_1 ;
+U     DB_XV._16XV0105.Output2 ;
+=     A_16XV0105_2 ;
+U     DB_XV._16XV0105.Output3 ;
+=     A_16XV0105_3 ;
+
+NETWORK
+TITLE =16XV0106 P21 : Break entrée BL01
+U     E_16XV0106_0 ;
+=     DB_XV._16XV0106.IOFeedback0 ;
+U     E_16XV0106_1 ;
+=     DB_XV._16XV0106.IOFeedback1 ;
+U     E_16XV0106_2 ;
+=     DB_XV._16XV0106.IOFeedback2 ;
+U     E_16XV0106_3 ;
+=     DB_XV._16XV0106.IOFeedback3 ;
+
+U     DB_XV._16XV0106.Output0 ;
+=     A_16XV0106_0 ;
+U     DB_XV._16XV0106.Output1 ;
+=     A_16XV0106_1 ;
+U     DB_XV._16XV0106.Output2 ;
+=     A_16XV0106_2 ;
+U     DB_XV._16XV0106.Output3 ;
+=     A_16XV0106_3 ;
+
+NETWORK
+TITLE =16XV0110 P21 : Mise a l'égout sortie appareil
+U     E_16XV0110_0 ;
+=     DB_XV._16XV0110.IOFeedback0 ;
+U     E_16XV0110_1 ;
+=     DB_XV._16XV0110.IOFeedback1 ;
+U     E_16XV0110_2 ;
+=     DB_XV._16XV0110.IOFeedback2 ;
+U     E_16XV0110_3 ;
+=     DB_XV._16XV0110.IOFeedback3 ;
+
+U     DB_XV._16XV0110.Output0 ;
+=     A_16XV0110_0 ;
+U     DB_XV._16XV0110.Output1 ;
+=     A_16XV0110_1 ;
+U     DB_XV._16XV0110.Output2 ;
+=     A_16XV0110_2 ;
+U     DB_XV._16XV0110.Output3 ;
+=     A_16XV0110_3 ;
+
+NETWORK
+TITLE =16XV0113 P21 : Arrivée boule NEP BL01
+U     E_16XV0113_0 ;
+=     DB_XV._16XV0113.IOFeedback0 ;
+U     E_16XV0113_1 ;
+=     DB_XV._16XV0113.IOFeedback1 ;
+U     E_16XV0113_2 ;
+=     DB_XV._16XV0113.IOFeedback2 ;
+U     E_16XV0113_3 ;
+=     DB_XV._16XV0113.IOFeedback3 ;
+
+U     DB_XV._16XV0113.Output0 ;
+=     A_16XV0113_0 ;
+U     DB_XV._16XV0113.Output1 ;
+=     A_16XV0113_1 ;
+U     DB_XV._16XV0113.Output2 ;
+=     A_16XV0113_2 ;
+U     DB_XV._16XV0113.Output3 ;
+=     A_16XV0113_3 ;
+
+NETWORK
+TITLE =16XV0141 P21 : Envoi soude concentrée BL01
+U     E_16XV0141_0 ;
+=     DB_XV._16XV0141.IOFeedback0 ;
+U     E_16XV0141_1 ;
+=     DB_XV._16XV0141.IOFeedback1 ;
+U     E_16XV0141_2 ;
+=     DB_XV._16XV0141.IOFeedback2 ;
+U     E_16XV0141_3 ;
+=     DB_XV._16XV0141.IOFeedback3 ;
+
+U     DB_XV._16XV0141.Output0 ;
+=     A_16XV0141_0 ;
+U     DB_XV._16XV0141.Output1 ;
+=     A_16XV0141_1 ;
+U     DB_XV._16XV0141.Output2 ;
+=     A_16XV0141_2 ;
+U     DB_XV._16XV0141.Output3 ;
+=     A_16XV0141_3 ;
+
+NETWORK
+TITLE =16XV0142 P21 : Envoi acide concentrée BL01
+U     E_16XV0142_0 ;
+=     DB_XV._16XV0142.IOFeedback0 ;
+U     E_16XV0142_1 ;
+=     DB_XV._16XV0142.IOFeedback1 ;
+U     E_16XV0142_2 ;
+=     DB_XV._16XV0142.IOFeedback2 ;
+U     E_16XV0142_3 ;
+=     DB_XV._16XV0142.IOFeedback3 ;
+
+U     DB_XV._16XV0142.Output0 ;
+=     A_16XV0142_0 ;
+U     DB_XV._16XV0142.Output1 ;
+=     A_16XV0142_1 ;
+U     DB_XV._16XV0142.Output2 ;
+=     A_16XV0142_2 ;
+U     DB_XV._16XV0142.Output3 ;
+=     A_16XV0142_3 ;
+
+NETWORK
+TITLE =16XV0143 P21 : Rinçage ligne concentres
+U     E_16XV0143_0 ;
+=     DB_XV._16XV0143.IOFeedback0 ;
+U     E_16XV0143_1 ;
+=     DB_XV._16XV0143.IOFeedback1 ;
+U     E_16XV0143_2 ;
+=     DB_XV._16XV0143.IOFeedback2 ;
+U     E_16XV0143_3 ;
+=     DB_XV._16XV0143.IOFeedback3 ;
+
+U     DB_XV._16XV0143.Output0 ;
+=     A_16XV0143_0 ;
+U     DB_XV._16XV0143.Output1 ;
+=     A_16XV0143_1 ;
+U     DB_XV._16XV0143.Output2 ;
+=     A_16XV0143_2 ;
+U     DB_XV._16XV0143.Output3 ;
+=     A_16XV0143_3 ;
+
+NETWORK
+TITLE =16XV0144 P21 : Sécurité ligne concentre
+U     E_16XV0144_0 ;
+=     DB_XV._16XV0144.IOFeedback0 ;
+U     E_16XV0144_1 ;
+=     DB_XV._16XV0144.IOFeedback1 ;
+U     E_16XV0144_2 ;
+=     DB_XV._16XV0144.IOFeedback2 ;
+U     E_16XV0144_3 ;
+=     DB_XV._16XV0144.IOFeedback3 ;
+
+U     DB_XV._16XV0144.Output0 ;
+=     A_16XV0144_0 ;
+U     DB_XV._16XV0144.Output1 ;
+=     A_16XV0144_1 ;
+U     DB_XV._16XV0144.Output2 ;
+=     A_16XV0144_2 ;
+U     DB_XV._16XV0144.Output3 ;
+=     A_16XV0144_3 ;
+
+NETWORK
+TITLE =16XV0151 LRM01 : Arrivée produit vers P21
+U     E_16XV0151_0 ;
+=     DB_XV._16XV0151.IOFeedback0 ;
+U     E_16XV0151_1 ;
+=     DB_XV._16XV0151.IOFeedback1 ;
+U     E_16XV0151_2 ;
+=     DB_XV._16XV0151.IOFeedback2 ;
+U     E_16XV0151_3 ;
+=     DB_XV._16XV0151.IOFeedback3 ;
+
+U     DB_XV._16XV0151.Output0 ;
+=     A_16XV0151_0 ;
+U     DB_XV._16XV0151.Output1 ;
+=     A_16XV0151_1 ;
+U     DB_XV._16XV0151.Output2 ;
+=     A_16XV0151_2 ;
+U     DB_XV._16XV0151.Output3 ;
+=     A_16XV0151_3 ;
+
+NETWORK
+TITLE =16XV0152 LRM01 : Break ligne avant BL01
+U     E_16XV0152_0 ;
+=     DB_XV._16XV0152.IOFeedback0 ;
+U     E_16XV0152_1 ;
+=     DB_XV._16XV0152.IOFeedback1 ;
+U     E_16XV0152_2 ;
+=     DB_XV._16XV0152.IOFeedback2 ;
+U     E_16XV0152_3 ;
+=     DB_XV._16XV0152.IOFeedback3 ;
+
+U     DB_XV._16XV0152.Output0 ;
+=     A_16XV0152_0 ;
+U     DB_XV._16XV0152.Output1 ;
+=     A_16XV0152_1 ;
+U     DB_XV._16XV0152.Output2 ;
+=     A_16XV0152_2 ;
+U     DB_XV._16XV0152.Output3 ;
+=     A_16XV0152_3 ;
+
+NETWORK
+TITLE =16XV0153 LRM01 : Break retour NEP ligne remplissage appareil
+U     E_16XV0153_0 ;
+=     DB_XV._16XV0153.IOFeedback0 ;
+U     E_16XV0153_1 ;
+=     DB_XV._16XV0153.IOFeedback1 ;
+U     E_16XV0153_2 ;
+=     DB_XV._16XV0153.IOFeedback2 ;
+U     E_16XV0153_3 ;
+=     DB_XV._16XV0153.IOFeedback3 ;
+
+U     DB_XV._16XV0153.Output0 ;
+=     A_16XV0153_0 ;
+U     DB_XV._16XV0153.Output1 ;
+=     A_16XV0153_1 ;
+U     DB_XV._16XV0153.Output2 ;
+=     A_16XV0153_2 ;
+U     DB_XV._16XV0153.Output3 ;
+=     A_16XV0153_3 ;
+
+NETWORK
+TITLE =16XV0157 CR01 : Arrivée NEP boules principales cuve
+U     E_16XV0157_0 ;
+=     DB_XV._16XV0157.IOFeedback0 ;
+U     E_16XV0157_1 ;
+=     DB_XV._16XV0157.IOFeedback1 ;
+U     E_16XV0157_2 ;
+=     DB_XV._16XV0157.IOFeedback2 ;
+U     E_16XV0157_3 ;
+=     DB_XV._16XV0157.IOFeedback3 ;
+
+U     DB_XV._16XV0157.Output0 ;
+=     A_16XV0157_0 ;
+U     DB_XV._16XV0157.Output1 ;
+=     A_16XV0157_1 ;
+U     DB_XV._16XV0157.Output2 ;
+=     A_16XV0157_2 ;
+U     DB_XV._16XV0157.Output3 ;
+=     A_16XV0157_3 ;
+
+NETWORK
+TITLE =16XV0160 CR01 : Remplissage cuve
+U     E_16XV0160_0 ;
+=     DB_XV._16XV0160.IOFeedback0 ;
+U     E_16XV0160_1 ;
+=     DB_XV._16XV0160.IOFeedback1 ;
+U     E_16XV0160_2 ;
+=     DB_XV._16XV0160.IOFeedback2 ;
+U     E_16XV0160_3 ;
+=     DB_XV._16XV0160.IOFeedback3 ;
+
+U     DB_XV._16XV0160.Output0 ;
+=     A_16XV0160_0 ;
+U     DB_XV._16XV0160.Output1 ;
+=     A_16XV0160_1 ;
+U     DB_XV._16XV0160.Output2 ;
+=     A_16XV0160_2 ;
+U     DB_XV._16XV0160.Output3 ;
+=     A_16XV0160_3 ;
+
+NETWORK
+TITLE =16XV0161 CR01 : Mise a l'égout remplissage cuve
+U     E_16XV0161_0 ;
+=     DB_XV._16XV0161.IOFeedback0 ;
+U     E_16XV0161_1 ;
+=     DB_XV._16XV0161.IOFeedback1 ;
+U     E_16XV0161_2 ;
+=     DB_XV._16XV0161.IOFeedback2 ;
+U     E_16XV0161_3 ;
+=     DB_XV._16XV0161.IOFeedback3 ;
+
+U     DB_XV._16XV0161.Output0 ;
+=     A_16XV0161_0 ;
+U     DB_XV._16XV0161.Output1 ;
+=     A_16XV0161_1 ;
+U     DB_XV._16XV0161.Output2 ;
+=     A_16XV0161_2 ;
+U     DB_XV._16XV0161.Output3 ;
+=     A_16XV0161_3 ;
+
+NETWORK
+TITLE =16XV0162 CR01 : Arrivée NEP boules cuve
+U     E_16XV0162_0 ;
+=     DB_XV._16XV0162.IOFeedback0 ;
+U     E_16XV0162_1 ;
+=     DB_XV._16XV0162.IOFeedback1 ;
+U     E_16XV0162_2 ;
+=     DB_XV._16XV0162.IOFeedback2 ;
+U     E_16XV0162_3 ;
+=     DB_XV._16XV0162.IOFeedback3 ;
+
+U     DB_XV._16XV0162.Output0 ;
+=     A_16XV0162_0 ;
+U     DB_XV._16XV0162.Output1 ;
+=     A_16XV0162_1 ;
+U     DB_XV._16XV0162.Output2 ;
+=     A_16XV0162_2 ;
+U     DB_XV._16XV0162.Output3 ;
+=     A_16XV0162_3 ;
+
+NETWORK
+TITLE =16XV0164 CR01 : Arrivée pousse ligne remplissage LRM01
+U     E_16XV0164_0 ;
+=     DB_XV._16XV0164.IOFeedback0 ;
+U     E_16XV0164_1 ;
+=     DB_XV._16XV0164.IOFeedback1 ;
+U     E_16XV0164_2 ;
+=     DB_XV._16XV0164.IOFeedback2 ;
+U     E_16XV0164_3 ;
+=     DB_XV._16XV0164.IOFeedback3 ;
+
+U     DB_XV._16XV0164.Output0 ;
+=     A_16XV0164_0 ;
+U     DB_XV._16XV0164.Output1 ;
+=     A_16XV0164_1 ;
+U     DB_XV._16XV0164.Output2 ;
+=     A_16XV0164_2 ;
+U     DB_XV._16XV0164.Output3 ;
+=     A_16XV0164_3 ;
+
+NETWORK
+TITLE =16XV0165 CR01 : Arrivée pousse fin ligne soutirage LSO22
+U     E_16XV0165_0 ;
+=     DB_XV._16XV0165.IOFeedback0 ;
+U     E_16XV0165_1 ;
+=     DB_XV._16XV0165.IOFeedback1 ;
+U     E_16XV0165_2 ;
+=     DB_XV._16XV0165.IOFeedback2 ;
+U     E_16XV0165_3 ;
+=     DB_XV._16XV0165.IOFeedback3 ;
+
+U     DB_XV._16XV0165.Output0 ;
+=     A_16XV0165_0 ;
+U     DB_XV._16XV0165.Output1 ;
+=     A_16XV0165_1 ;
+U     DB_XV._16XV0165.Output2 ;
+=     A_16XV0165_2 ;
+U     DB_XV._16XV0165.Output3 ;
+=     A_16XV0165_3 ;
+
+NETWORK
+TITLE =16XV0166 CR01 : Arrivée pousse Manifold MDL11
+U     E_16XV0166_0 ;
+=     DB_XV._16XV0166.IOFeedback0 ;
+U     E_16XV0166_1 ;
+=     DB_XV._16XV0166.IOFeedback1 ;
+U     E_16XV0166_2 ;
+=     DB_XV._16XV0166.IOFeedback2 ;
+U     E_16XV0166_3 ;
+=     DB_XV._16XV0166.IOFeedback3 ;
+
+U     DB_XV._16XV0166.Output0 ;
+=     A_16XV0166_0 ;
+U     DB_XV._16XV0166.Output1 ;
+=     A_16XV0166_1 ;
+U     DB_XV._16XV0166.Output2 ;
+=     A_16XV0166_2 ;
+U     DB_XV._16XV0166.Output3 ;
+=     A_16XV0166_3 ;
+
+NETWORK
+TITLE =16XV0168 CR01 : Break Arrivée NEP cuve
+U     E_16XV0168_0 ;
+=     DB_XV._16XV0168.IOFeedback0 ;
+U     E_16XV0168_1 ;
+=     DB_XV._16XV0168.IOFeedback1 ;
+U     E_16XV0168_2 ;
+=     DB_XV._16XV0168.IOFeedback2 ;
+U     E_16XV0168_3 ;
+=     DB_XV._16XV0168.IOFeedback3 ;
+
+U     DB_XV._16XV0168.Output0 ;
+=     A_16XV0168_0 ;
+U     DB_XV._16XV0168.Output1 ;
+=     A_16XV0168_1 ;
+U     DB_XV._16XV0168.Output2 ;
+=     A_16XV0168_2 ;
+U     DB_XV._16XV0168.Output3 ;
+=     A_16XV0168_3 ;
+
+NETWORK
+TITLE =16XV0169 CR01 : Arrivée NEP ligne
+U     E_16XV0169_0 ;
+=     DB_XV._16XV0169.IOFeedback0 ;
+U     E_16XV0169_1 ;
+=     DB_XV._16XV0169.IOFeedback1 ;
+U     E_16XV0169_2 ;
+=     DB_XV._16XV0169.IOFeedback2 ;
+U     E_16XV0169_3 ;
+=     DB_XV._16XV0169.IOFeedback3 ;
+
+U     DB_XV._16XV0169.Output0 ;
+=     A_16XV0169_0 ;
+U     DB_XV._16XV0169.Output1 ;
+=     A_16XV0169_1 ;
+U     DB_XV._16XV0169.Output2 ;
+=     A_16XV0169_2 ;
+U     DB_XV._16XV0169.Output3 ;
+=     A_16XV0169_3 ;
+
+NETWORK
+TITLE =16XV0172 P21 : Break boucle appareil
+U     E_16XV0172_0 ;
+=     DB_XV._16XV0172.IOFeedback0 ;
+U     E_16XV0172_1 ;
+=     DB_XV._16XV0172.IOFeedback1 ;
+U     E_16XV0172_2 ;
+=     DB_XV._16XV0172.IOFeedback2 ;
+U     E_16XV0172_3 ;
+=     DB_XV._16XV0172.IOFeedback3 ;
+
+U     DB_XV._16XV0172.Output0 ;
+=     A_16XV0172_0 ;
+U     DB_XV._16XV0172.Output1 ;
+=     A_16XV0172_1 ;
+U     DB_XV._16XV0172.Output2 ;
+=     A_16XV0172_2 ;
+U     DB_XV._16XV0172.Output3 ;
+=     A_16XV0172_3 ;
+
+NETWORK
+TITLE =16XV0173 P21 : Break retour NEP ligne récupération
+U     E_16XV0173_0 ;
+=     DB_XV._16XV0173.IOFeedback0 ;
+U     E_16XV0173_1 ;
+=     DB_XV._16XV0173.IOFeedback1 ;
+U     E_16XV0173_2 ;
+=     DB_XV._16XV0173.IOFeedback2 ;
+U     E_16XV0173_3 ;
+=     DB_XV._16XV0173.IOFeedback3 ;
+
+U     DB_XV._16XV0173.Output0 ;
+=     A_16XV0173_0 ;
+U     DB_XV._16XV0173.Output1 ;
+=     A_16XV0173_1 ;
+U     DB_XV._16XV0173.Output2 ;
+=     A_16XV0173_2 ;
+U     DB_XV._16XV0173.Output3 ;
+=     A_16XV0173_3 ;
+
+NETWORK
+TITLE =16XV0174 P21 : Retour NEP ligne récupération
+U     E_16XV0174_0 ;
+=     DB_XV._16XV0174.IOFeedback0 ;
+U     E_16XV0174_1 ;
+=     DB_XV._16XV0174.IOFeedback1 ;
+U     E_16XV0174_2 ;
+=     DB_XV._16XV0174.IOFeedback2 ;
+U     E_16XV0174_3 ;
+=     DB_XV._16XV0174.IOFeedback3 ;
+
+U     DB_XV._16XV0174.Output0 ;
+=     A_16XV0174_0 ;
+U     DB_XV._16XV0174.Output1 ;
+=     A_16XV0174_1 ;
+U     DB_XV._16XV0174.Output2 ;
+=     A_16XV0174_2 ;
+U     DB_XV._16XV0174.Output3 ;
+=     A_16XV0174_3 ;
+
+NETWORK
+TITLE =16XV1082 LSO22 : Arrivée NEP ligne
+U     E_16XV1082_0 ;
+=     DB_XV._16XV1082.IOFeedback0 ;
+U     E_16XV1082_1 ;
+=     DB_XV._16XV1082.IOFeedback1 ;
+U     E_16XV1082_2 ;
+=     DB_XV._16XV1082.IOFeedback2 ;
+U     E_16XV1082_3 ;
+=     DB_XV._16XV1082.IOFeedback3 ;
+
+U     DB_XV._16XV1082.Output0 ;
+=     A_16XV1082_0 ;
+U     DB_XV._16XV1082.Output1 ;
+=     A_16XV1082_1 ;
+U     DB_XV._16XV1082.Output2 ;
+=     A_16XV1082_2 ;
+U     DB_XV._16XV1082.Output3 ;
+=     A_16XV1082_3 ;
+
+NETWORK
+TITLE =16XV9981 LRM21 : Break retour NEP
+U     E_16XV9981_0 ;
+=     DB_XV._16XV9981.IOFeedback0 ;
+U     E_16XV9981_1 ;
+=     DB_XV._16XV9981.IOFeedback1 ;
+U     E_16XV9981_2 ;
+=     DB_XV._16XV9981.IOFeedback2 ;
+U     E_16XV9981_3 ;
+=     DB_XV._16XV9981.IOFeedback3 ;
+
+U     DB_XV._16XV9981.Output0 ;
+=     A_16XV9981_0 ;
+U     DB_XV._16XV9981.Output1 ;
+=     A_16XV9981_1 ;
+U     DB_XV._16XV9981.Output2 ;
+=     A_16XV9981_2 ;
+U     DB_XV._16XV9981.Output3 ;
+=     A_16XV9981_3 ;
+
+NETWORK
+TITLE =16XV2111 TTJ11 : Manifold MDL20 - LRM21
+U     E_16XV2111_0 ;
+=     DB_XV._16XV2111.IOFeedback0 ;
+U     E_16XV2111_1 ;
+=     DB_XV._16XV2111.IOFeedback1 ;
+U     E_16XV2111_2 ;
+=     DB_XV._16XV2111.IOFeedback2 ;
+U     E_16XV2111_3 ;
+=     DB_XV._16XV2111.IOFeedback3 ;
+
+U     DB_XV._16XV2111.Output0 ;
+=     A_16XV2111_0 ;
+U     DB_XV._16XV2111.Output1 ;
+=     A_16XV2111_1 ;
+U     DB_XV._16XV2111.Output2 ;
+=     A_16XV2111_2 ;
+U     DB_XV._16XV2111.Output3 ;
+=     A_16XV2111_3 ;
+
+NETWORK
+TITLE =16XV2171 TTJ11 : NEP prise échantillon
+U     E_16XV2171_0 ;
+=     DB_XV._16XV2171.IOFeedback0 ;
+U     E_16XV2171_1 ;
+=     DB_XV._16XV2171.IOFeedback1 ;
+U     E_16XV2171_2 ;
+=     DB_XV._16XV2171.IOFeedback2 ;
+U     E_16XV2171_3 ;
+=     DB_XV._16XV2171.IOFeedback3 ;
+
+U     DB_XV._16XV2171.Output0 ;
+=     A_16XV2171_0 ;
+U     DB_XV._16XV2171.Output1 ;
+=     A_16XV2171_1 ;
+U     DB_XV._16XV2171.Output2 ;
+=     A_16XV2171_2 ;
+U     DB_XV._16XV2171.Output3 ;
+=     A_16XV2171_3 ;
+
+NETWORK
+TITLE =16XV2172 TTJ11 : NEP ligne remplissage
+U     E_16XV2172_0 ;
+=     DB_XV._16XV2172.IOFeedback0 ;
+U     E_16XV2172_1 ;
+=     DB_XV._16XV2172.IOFeedback1 ;
+U     E_16XV2172_2 ;
+=     DB_XV._16XV2172.IOFeedback2 ;
+U     E_16XV2172_3 ;
+=     DB_XV._16XV2172.IOFeedback3 ;
+
+U     DB_XV._16XV2172.Output0 ;
+=     A_16XV2172_0 ;
+U     DB_XV._16XV2172.Output1 ;
+=     A_16XV2172_1 ;
+U     DB_XV._16XV2172.Output2 ;
+=     A_16XV2172_2 ;
+U     DB_XV._16XV2172.Output3 ;
+=     A_16XV2172_3 ;
+
+NETWORK
+TITLE =16XV2177 TTJ11 : Arrivée NEP cuve
+U     E_16XV2177_0 ;
+=     DB_XV._16XV2177.IOFeedback0 ;
+U     E_16XV2177_1 ;
+=     DB_XV._16XV2177.IOFeedback1 ;
+U     E_16XV2177_2 ;
+=     DB_XV._16XV2177.IOFeedback2 ;
+U     E_16XV2177_3 ;
+=     DB_XV._16XV2177.IOFeedback3 ;
+
+U     DB_XV._16XV2177.Output0 ;
+=     A_16XV2177_0 ;
+U     DB_XV._16XV2177.Output1 ;
+=     A_16XV2177_1 ;
+U     DB_XV._16XV2177.Output2 ;
+=     A_16XV2177_2 ;
+U     DB_XV._16XV2177.Output3 ;
+=     A_16XV2177_3 ;
+
+NETWORK
+TITLE =16XV2211 TTJ12 : Manifold MDL20 - LRM21
+U     E_16XV2211_0 ;
+=     DB_XV._16XV2211.IOFeedback0 ;
+U     E_16XV2211_1 ;
+=     DB_XV._16XV2211.IOFeedback1 ;
+U     E_16XV2211_2 ;
+=     DB_XV._16XV2211.IOFeedback2 ;
+U     E_16XV2211_3 ;
+=     DB_XV._16XV2211.IOFeedback3 ;
+
+U     DB_XV._16XV2211.Output0 ;
+=     A_16XV2211_0 ;
+U     DB_XV._16XV2211.Output1 ;
+=     A_16XV2211_1 ;
+U     DB_XV._16XV2211.Output2 ;
+=     A_16XV2211_2 ;
+U     DB_XV._16XV2211.Output3 ;
+=     A_16XV2211_3 ;
+
+NETWORK
+TITLE =16XV2271 TTJ12 : NEP prise échantillon
+U     E_16XV2271_0 ;
+=     DB_XV._16XV2271.IOFeedback0 ;
+U     E_16XV2271_1 ;
+=     DB_XV._16XV2271.IOFeedback1 ;
+U     E_16XV2271_2 ;
+=     DB_XV._16XV2271.IOFeedback2 ;
+U     E_16XV2271_3 ;
+=     DB_XV._16XV2271.IOFeedback3 ;
+
+U     DB_XV._16XV2271.Output0 ;
+=     A_16XV2271_0 ;
+U     DB_XV._16XV2271.Output1 ;
+=     A_16XV2271_1 ;
+U     DB_XV._16XV2271.Output2 ;
+=     A_16XV2271_2 ;
+U     DB_XV._16XV2271.Output3 ;
+=     A_16XV2271_3 ;
+
+NETWORK
+TITLE =16XV2272 TTJ12 : NEP ligne remplissage
+U     E_16XV2272_0 ;
+=     DB_XV._16XV2272.IOFeedback0 ;
+U     E_16XV2272_1 ;
+=     DB_XV._16XV2272.IOFeedback1 ;
+U     E_16XV2272_2 ;
+=     DB_XV._16XV2272.IOFeedback2 ;
+U     E_16XV2272_3 ;
+=     DB_XV._16XV2272.IOFeedback3 ;
+
+U     DB_XV._16XV2272.Output0 ;
+=     A_16XV2272_0 ;
+U     DB_XV._16XV2272.Output1 ;
+=     A_16XV2272_1 ;
+U     DB_XV._16XV2272.Output2 ;
+=     A_16XV2272_2 ;
+U     DB_XV._16XV2272.Output3 ;
+=     A_16XV2272_3 ;
+
+NETWORK
+TITLE =16XV2277 TTJ12 : Arrivée NEP cuve
+U     E_16XV2277_0 ;
+=     DB_XV._16XV2277.IOFeedback0 ;
+U     E_16XV2277_1 ;
+=     DB_XV._16XV2277.IOFeedback1 ;
+U     E_16XV2277_2 ;
+=     DB_XV._16XV2277.IOFeedback2 ;
+U     E_16XV2277_3 ;
+=     DB_XV._16XV2277.IOFeedback3 ;
+
+U     DB_XV._16XV2277.Output0 ;
+=     A_16XV2277_0 ;
+U     DB_XV._16XV2277.Output1 ;
+=     A_16XV2277_1 ;
+U     DB_XV._16XV2277.Output2 ;
+=     A_16XV2277_2 ;
+U     DB_XV._16XV2277.Output3 ;
+=     A_16XV2277_3 ;
+
+NETWORK
+TITLE =16XV0182 P21 : Arrosage garnitures pompe soutirage BL01
+UN    A_16XV0182_0 ;
+=     DB_XV._16XV0182.IOFeedback0 ;
+U     A_16XV0182_0 ;
+
+U     DB_XV._16XV0182.Output0 ;
+=     A_16XV0182_0 ;
+
+
+NETWORK
+TITLE =16XV0184 P21 : Arrosage garnitures pompe dégazeur DA01
+UN    A_16XV0184_0 ;
+=     DB_XV._16XV0184.IOFeedback0 ;
+U     A_16XV0184_0 ;
+=     DB_XV._16XV0184.IOFeedback1 ;
+
+U     DB_XV._16XV0184.Output0 ;
+=     A_16XV0184_0 ;
+
+
+NETWORK
+TITLE =16XV8852 LSO22 : Arrosage garniture pompe
+UN    A_16XV8852_0 ;
+=     DB_XV._16XV8852.IOFeedback0 ;
+U     A_16XV8852_0 ;
+=     DB_XV._16XV8852.IOFeedback1 ;
+
+U     DB_XV._16XV8852.Output0 ;
+=     A_16XV8852_0 ;
+
+
+NETWORK
+TITLE =16XV1110 TTJ1 : Fond cuve
+U     E_16XV1110_0 ;
+=     DB_XV._16XV1110.IOFeedback0 ;
+U     E_16XV1110_1 ;
+=     DB_XV._16XV1110.IOFeedback1 ;
+U     E_16XV1110_2 ;
+=     DB_XV._16XV1110.IOFeedback2 ;
+U     E_16XV1110_3 ;
+=     DB_XV._16XV1110.IOFeedback3 ;
+
+//U     DB_XV._16XV1110.Output0 ;
+//=     A_16XV1110_0 ;
+//U     DB_XV._16XV1110.Output1 ;
+//=     A_16XV1110_1 ;
+//U     DB_XV._16XV1110.Output2 ;
+//=     A_16XV1110_2 ;
+//U     DB_XV._16XV1110.Output3 ;
+//=     A_16XV1110_3 ;
+
+NETWORK
+TITLE =16XV1152 TTJ1 : Purge filtre air
+U     E_16XV1152_0 ;
+=     DB_XV._16XV1152.IOFeedback0 ;
+U     E_16XV1152_1 ;
+=     DB_XV._16XV1152.IOFeedback1 ;
+U     E_16XV1152_2 ;
+=     DB_XV._16XV1152.IOFeedback2 ;
+U     E_16XV1152_3 ;
+=     DB_XV._16XV1152.IOFeedback3 ;
+
+//U     DB_XV._16XV1152.Output0 ;
+//=     A_16XV1152_0 ;
+//U     DB_XV._16XV1152.Output1 ;
+//=     A_16XV1152_1 ;
+//U     DB_XV._16XV1152.Output2 ;
+//=     A_16XV1152_2 ;
+//U     DB_XV._16XV1152.Output3 ;
+//=     A_16XV1152_3 ;
+
+NETWORK
+TITLE =16XV1150 TTJ1 : Arrivée vapeur prise échantillon
+U     E_16XV1150_0 ;
+=     DB_XV._16XV1150.IOFeedback0 ;
+U     E_16XV1150_1 ;
+=     DB_XV._16XV1150.IOFeedback1 ;
+U     E_16XV1150_2 ;
+=     DB_XV._16XV1150.IOFeedback2 ;
+U     E_16XV1150_3 ;
+=     DB_XV._16XV1150.IOFeedback3 ;
+
+//U     DB_XV._16XV1150.Output0 ;
+//=     A_16XV1150_0 ;
+//U     DB_XV._16XV1150.Output1 ;
+//=     A_16XV1150_1 ;
+//U     DB_XV._16XV1150.Output2 ;
+//=     A_16XV1150_2 ;
+//U     DB_XV._16XV1150.Output3 ;
+//=     A_16XV1150_3 ;
+
+NETWORK
+TITLE =16XV1171 TTJ1 : NEP prise échantillon
+U     E_16XV1171_0 ;
+=     DB_XV._16XV1171.IOFeedback0 ;
+U     E_16XV1171_1 ;
+=     DB_XV._16XV1171.IOFeedback1 ;
+U     E_16XV1171_2 ;
+=     DB_XV._16XV1171.IOFeedback2 ;
+U     E_16XV1171_3 ;
+=     DB_XV._16XV1171.IOFeedback3 ;
+
+//U     DB_XV._16XV1171.Output0 ;
+//=     A_16XV1171_0 ;
+//U     DB_XV._16XV1171.Output1 ;
+//=     A_16XV1171_1 ;
+//U     DB_XV._16XV1171.Output2 ;
+//=     A_16XV1171_2 ;
+//U     DB_XV._16XV1171.Output3 ;
+//=     A_16XV1171_3 ;
+
+NETWORK
+TITLE =16XV1161 TTJ1 : Arrivée air filtre
+U     E_16XV1161_0 ;
+=     DB_XV._16XV1161.IOFeedback0 ;
+U     E_16XV1161_1 ;
+=     DB_XV._16XV1161.IOFeedback1 ;
+U     E_16XV1161_2 ;
+=     DB_XV._16XV1161.IOFeedback2 ;
+U     E_16XV1161_3 ;
+=     DB_XV._16XV1161.IOFeedback3 ;
+
+//U     DB_XV._16XV1161.Output0 ;
+//=     A_16XV1161_0 ;
+//U     DB_XV._16XV1161.Output1 ;
+//=     A_16XV1161_1 ;
+//U     DB_XV._16XV1161.Output2 ;
+//=     A_16XV1161_2 ;
+//U     DB_XV._16XV1161.Output3 ;
+//=     A_16XV1161_3 ;
+
+NETWORK
+TITLE =16XV8813 LSO13 : By-passe pompe ligne soutirage
+U     E_16XV8813_0 ;
+=     DB_XV._16XV8813.IOFeedback0 ;
+U     E_16XV8813_1 ;
+=     DB_XV._16XV8813.IOFeedback1 ;
+U     E_16XV8813_2 ;
+=     DB_XV._16XV8813.IOFeedback2 ;
+U     E_16XV8813_3 ;
+=     DB_XV._16XV8813.IOFeedback3 ;
+
+//U     DB_XV._16XV8813.Output0 ;
+//=     A_16XV8813_0 ;
+//U     DB_XV._16XV8813.Output1 ;
+//=     A_16XV8813_1 ;
+//U     DB_XV._16XV8813.Output2 ;
+//=     A_16XV8813_2 ;
+//U     DB_XV._16XV8813.Output3 ;
+//=     A_16XV8813_3 ;
+
+NETWORK
+TITLE =16XV1173 TTJ1 : NEP 2eme boule lavage
+U     E_16XV1173_0 ;
+=     DB_XV._16XV1173.IOFeedback0 ;
+U     E_16XV1173_1 ;
+=     DB_XV._16XV1173.IOFeedback1 ;
+U     E_16XV1173_2 ;
+=     DB_XV._16XV1173.IOFeedback2 ;
+U     E_16XV1173_3 ;
+=     DB_XV._16XV1173.IOFeedback3 ;
+
+//U     DB_XV._16XV1173.Output0 ;
+//=     A_16XV1173_0 ;
+//U     DB_XV._16XV1173.Output1 ;
+//=     A_16XV1173_1 ;
+//U     DB_XV._16XV1173.Output2 ;
+//=     A_16XV1173_2 ;
+//U     DB_XV._16XV1173.Output3 ;
+//=     A_16XV1173_3 ;
+
+NETWORK
+TITLE =16XV1240 TTJ2 : Arrivée eau prise échantillon
+U     E_16XV1240_0 ;
+=     DB_XV._16XV1240.IOFeedback0 ;
+U     E_16XV1240_1 ;
+=     DB_XV._16XV1240.IOFeedback1 ;
+U     E_16XV1240_2 ;
+=     DB_XV._16XV1240.IOFeedback2 ;
+U     E_16XV1240_3 ;
+=     DB_XV._16XV1240.IOFeedback3 ;
+
+//U     DB_XV._16XV1240.Output0 ;
+//=     A_16XV1240_0 ;
+//U     DB_XV._16XV1240.Output1 ;
+//=     A_16XV1240_1 ;
+//U     DB_XV._16XV1240.Output2 ;
+//=     A_16XV1240_2 ;
+//U     DB_XV._16XV1240.Output3 ;
+//=     A_16XV1240_3 ;
+
+NETWORK
+TITLE =16XV1177 TTJ1 : Arrivée NEP cuve
+U     E_16XV1177_0 ;
+=     DB_XV._16XV1177.IOFeedback0 ;
+U     E_16XV1177_1 ;
+=     DB_XV._16XV1177.IOFeedback1 ;
+U     E_16XV1177_2 ;
+=     DB_XV._16XV1177.IOFeedback2 ;
+U     E_16XV1177_3 ;
+=     DB_XV._16XV1177.IOFeedback3 ;
+
+//U     DB_XV._16XV1177.Output0 ;
+//=     A_16XV1177_0 ;
+//U     DB_XV._16XV1177.Output1 ;
+//=     A_16XV1177_1 ;
+//U     DB_XV._16XV1177.Output2 ;
+//=     A_16XV1177_2 ;
+//U     DB_XV._16XV1177.Output3 ;
+//=     A_16XV1177_3 ;
+
+NETWORK
+TITLE =16XV1253 TTJ2 : Purge ligne air
+U     E_16XV1253_0 ;
+=     DB_XV._16XV1253.IOFeedback0 ;
+U     E_16XV1253_1 ;
+=     DB_XV._16XV1253.IOFeedback1 ;
+U     E_16XV1253_2 ;
+=     DB_XV._16XV1253.IOFeedback2 ;
+U     E_16XV1253_3 ;
+=     DB_XV._16XV1253.IOFeedback3 ;
+
+//U     DB_XV._16XV1253.Output0 ;
+//=     A_16XV1253_0 ;
+//U     DB_XV._16XV1253.Output1 ;
+//=     A_16XV1253_1 ;
+//U     DB_XV._16XV1253.Output2 ;
+//=     A_16XV1253_2 ;
+//U     DB_XV._16XV1253.Output3 ;
+//=     A_16XV1253_3 ;
+
+NETWORK
+TITLE =16XV1251 TTJ2 : Arrivée vapeur stérilisation filtre
+U     E_16XV1251_0 ;
+=     DB_XV._16XV1251.IOFeedback0 ;
+U     E_16XV1251_1 ;
+=     DB_XV._16XV1251.IOFeedback1 ;
+U     E_16XV1251_2 ;
+=     DB_XV._16XV1251.IOFeedback2 ;
+U     E_16XV1251_3 ;
+=     DB_XV._16XV1251.IOFeedback3 ;
+
+//U     DB_XV._16XV1251.Output0 ;
+//=     A_16XV1251_0 ;
+//U     DB_XV._16XV1251.Output1 ;
+//=     A_16XV1251_1 ;
+//U     DB_XV._16XV1251.Output2 ;
+//=     A_16XV1251_2 ;
+//U     DB_XV._16XV1251.Output3 ;
+//=     A_16XV1251_3 ;
+
+NETWORK
+TITLE =16XV1272 TTJ2 : NEP 1er boule lavage
+U     E_16XV1272_0 ;
+=     DB_XV._16XV1272.IOFeedback0 ;
+U     E_16XV1272_1 ;
+=     DB_XV._16XV1272.IOFeedback1 ;
+U     E_16XV1272_2 ;
+=     DB_XV._16XV1272.IOFeedback2 ;
+U     E_16XV1272_3 ;
+=     DB_XV._16XV1272.IOFeedback3 ;
+
+//U     DB_XV._16XV1272.Output0 ;
+//=     A_16XV1272_0 ;
+//U     DB_XV._16XV1272.Output1 ;
+//=     A_16XV1272_1 ;
+//U     DB_XV._16XV1272.Output2 ;
+//=     A_16XV1272_2 ;
+//U     DB_XV._16XV1272.Output3 ;
+//=     A_16XV1272_3 ;
+
+NETWORK
+TITLE =16XV1262 TTJ2 : Arrivée air vers cuve
+U     E_16XV1262_0 ;
+=     DB_XV._16XV1262.IOFeedback0 ;
+U     E_16XV1262_1 ;
+=     DB_XV._16XV1262.IOFeedback1 ;
+U     E_16XV1262_2 ;
+=     DB_XV._16XV1262.IOFeedback2 ;
+U     E_16XV1262_3 ;
+=     DB_XV._16XV1262.IOFeedback3 ;
+
+//U     DB_XV._16XV1262.Output0 ;
+//=     A_16XV1262_0 ;
+//U     DB_XV._16XV1262.Output1 ;
+//=     A_16XV1262_1 ;
+//U     DB_XV._16XV1262.Output2 ;
+//=     A_16XV1262_2 ;
+//U     DB_XV._16XV1262.Output3 ;
+//=     A_16XV1262_3 ;
+
+NETWORK
+TITLE =16XV1276 TTJ2 : NEP ligne air cuve
+U     E_16XV1276_0 ;
+=     DB_XV._16XV1276.IOFeedback0 ;
+U     E_16XV1276_1 ;
+=     DB_XV._16XV1276.IOFeedback1 ;
+U     E_16XV1276_2 ;
+=     DB_XV._16XV1276.IOFeedback2 ;
+U     E_16XV1276_3 ;
+=     DB_XV._16XV1276.IOFeedback3 ;
+
+//U     DB_XV._16XV1276.Output0 ;
+//=     A_16XV1276_0 ;
+//U     DB_XV._16XV1276.Output1 ;
+//=     A_16XV1276_1 ;
+//U     DB_XV._16XV1276.Output2 ;
+//=     A_16XV1276_2 ;
+//U     DB_XV._16XV1276.Output3 ;
+//=     A_16XV1276_3 ;
+
+NETWORK
+TITLE =16XV1274 TTJ2 : Break ligne NEP cuve
+U     E_16XV1274_0 ;
+=     DB_XV._16XV1274.IOFeedback0 ;
+U     E_16XV1274_1 ;
+=     DB_XV._16XV1274.IOFeedback1 ;
+U     E_16XV1274_2 ;
+=     DB_XV._16XV1274.IOFeedback2 ;
+U     E_16XV1274_3 ;
+=     DB_XV._16XV1274.IOFeedback3 ;
+
+//U     DB_XV._16XV1274.Output0 ;
+//=     A_16XV1274_0 ;
+//U     DB_XV._16XV1274.Output1 ;
+//=     A_16XV1274_1 ;
+//U     DB_XV._16XV1274.Output2 ;
+//=     A_16XV1274_2 ;
+//U     DB_XV._16XV1274.Output3 ;
+//=     A_16XV1274_3 ;
+
+NETWORK
+TITLE =16XV1140 TTJ1 : Arrivée eau prise échantillon
+U     E_16XV1140_0 ;
+=     DB_XV._16XV1140.IOFeedback0 ;
+U     E_16XV1140_1 ;
+=     DB_XV._16XV1140.IOFeedback1 ;
+U     E_16XV1140_2 ;
+=     DB_XV._16XV1140.IOFeedback2 ;
+U     E_16XV1140_3 ;
+=     DB_XV._16XV1140.IOFeedback3 ;
+
+//U     DB_XV._16XV1140.Output0 ;
+//=     A_16XV1140_0 ;
+//U     DB_XV._16XV1140.Output1 ;
+//=     A_16XV1140_1 ;
+//U     DB_XV._16XV1140.Output2 ;
+//=     A_16XV1140_2 ;
+//U     DB_XV._16XV1140.Output3 ;
+//=     A_16XV1140_3 ;
+
+NETWORK
+TITLE =16XV1153 TTJ1 : Purge ligne air
+U     E_16XV1153_0 ;
+=     DB_XV._16XV1153.IOFeedback0 ;
+U     E_16XV1153_1 ;
+=     DB_XV._16XV1153.IOFeedback1 ;
+U     E_16XV1153_2 ;
+=     DB_XV._16XV1153.IOFeedback2 ;
+U     E_16XV1153_3 ;
+=     DB_XV._16XV1153.IOFeedback3 ;
+
+//U     DB_XV._16XV1153.Output0 ;
+//=     A_16XV1153_0 ;
+//U     DB_XV._16XV1153.Output1 ;
+//=     A_16XV1153_1 ;
+//U     DB_XV._16XV1153.Output2 ;
+//=     A_16XV1153_2 ;
+//U     DB_XV._16XV1153.Output3 ;
+//=     A_16XV1153_3 ;
+
+NETWORK
+TITLE =16XV1162 TTJ1 : Arrivée air vers cuve
+U     E_16XV1162_0 ;
+=     DB_XV._16XV1162.IOFeedback0 ;
+U     E_16XV1162_1 ;
+=     DB_XV._16XV1162.IOFeedback1 ;
+U     E_16XV1162_2 ;
+=     DB_XV._16XV1162.IOFeedback2 ;
+U     E_16XV1162_3 ;
+=     DB_XV._16XV1162.IOFeedback3 ;
+
+//U     DB_XV._16XV1162.Output0 ;
+//=     A_16XV1162_0 ;
+//U     DB_XV._16XV1162.Output1 ;
+//=     A_16XV1162_1 ;
+//U     DB_XV._16XV1162.Output2 ;
+//=     A_16XV1162_2 ;
+//U     DB_XV._16XV1162.Output3 ;
+//=     A_16XV1162_3 ;
+
+NETWORK
+TITLE =16XV1172 TTJ1 : NEP 1er boule lavage
+U     E_16XV1172_0 ;
+=     DB_XV._16XV1172.IOFeedback0 ;
+U     E_16XV1172_1 ;
+=     DB_XV._16XV1172.IOFeedback1 ;
+U     E_16XV1172_2 ;
+=     DB_XV._16XV1172.IOFeedback2 ;
+U     E_16XV1172_3 ;
+=     DB_XV._16XV1172.IOFeedback3 ;
+
+//U     DB_XV._16XV1172.Output0 ;
+//=     A_16XV1172_0 ;
+//U     DB_XV._16XV1172.Output1 ;
+//=     A_16XV1172_1 ;
+//U     DB_XV._16XV1172.Output2 ;
+//=     A_16XV1172_2 ;
+//U     DB_XV._16XV1172.Output3 ;
+//=     A_16XV1172_3 ;
+
+NETWORK
+TITLE =16XV1174 TTJ1 : Break ligne NEP cuve
+U     E_16XV1174_0 ;
+=     DB_XV._16XV1174.IOFeedback0 ;
+U     E_16XV1174_1 ;
+=     DB_XV._16XV1174.IOFeedback1 ;
+U     E_16XV1174_2 ;
+=     DB_XV._16XV1174.IOFeedback2 ;
+U     E_16XV1174_3 ;
+=     DB_XV._16XV1174.IOFeedback3 ;
+
+//U     DB_XV._16XV1174.Output0 ;
+//=     A_16XV1174_0 ;
+//U     DB_XV._16XV1174.Output1 ;
+//=     A_16XV1174_1 ;
+//U     DB_XV._16XV1174.Output2 ;
+//=     A_16XV1174_2 ;
+//U     DB_XV._16XV1174.Output3 ;
+//=     A_16XV1174_3 ;
+
+NETWORK
+TITLE =16XV1176 TTJ1 : NEP ligne air cuve
+U     E_16XV1176_0 ;
+=     DB_XV._16XV1176.IOFeedback0 ;
+U     E_16XV1176_1 ;
+=     DB_XV._16XV1176.IOFeedback1 ;
+U     E_16XV1176_2 ;
+=     DB_XV._16XV1176.IOFeedback2 ;
+U     E_16XV1176_3 ;
+=     DB_XV._16XV1176.IOFeedback3 ;
+
+//U     DB_XV._16XV1176.Output0 ;
+//=     A_16XV1176_0 ;
+//U     DB_XV._16XV1176.Output1 ;
+//=     A_16XV1176_1 ;
+//U     DB_XV._16XV1176.Output2 ;
+//=     A_16XV1176_2 ;
+//U     DB_XV._16XV1176.Output3 ;
+//=     A_16XV1176_3 ;
+
+NETWORK
+TITLE =16XV1210 TTJ2 : Fond cuve
+U     E_16XV1210_0 ;
+=     DB_XV._16XV1210.IOFeedback0 ;
+U     E_16XV1210_1 ;
+=     DB_XV._16XV1210.IOFeedback1 ;
+U     E_16XV1210_2 ;
+=     DB_XV._16XV1210.IOFeedback2 ;
+U     E_16XV1210_3 ;
+=     DB_XV._16XV1210.IOFeedback3 ;
+
+//U     DB_XV._16XV1210.Output0 ;
+//=     A_16XV1210_0 ;
+//U     DB_XV._16XV1210.Output1 ;
+//=     A_16XV1210_1 ;
+//U     DB_XV._16XV1210.Output2 ;
+//=     A_16XV1210_2 ;
+//U     DB_XV._16XV1210.Output3 ;
+//=     A_16XV1210_3 ;
+
+NETWORK
+TITLE =16XV1250 TTJ2 : Arrivée vapeur prise échantillon
+U     E_16XV1250_0 ;
+=     DB_XV._16XV1250.IOFeedback0 ;
+U     E_16XV1250_1 ;
+=     DB_XV._16XV1250.IOFeedback1 ;
+U     E_16XV1250_2 ;
+=     DB_XV._16XV1250.IOFeedback2 ;
+U     E_16XV1250_3 ;
+=     DB_XV._16XV1250.IOFeedback3 ;
+
+//U     DB_XV._16XV1250.Output0 ;
+//=     A_16XV1250_0 ;
+//U     DB_XV._16XV1250.Output1 ;
+//=     A_16XV1250_1 ;
+//U     DB_XV._16XV1250.Output2 ;
+//=     A_16XV1250_2 ;
+//U     DB_XV._16XV1250.Output3 ;
+//=     A_16XV1250_3 ;
+
+NETWORK
+TITLE =16XV1252 TTJ2 : Purge filtre air
+U     E_16XV1252_0 ;
+=     DB_XV._16XV1252.IOFeedback0 ;
+U     E_16XV1252_1 ;
+=     DB_XV._16XV1252.IOFeedback1 ;
+U     E_16XV1252_2 ;
+=     DB_XV._16XV1252.IOFeedback2 ;
+U     E_16XV1252_3 ;
+=     DB_XV._16XV1252.IOFeedback3 ;
+
+//U     DB_XV._16XV1252.Output0 ;
+//=     A_16XV1252_0 ;
+//U     DB_XV._16XV1252.Output1 ;
+//=     A_16XV1252_1 ;
+//U     DB_XV._16XV1252.Output2 ;
+//=     A_16XV1252_2 ;
+//U     DB_XV._16XV1252.Output3 ;
+//=     A_16XV1252_3 ;
+
+NETWORK
+TITLE =16XV1261 TTJ2 : Arrivée air filtre
+U     E_16XV1261_0 ;
+=     DB_XV._16XV1261.IOFeedback0 ;
+U     E_16XV1261_1 ;
+=     DB_XV._16XV1261.IOFeedback1 ;
+U     E_16XV1261_2 ;
+=     DB_XV._16XV1261.IOFeedback2 ;
+U     E_16XV1261_3 ;
+=     DB_XV._16XV1261.IOFeedback3 ;
+
+//U     DB_XV._16XV1261.Output0 ;
+//=     A_16XV1261_0 ;
+//U     DB_XV._16XV1261.Output1 ;
+//=     A_16XV1261_1 ;
+//U     DB_XV._16XV1261.Output2 ;
+//=     A_16XV1261_2 ;
+//U     DB_XV._16XV1261.Output3 ;
+//=     A_16XV1261_3 ;
+
+NETWORK
+TITLE =16XV1271 TTJ2 : NEP prise échantillon
+U     E_16XV1271_0 ;
+=     DB_XV._16XV1271.IOFeedback0 ;
+U     E_16XV1271_1 ;
+=     DB_XV._16XV1271.IOFeedback1 ;
+U     E_16XV1271_2 ;
+=     DB_XV._16XV1271.IOFeedback2 ;
+U     E_16XV1271_3 ;
+=     DB_XV._16XV1271.IOFeedback3 ;
+
+//U     DB_XV._16XV1271.Output0 ;
+//=     A_16XV1271_0 ;
+//U     DB_XV._16XV1271.Output1 ;
+//=     A_16XV1271_1 ;
+//U     DB_XV._16XV1271.Output2 ;
+//=     A_16XV1271_2 ;
+//U     DB_XV._16XV1271.Output3 ;
+//=     A_16XV1271_3 ;
+
+NETWORK
+TITLE =16XV1273 TTJ2 : NEP 2eme boule lavage
+U     E_16XV1273_0 ;
+=     DB_XV._16XV1273.IOFeedback0 ;
+U     E_16XV1273_1 ;
+=     DB_XV._16XV1273.IOFeedback1 ;
+U     E_16XV1273_2 ;
+=     DB_XV._16XV1273.IOFeedback2 ;
+U     E_16XV1273_3 ;
+=     DB_XV._16XV1273.IOFeedback3 ;
+
+//U     DB_XV._16XV1273.Output0 ;
+//=     A_16XV1273_0 ;
+//U     DB_XV._16XV1273.Output1 ;
+//=     A_16XV1273_1 ;
+//U     DB_XV._16XV1273.Output2 ;
+//=     A_16XV1273_2 ;
+//U     DB_XV._16XV1273.Output3 ;
+//=     A_16XV1273_3 ;
+
+NETWORK
+TITLE =16XV8814 LSO14 : By-passe pompe ligne soutirage
+U     E_16XV8814_0 ;
+=     DB_XV._16XV8814.IOFeedback0 ;
+U     E_16XV8814_1 ;
+=     DB_XV._16XV8814.IOFeedback1 ;
+U     E_16XV8814_2 ;
+=     DB_XV._16XV8814.IOFeedback2 ;
+U     E_16XV8814_3 ;
+=     DB_XV._16XV8814.IOFeedback3 ;
+
+//U     DB_XV._16XV8814.Output0 ;
+//=     A_16XV8814_0 ;
+//U     DB_XV._16XV8814.Output1 ;
+//=     A_16XV8814_1 ;
+//U     DB_XV._16XV8814.Output2 ;
+//=     A_16XV8814_2 ;
+//U     DB_XV._16XV8814.Output3 ;
+//=     A_16XV8814_3 ;
+
+NETWORK
+TITLE =16XV1277 TTJ2 : Arrivée NEP cuve
+U     E_16XV1277_0 ;
+=     DB_XV._16XV1277.IOFeedback0 ;
+U     E_16XV1277_1 ;
+=     DB_XV._16XV1277.IOFeedback1 ;
+U     E_16XV1277_2 ;
+=     DB_XV._16XV1277.IOFeedback2 ;
+U     E_16XV1277_3 ;
+=     DB_XV._16XV1277.IOFeedback3 ;
+
+//U     DB_XV._16XV1277.Output0 ;
+//=     A_16XV1277_0 ;
+//U     DB_XV._16XV1277.Output1 ;
+//=     A_16XV1277_1 ;
+//U     DB_XV._16XV1277.Output2 ;
+//=     A_16XV1277_2 ;
+//U     DB_XV._16XV1277.Output3 ;
+//=     A_16XV1277_3 ;
+
+NETWORK
+TITLE =16XV1151 TTJ1 : Arrivée vapeur stérilisation filtre
+U     E_16XV1151_0 ;
+=     DB_XV._16XV1151.IOFeedback0 ;
+U     E_16XV1151_1 ;
+=     DB_XV._16XV1151.IOFeedback1 ;
+U     E_16XV1151_2 ;
+=     DB_XV._16XV1151.IOFeedback2 ;
+U     E_16XV1151_3 ;
+=     DB_XV._16XV1151.IOFeedback3 ;
+
+//U     DB_XV._16XV1151.Output0 ;
+//=     A_16XV1151_0 ;
+//U     DB_XV._16XV1151.Output1 ;
+//=     A_16XV1151_1 ;
+//U     DB_XV._16XV1151.Output2 ;
+//=     A_16XV1151_2 ;
+//U     DB_XV._16XV1151.Output3 ;
+//=     A_16XV1151_3 ;
+
+NETWORK
+TITLE =16XV1111 TTJ1 : Manifold MDL10 - LRM11
+U     E_16XV1111_0 ;
+=     DB_XV._16XV1111.IOFeedback0 ;
+U     E_16XV1111_1 ;
+=     DB_XV._16XV1111.IOFeedback1 ;
+U     E_16XV1111_2 ;
+=     DB_XV._16XV1111.IOFeedback2 ;
+U     E_16XV1111_3 ;
+=     DB_XV._16XV1111.IOFeedback3 ;
+
+//U     DB_XV._16XV1111.Output0 ;
+//=     A_16XV1111_0 ;
+//U     DB_XV._16XV1111.Output1 ;
+//=     A_16XV1111_1 ;
+//U     DB_XV._16XV1111.Output2 ;
+//=     A_16XV1111_2 ;
+//U     DB_XV._16XV1111.Output3 ;
+//=     A_16XV1111_3 ;
+
+NETWORK
+TITLE =16XV1113 TTJ1 : Manifold MDL10 - LSO13
+U     E_16XV1113_0 ;
+=     DB_XV._16XV1113.IOFeedback0 ;
+U     E_16XV1113_1 ;
+=     DB_XV._16XV1113.IOFeedback1 ;
+U     E_16XV1113_2 ;
+=     DB_XV._16XV1113.IOFeedback2 ;
+U     E_16XV1113_3 ;
+=     DB_XV._16XV1113.IOFeedback3 ;
+
+//U     DB_XV._16XV1113.Output0 ;
+//=     A_16XV1113_0 ;
+//U     DB_XV._16XV1113.Output1 ;
+//=     A_16XV1113_1 ;
+//U     DB_XV._16XV1113.Output2 ;
+//=     A_16XV1113_2 ;
+//U     DB_XV._16XV1113.Output3 ;
+//=     A_16XV1113_3 ;
+
+NETWORK
+TITLE =16XV1178 TTJ1 : Retour NEP cuve
+U     E_16XV1178_0 ;
+=     DB_XV._16XV1178.IOFeedback0 ;
+U     E_16XV1178_1 ;
+=     DB_XV._16XV1178.IOFeedback1 ;
+U     E_16XV1178_2 ;
+=     DB_XV._16XV1178.IOFeedback2 ;
+U     E_16XV1178_3 ;
+=     DB_XV._16XV1178.IOFeedback3 ;
+
+//U     DB_XV._16XV1178.Output0 ;
+//=     A_16XV1178_0 ;
+//U     DB_XV._16XV1178.Output1 ;
+//=     A_16XV1178_1 ;
+//U     DB_XV._16XV1178.Output2 ;
+//=     A_16XV1178_2 ;
+//U     DB_XV._16XV1178.Output3 ;
+//=     A_16XV1178_3 ;
+
+NETWORK
+TITLE =16XV1211 TTJ2 : Manifold MDL10 - LRM11
+U     E_16XV1211_0 ;
+=     DB_XV._16XV1211.IOFeedback0 ;
+U     E_16XV1211_1 ;
+=     DB_XV._16XV1211.IOFeedback1 ;
+U     E_16XV1211_2 ;
+=     DB_XV._16XV1211.IOFeedback2 ;
+U     E_16XV1211_3 ;
+=     DB_XV._16XV1211.IOFeedback3 ;
+
+//U     DB_XV._16XV1211.Output0 ;
+//=     A_16XV1211_0 ;
+//U     DB_XV._16XV1211.Output1 ;
+//=     A_16XV1211_1 ;
+//U     DB_XV._16XV1211.Output2 ;
+//=     A_16XV1211_2 ;
+//U     DB_XV._16XV1211.Output3 ;
+//=     A_16XV1211_3 ;
+
+NETWORK
+TITLE =16XV1213 TTJ2 : Manifold MDL10 - LSO13
+U     E_16XV1213_0 ;
+=     DB_XV._16XV1213.IOFeedback0 ;
+U     E_16XV1213_1 ;
+=     DB_XV._16XV1213.IOFeedback1 ;
+U     E_16XV1213_2 ;
+=     DB_XV._16XV1213.IOFeedback2 ;
+U     E_16XV1213_3 ;
+=     DB_XV._16XV1213.IOFeedback3 ;
+
+//U     DB_XV._16XV1213.Output0 ;
+//=     A_16XV1213_0 ;
+//U     DB_XV._16XV1213.Output1 ;
+//=     A_16XV1213_1 ;
+//U     DB_XV._16XV1213.Output2 ;
+//=     A_16XV1213_2 ;
+//U     DB_XV._16XV1213.Output3 ;
+//=     A_16XV1213_3 ;
+
+NETWORK
+TITLE =16XV1278 TTJ2 : Retour NEP cuve
+U     E_16XV1278_0 ;
+=     DB_XV._16XV1278.IOFeedback0 ;
+U     E_16XV1278_1 ;
+=     DB_XV._16XV1278.IOFeedback1 ;
+U     E_16XV1278_2 ;
+=     DB_XV._16XV1278.IOFeedback2 ;
+U     E_16XV1278_3 ;
+=     DB_XV._16XV1278.IOFeedback3 ;
+
+//U     DB_XV._16XV1278.Output0 ;
+//=     A_16XV1278_0 ;
+//U     DB_XV._16XV1278.Output1 ;
+//=     A_16XV1278_1 ;
+//U     DB_XV._16XV1278.Output2 ;
+//=     A_16XV1278_2 ;
+//U     DB_XV._16XV1278.Output3 ;
+//=     A_16XV1278_3 ;
+
+NETWORK
+TITLE =16XV1114 TTJ1 : Manifold MDL10 - LSO14
+U     E_16XV1114_0 ;
+=     DB_XV._16XV1114.IOFeedback0 ;
+U     E_16XV1114_1 ;
+=     DB_XV._16XV1114.IOFeedback1 ;
+U     E_16XV1114_2 ;
+=     DB_XV._16XV1114.IOFeedback2 ;
+U     E_16XV1114_3 ;
+=     DB_XV._16XV1114.IOFeedback3 ;
+
+//U     DB_XV._16XV1114.Output0 ;
+//=     A_16XV1114_0 ;
+//U     DB_XV._16XV1114.Output1 ;
+//=     A_16XV1114_1 ;
+//U     DB_XV._16XV1114.Output2 ;
+//=     A_16XV1114_2 ;
+//U     DB_XV._16XV1114.Output3 ;
+//=     A_16XV1114_3 ;
+
+NETWORK
+TITLE =16XV1214 TTJ2 : Manifold MDL10 - LSO14
+U     E_16XV1214_0 ;
+=     DB_XV._16XV1214.IOFeedback0 ;
+U     E_16XV1214_1 ;
+=     DB_XV._16XV1214.IOFeedback1 ;
+U     E_16XV1214_2 ;
+=     DB_XV._16XV1214.IOFeedback2 ;
+U     E_16XV1214_3 ;
+=     DB_XV._16XV1214.IOFeedback3 ;
+
+//U     DB_XV._16XV1214.Output0 ;
+//=     A_16XV1214_0 ;
+//U     DB_XV._16XV1214.Output1 ;
+//=     A_16XV1214_1 ;
+//U     DB_XV._16XV1214.Output2 ;
+//=     A_16XV1214_2 ;
+//U     DB_XV._16XV1214.Output3 ;
+//=     A_16XV1214_3 ;
+
+NETWORK
+TITLE =16XV1074 TTJx : Retour NEP cuves
+U     E_16XV1074_0 ;
+=     DB_XV._16XV1074.IOFeedback0 ;
+U     E_16XV1074_1 ;
+=     DB_XV._16XV1074.IOFeedback1 ;
+U     E_16XV1074_2 ;
+=     DB_XV._16XV1074.IOFeedback2 ;
+U     E_16XV1074_3 ;
+=     DB_XV._16XV1074.IOFeedback3 ;
+
+//U     DB_XV._16XV1074.Output0 ;
+//=     A_16XV1074_0 ;
+//U     DB_XV._16XV1074.Output1 ;
+//=     A_16XV1074_1 ;
+//U     DB_XV._16XV1074.Output2 ;
+//=     A_16XV1074_2 ;
+//U     DB_XV._16XV1074.Output3 ;
+//=     A_16XV1074_3 ;
+
+NETWORK
+TITLE =16XV1071 LSO14 : Arrivée NEP ligne
+U     E_16XV1071_0 ;
+=     DB_XV._16XV1071.IOFeedback0 ;
+U     E_16XV1071_1 ;
+=     DB_XV._16XV1071.IOFeedback1 ;
+U     E_16XV1071_2 ;
+=     DB_XV._16XV1071.IOFeedback2 ;
+U     E_16XV1071_3 ;
+=     DB_XV._16XV1071.IOFeedback3 ;
+
+//U     DB_XV._16XV1071.Output0 ;
+//=     A_16XV1071_0 ;
+//U     DB_XV._16XV1071.Output1 ;
+//=     A_16XV1071_1 ;
+//U     DB_XV._16XV1071.Output2 ;
+//=     A_16XV1071_2 ;
+//U     DB_XV._16XV1071.Output3 ;
+//=     A_16XV1071_3 ;
+
+NETWORK
+TITLE =16XV9873 LSO13 : Arrivée NEP
+U     E_16XV9873_0 ;
+=     DB_XV._16XV9873.IOFeedback0 ;
+U     E_16XV9873_1 ;
+=     DB_XV._16XV9873.IOFeedback1 ;
+U     E_16XV9873_2 ;
+=     DB_XV._16XV9873.IOFeedback2 ;
+U     E_16XV9873_3 ;
+=     DB_XV._16XV9873.IOFeedback3 ;
+
+//U     DB_XV._16XV9873.Output0 ;
+//=     A_16XV9873_0 ;
+//U     DB_XV._16XV9873.Output1 ;
+//=     A_16XV9873_1 ;
+//U     DB_XV._16XV9873.Output2 ;
+//=     A_16XV9873_2 ;
+//U     DB_XV._16XV9873.Output3 ;
+//=     A_16XV9873_3 ;
+
+NETWORK
+TITLE =16XV9874 LSO14 : Break arrivée NEP
+U     E_16XV9874_0 ;
+=     DB_XV._16XV9874.IOFeedback0 ;
+U     E_16XV9874_1 ;
+=     DB_XV._16XV9874.IOFeedback1 ;
+U     E_16XV9874_2 ;
+=     DB_XV._16XV9874.IOFeedback2 ;
+U     E_16XV9874_3 ;
+=     DB_XV._16XV9874.IOFeedback3 ;
+
+//U     DB_XV._16XV9874.Output0 ;
+//=     A_16XV9874_0 ;
+//U     DB_XV._16XV9874.Output1 ;
+//=     A_16XV9874_1 ;
+//U     DB_XV._16XV9874.Output2 ;
+//=     A_16XV9874_2 ;
+//U     DB_XV._16XV9874.Output3 ;
+//=     A_16XV9874_3 ;
+
+NETWORK
+TITLE =16XV9971 LRM11 : Break retour NEP
+U     E_16XV9971_0 ;
+=     DB_XV._16XV9971.IOFeedback0 ;
+U     E_16XV9971_1 ;
+=     DB_XV._16XV9971.IOFeedback1 ;
+U     E_16XV9971_2 ;
+=     DB_XV._16XV9971.IOFeedback2 ;
+U     E_16XV9971_3 ;
+=     DB_XV._16XV9971.IOFeedback3 ;
+
+//U     DB_XV._16XV9971.Output0 ;
+//=     A_16XV9971_0 ;
+//U     DB_XV._16XV9971.Output1 ;
+//=     A_16XV9971_1 ;
+//U     DB_XV._16XV9971.Output2 ;
+//=     A_16XV9971_2 ;
+//U     DB_XV._16XV9971.Output3 ;
+//=     A_16XV9971_3 ;
+
+NETWORK
+TITLE =16XV9913 LSO13 : Break eau de pousse
+U     E_16XV9913_0 ;
+=     DB_XV._16XV9913.IOFeedback0 ;
+U     E_16XV9913_1 ;
+=     DB_XV._16XV9913.IOFeedback1 ;
+U     E_16XV9913_2 ;
+=     DB_XV._16XV9913.IOFeedback2 ;
+U     E_16XV9913_3 ;
+=     DB_XV._16XV9913.IOFeedback3 ;
+
+//U     DB_XV._16XV9913.Output0 ;
+//=     A_16XV9913_0 ;
+//U     DB_XV._16XV9913.Output1 ;
+//=     A_16XV9913_1 ;
+//U     DB_XV._16XV9913.Output2 ;
+//=     A_16XV9913_2 ;
+//U     DB_XV._16XV9913.Output3 ;
+//=     A_16XV9913_3 ;
+
+NETWORK
+TITLE =16XV9914 LSO14 : Break eau de pousse
+U     E_16XV9914_0 ;
+=     DB_XV._16XV9914.IOFeedback0 ;
+U     E_16XV9914_1 ;
+=     DB_XV._16XV9914.IOFeedback1 ;
+U     E_16XV9914_2 ;
+=     DB_XV._16XV9914.IOFeedback2 ;
+U     E_16XV9914_3 ;
+=     DB_XV._16XV9914.IOFeedback3 ;
+
+//U     DB_XV._16XV9914.Output0 ;
+//=     A_16XV9914_0 ;
+//U     DB_XV._16XV9914.Output1 ;
+//=     A_16XV9914_1 ;
+//U     DB_XV._16XV9914.Output2 ;
+//=     A_16XV9914_2 ;
+//U     DB_XV._16XV9914.Output3 ;
+//=     A_16XV9914_3 ;
+
+NETWORK
+TITLE =16XV1011 LRM11 : Egout bout de ligne
+U     E_16XV1011_0 ;
+=     DB_XV._16XV1011.IOFeedback0 ;
+U     E_16XV1011_1 ;
+=     DB_XV._16XV1011.IOFeedback1 ;
+U     E_16XV1011_2 ;
+=     DB_XV._16XV1011.IOFeedback2 ;
+U     E_16XV1011_3 ;
+=     DB_XV._16XV1011.IOFeedback3 ;
+
+//U     DB_XV._16XV1011.Output0 ;
+//=     A_16XV1011_0 ;
+//U     DB_XV._16XV1011.Output1 ;
+//=     A_16XV1011_1 ;
+//U     DB_XV._16XV1011.Output2 ;
+//=     A_16XV1011_2 ;
+//U     DB_XV._16XV1011.Output3 ;
+//=     A_16XV1011_3 ;
+
+NETWORK
+TITLE =16XV9943 LSO13 : Arrivée eau de pousse
+U     E_16XV9943_0 ;
+=     DB_XV._16XV9943.IOFeedback0 ;
+U     E_16XV9943_1 ;
+=     DB_XV._16XV9943.IOFeedback1 ;
+U     E_16XV9943_2 ;
+=     DB_XV._16XV9943.IOFeedback2 ;
+U     E_16XV9943_3 ;
+=     DB_XV._16XV9943.IOFeedback3 ;
+
+//U     DB_XV._16XV9943.Output0 ;
+//=     A_16XV9943_0 ;
+//U     DB_XV._16XV9943.Output1 ;
+//=     A_16XV9943_1 ;
+//U     DB_XV._16XV9943.Output2 ;
+//=     A_16XV9943_2 ;
+//U     DB_XV._16XV9943.Output3 ;
+//=     A_16XV9943_3 ;
+
+NETWORK
+TITLE =16XV9944 LSO14 : Arrivée eau de pousse
+U     E_16XV9944_0 ;
+=     DB_XV._16XV9944.IOFeedback0 ;
+U     E_16XV9944_1 ;
+=     DB_XV._16XV9944.IOFeedback1 ;
+U     E_16XV9944_2 ;
+=     DB_XV._16XV9944.IOFeedback2 ;
+U     E_16XV9944_3 ;
+=     DB_XV._16XV9944.IOFeedback3 ;
+
+//U     DB_XV._16XV9944.Output0 ;
+//=     A_16XV9944_0 ;
+//U     DB_XV._16XV9944.Output1 ;
+//=     A_16XV9944_1 ;
+//U     DB_XV._16XV9944.Output2 ;
+//=     A_16XV9944_2 ;
+//U     DB_XV._16XV9944.Output3 ;
+//=     A_16XV9944_3 ;
+
+NETWORK
+TITLE =16XV1012 LRM12 : Egout bout de ligne
+U     E_16XV1012_0 ;
+=     DB_XV._16XV1012.IOFeedback0 ;
+U     E_16XV1012_1 ;
+=     DB_XV._16XV1012.IOFeedback1 ;
+U     E_16XV1012_2 ;
+=     DB_XV._16XV1012.IOFeedback2 ;
+U     E_16XV1012_3 ;
+=     DB_XV._16XV1012.IOFeedback3 ;
+
+//U     DB_XV._16XV1012.Output0 ;
+//=     A_16XV1012_0 ;
+//U     DB_XV._16XV1012.Output1 ;
+//=     A_16XV1012_1 ;
+//U     DB_XV._16XV1012.Output2 ;
+//=     A_16XV1012_2 ;
+//U     DB_XV._16XV1012.Output3 ;
+//=     A_16XV1012_3 ;
+
+NETWORK
+TITLE =16XV1112 TTJ1 : Manifold MDL10 - LRM12
+U     E_16XV1112_0 ;
+=     DB_XV._16XV1112.IOFeedback0 ;
+U     E_16XV1112_1 ;
+=     DB_XV._16XV1112.IOFeedback1 ;
+U     E_16XV1112_2 ;
+=     DB_XV._16XV1112.IOFeedback2 ;
+U     E_16XV1112_3 ;
+=     DB_XV._16XV1112.IOFeedback3 ;
+
+//U     DB_XV._16XV1112.Output0 ;
+//=     A_16XV1112_0 ;
+//U     DB_XV._16XV1112.Output1 ;
+//=     A_16XV1112_1 ;
+//U     DB_XV._16XV1112.Output2 ;
+//=     A_16XV1112_2 ;
+//U     DB_XV._16XV1112.Output3 ;
+//=     A_16XV1112_3 ;
+
+NETWORK
+TITLE =16XV1115 TTJ1 : Manifold MDL10 - LSO15
+U     E_16XV1115_0 ;
+=     DB_XV._16XV1115.IOFeedback0 ;
+U     E_16XV1115_1 ;
+=     DB_XV._16XV1115.IOFeedback1 ;
+U     E_16XV1115_2 ;
+=     DB_XV._16XV1115.IOFeedback2 ;
+U     E_16XV1115_3 ;
+=     DB_XV._16XV1115.IOFeedback3 ;
+
+//U     DB_XV._16XV1115.Output0 ;
+//=     A_16XV1115_0 ;
+//U     DB_XV._16XV1115.Output1 ;
+//=     A_16XV1115_1 ;
+//U     DB_XV._16XV1115.Output2 ;
+//=     A_16XV1115_2 ;
+//U     DB_XV._16XV1115.Output3 ;
+//=     A_16XV1115_3 ;
+
+NETWORK
+TITLE =16XV1116 TTJ1 : Manifold MDL10 - LSO16
+U     E_16XV1116_0 ;
+=     DB_XV._16XV1116.IOFeedback0 ;
+U     E_16XV1116_1 ;
+=     DB_XV._16XV1116.IOFeedback1 ;
+U     E_16XV1116_2 ;
+=     DB_XV._16XV1116.IOFeedback2 ;
+U     E_16XV1116_3 ;
+=     DB_XV._16XV1116.IOFeedback3 ;
+
+//U     DB_XV._16XV1116.Output0 ;
+//=     A_16XV1116_0 ;
+//U     DB_XV._16XV1116.Output1 ;
+//=     A_16XV1116_1 ;
+//U     DB_XV._16XV1116.Output2 ;
+//=     A_16XV1116_2 ;
+//U     DB_XV._16XV1116.Output3 ;
+//=     A_16XV1116_3 ;
+
+NETWORK
+TITLE =16XV1212 TTJ2 : Manifold MDL10 - LRM12
+U     E_16XV1212_0 ;
+=     DB_XV._16XV1212.IOFeedback0 ;
+U     E_16XV1212_1 ;
+=     DB_XV._16XV1212.IOFeedback1 ;
+U     E_16XV1212_2 ;
+=     DB_XV._16XV1212.IOFeedback2 ;
+U     E_16XV1212_3 ;
+=     DB_XV._16XV1212.IOFeedback3 ;
+
+//U     DB_XV._16XV1212.Output0 ;
+//=     A_16XV1212_0 ;
+//U     DB_XV._16XV1212.Output1 ;
+//=     A_16XV1212_1 ;
+//U     DB_XV._16XV1212.Output2 ;
+//=     A_16XV1212_2 ;
+//U     DB_XV._16XV1212.Output3 ;
+//=     A_16XV1212_3 ;
+
+NETWORK
+TITLE =16XV1014 TTJx : Arrivée NEP cuves
+U     E_16XV1014_0 ;
+=     DB_XV._16XV1014.IOFeedback0 ;
+U     E_16XV1014_1 ;
+=     DB_XV._16XV1014.IOFeedback1 ;
+U     E_16XV1014_2 ;
+=     DB_XV._16XV1014.IOFeedback2 ;
+U     E_16XV1014_3 ;
+=     DB_XV._16XV1014.IOFeedback3 ;
+
+//U     DB_XV._16XV1014.Output0 ;
+//=     A_16XV1014_0 ;
+//U     DB_XV._16XV1014.Output1 ;
+//=     A_16XV1014_1 ;
+//U     DB_XV._16XV1014.Output2 ;
+//=     A_16XV1014_2 ;
+//U     DB_XV._16XV1014.Output3 ;
+//=     A_16XV1014_3 ;
+
+NETWORK
+TITLE =16XV1215 TTJ2 : Manifold MDL10 - LSO15
+U     E_16XV1215_0 ;
+=     DB_XV._16XV1215.IOFeedback0 ;
+U     E_16XV1215_1 ;
+=     DB_XV._16XV1215.IOFeedback1 ;
+U     E_16XV1215_2 ;
+=     DB_XV._16XV1215.IOFeedback2 ;
+U     E_16XV1215_3 ;
+=     DB_XV._16XV1215.IOFeedback3 ;
+
+//U     DB_XV._16XV1215.Output0 ;
+//=     A_16XV1215_0 ;
+//U     DB_XV._16XV1215.Output1 ;
+//=     A_16XV1215_1 ;
+//U     DB_XV._16XV1215.Output2 ;
+//=     A_16XV1215_2 ;
+//U     DB_XV._16XV1215.Output3 ;
+//=     A_16XV1215_3 ;
+
+NETWORK
+TITLE =16XV1216 TTJ2 : Manifold MDL10 - LSO16
+U     E_16XV1216_0 ;
+=     DB_XV._16XV1216.IOFeedback0 ;
+U     E_16XV1216_1 ;
+=     DB_XV._16XV1216.IOFeedback1 ;
+U     E_16XV1216_2 ;
+=     DB_XV._16XV1216.IOFeedback2 ;
+U     E_16XV1216_3 ;
+=     DB_XV._16XV1216.IOFeedback3 ;
+
+//U     DB_XV._16XV1216.Output0 ;
+//=     A_16XV1216_0 ;
+//U     DB_XV._16XV1216.Output1 ;
+//=     A_16XV1216_1 ;
+//U     DB_XV._16XV1216.Output2 ;
+//=     A_16XV1216_2 ;
+//U     DB_XV._16XV1216.Output3 ;
+//=     A_16XV1216_3 ;
+
+NETWORK
+TITLE =16XV8815 LSO15 : By-passe pompe ligne soutirage
+U     E_16XV8815_0 ;
+=     DB_XV._16XV8815.IOFeedback0 ;
+U     E_16XV8815_1 ;
+=     DB_XV._16XV8815.IOFeedback1 ;
+U     E_16XV8815_2 ;
+=     DB_XV._16XV8815.IOFeedback2 ;
+U     E_16XV8815_3 ;
+=     DB_XV._16XV8815.IOFeedback3 ;
+
+//U     DB_XV._16XV8815.Output0 ;
+//=     A_16XV8815_0 ;
+//U     DB_XV._16XV8815.Output1 ;
+//=     A_16XV8815_1 ;
+//U     DB_XV._16XV8815.Output2 ;
+//=     A_16XV8815_2 ;
+//U     DB_XV._16XV8815.Output3 ;
+//=     A_16XV8815_3 ;
+
+NETWORK
+TITLE =16XV8816 LSO16 : By-passe pompe ligne soutirage
+U     E_16XV8816_0 ;
+=     DB_XV._16XV8816.IOFeedback0 ;
+U     E_16XV8816_1 ;
+=     DB_XV._16XV8816.IOFeedback1 ;
+U     E_16XV8816_2 ;
+=     DB_XV._16XV8816.IOFeedback2 ;
+U     E_16XV8816_3 ;
+=     DB_XV._16XV8816.IOFeedback3 ;
+
+//U     DB_XV._16XV8816.Output0 ;
+//=     A_16XV8816_0 ;
+//U     DB_XV._16XV8816.Output1 ;
+//=     A_16XV8816_1 ;
+//U     DB_XV._16XV8816.Output2 ;
+//=     A_16XV8816_2 ;
+//U     DB_XV._16XV8816.Output3 ;
+//=     A_16XV8816_3 ;
+
+NETWORK
+TITLE =16XV9875 LSO15 : Break arrivée NEP
+U     E_16XV9875_0 ;
+=     DB_XV._16XV9875.IOFeedback0 ;
+U     E_16XV9875_1 ;
+=     DB_XV._16XV9875.IOFeedback1 ;
+U     E_16XV9875_2 ;
+=     DB_XV._16XV9875.IOFeedback2 ;
+U     E_16XV9875_3 ;
+=     DB_XV._16XV9875.IOFeedback3 ;
+
+//U     DB_XV._16XV9875.Output0 ;
+//=     A_16XV9875_0 ;
+//U     DB_XV._16XV9875.Output1 ;
+//=     A_16XV9875_1 ;
+//U     DB_XV._16XV9875.Output2 ;
+//=     A_16XV9875_2 ;
+//U     DB_XV._16XV9875.Output3 ;
+//=     A_16XV9875_3 ;
+
+NETWORK
+TITLE =16XV9876 LSO16 : Break arrivée NEP
+U     E_16XV9876_0 ;
+=     DB_XV._16XV9876.IOFeedback0 ;
+U     E_16XV9876_1 ;
+=     DB_XV._16XV9876.IOFeedback1 ;
+U     E_16XV9876_2 ;
+=     DB_XV._16XV9876.IOFeedback2 ;
+U     E_16XV9876_3 ;
+=     DB_XV._16XV9876.IOFeedback3 ;
+
+//U     DB_XV._16XV9876.Output0 ;
+//=     A_16XV9876_0 ;
+//U     DB_XV._16XV9876.Output1 ;
+//=     A_16XV9876_1 ;
+//U     DB_XV._16XV9876.Output2 ;
+//=     A_16XV9876_2 ;
+//U     DB_XV._16XV9876.Output3 ;
+//=     A_16XV9876_3 ;
+
+NETWORK
+TITLE =16XV9972 LRM12 : Break retour NEP
+U     E_16XV9972_0 ;
+=     DB_XV._16XV9972.IOFeedback0 ;
+U     E_16XV9972_1 ;
+=     DB_XV._16XV9972.IOFeedback1 ;
+U     E_16XV9972_2 ;
+=     DB_XV._16XV9972.IOFeedback2 ;
+U     E_16XV9972_3 ;
+=     DB_XV._16XV9972.IOFeedback3 ;
+
+//U     DB_XV._16XV9972.Output0 ;
+//=     A_16XV9972_0 ;
+//U     DB_XV._16XV9972.Output1 ;
+//=     A_16XV9972_1 ;
+//U     DB_XV._16XV9972.Output2 ;
+//=     A_16XV9972_2 ;
+//U     DB_XV._16XV9972.Output3 ;
+//=     A_16XV9972_3 ;
+
+NETWORK
+TITLE =16XV9915 LSO15 : Break eau de pousse
+U     E_16XV9915_0 ;
+=     DB_XV._16XV9915.IOFeedback0 ;
+U     E_16XV9915_1 ;
+=     DB_XV._16XV9915.IOFeedback1 ;
+U     E_16XV9915_2 ;
+=     DB_XV._16XV9915.IOFeedback2 ;
+U     E_16XV9915_3 ;
+=     DB_XV._16XV9915.IOFeedback3 ;
+
+//U     DB_XV._16XV9915.Output0 ;
+//=     A_16XV9915_0 ;
+//U     DB_XV._16XV9915.Output1 ;
+//=     A_16XV9915_1 ;
+//U     DB_XV._16XV9915.Output2 ;
+//=     A_16XV9915_2 ;
+//U     DB_XV._16XV9915.Output3 ;
+//=     A_16XV9915_3 ;
+
+NETWORK
+TITLE =16XV9916 LSO16 : Break eau de pousse
+U     E_16XV9916_0 ;
+=     DB_XV._16XV9916.IOFeedback0 ;
+U     E_16XV9916_1 ;
+=     DB_XV._16XV9916.IOFeedback1 ;
+U     E_16XV9916_2 ;
+=     DB_XV._16XV9916.IOFeedback2 ;
+U     E_16XV9916_3 ;
+=     DB_XV._16XV9916.IOFeedback3 ;
+
+//U     DB_XV._16XV9916.Output0 ;
+//=     A_16XV9916_0 ;
+//U     DB_XV._16XV9916.Output1 ;
+//=     A_16XV9916_1 ;
+//U     DB_XV._16XV9916.Output2 ;
+//=     A_16XV9916_2 ;
+//U     DB_XV._16XV9916.Output3 ;
+//=     A_16XV9916_3 ;
+
+NETWORK
+TITLE =16XV9945 LSO15 : Arrivée eau de pousse
+U     E_16XV9945_0 ;
+=     DB_XV._16XV9945.IOFeedback0 ;
+U     E_16XV9945_1 ;
+=     DB_XV._16XV9945.IOFeedback1 ;
+U     E_16XV9945_2 ;
+=     DB_XV._16XV9945.IOFeedback2 ;
+U     E_16XV9945_3 ;
+=     DB_XV._16XV9945.IOFeedback3 ;
+
+//U     DB_XV._16XV9945.Output0 ;
+//=     A_16XV9945_0 ;
+//U     DB_XV._16XV9945.Output1 ;
+//=     A_16XV9945_1 ;
+//U     DB_XV._16XV9945.Output2 ;
+//=     A_16XV9945_2 ;
+//U     DB_XV._16XV9945.Output3 ;
+//=     A_16XV9945_3 ;
+
+NETWORK
+TITLE =16XV9946 LSO16 : Arrivée eau de pousse
+U     E_16XV9946_0 ;
+=     DB_XV._16XV9946.IOFeedback0 ;
+U     E_16XV9946_1 ;
+=     DB_XV._16XV9946.IOFeedback1 ;
+U     E_16XV9946_2 ;
+=     DB_XV._16XV9946.IOFeedback2 ;
+U     E_16XV9946_3 ;
+=     DB_XV._16XV9946.IOFeedback3 ;
+
+//U     DB_XV._16XV9946.Output0 ;
+//=     A_16XV9946_0 ;
+//U     DB_XV._16XV9946.Output1 ;
+//=     A_16XV9946_1 ;
+//U     DB_XV._16XV9946.Output2 ;
+//=     A_16XV9946_2 ;
+//U     DB_XV._16XV9946.Output3 ;
+//=     A_16XV9946_3 ;
+
+NETWORK
+TITLE =16XV1310 TTJ3 : Fond cuve
+U     E_16XV1310_0 ;
+=     DB_XV._16XV1310.IOFeedback0 ;
+U     E_16XV1310_1 ;
+=     DB_XV._16XV1310.IOFeedback1 ;
+U     E_16XV1310_2 ;
+=     DB_XV._16XV1310.IOFeedback2 ;
+U     E_16XV1310_3 ;
+=     DB_XV._16XV1310.IOFeedback3 ;
+
+//U     DB_XV._16XV1310.Output0 ;
+//=     A_16XV1310_0 ;
+//U     DB_XV._16XV1310.Output1 ;
+//=     A_16XV1310_1 ;
+//U     DB_XV._16XV1310.Output2 ;
+//=     A_16XV1310_2 ;
+//U     DB_XV._16XV1310.Output3 ;
+//=     A_16XV1310_3 ;
+
+NETWORK
+TITLE =16XV1311 TTJ3 : Manifold MDL10 - LRM11
+U     E_16XV1311_0 ;
+=     DB_XV._16XV1311.IOFeedback0 ;
+U     E_16XV1311_1 ;
+=     DB_XV._16XV1311.IOFeedback1 ;
+U     E_16XV1311_2 ;
+=     DB_XV._16XV1311.IOFeedback2 ;
+U     E_16XV1311_3 ;
+=     DB_XV._16XV1311.IOFeedback3 ;
+
+//U     DB_XV._16XV1311.Output0 ;
+//=     A_16XV1311_0 ;
+//U     DB_XV._16XV1311.Output1 ;
+//=     A_16XV1311_1 ;
+//U     DB_XV._16XV1311.Output2 ;
+//=     A_16XV1311_2 ;
+//U     DB_XV._16XV1311.Output3 ;
+//=     A_16XV1311_3 ;
+
+NETWORK
+TITLE =16XV1312 TTJ3 : Manifold MDL10 - LRM12
+U     E_16XV1312_0 ;
+=     DB_XV._16XV1312.IOFeedback0 ;
+U     E_16XV1312_1 ;
+=     DB_XV._16XV1312.IOFeedback1 ;
+U     E_16XV1312_2 ;
+=     DB_XV._16XV1312.IOFeedback2 ;
+U     E_16XV1312_3 ;
+=     DB_XV._16XV1312.IOFeedback3 ;
+
+//U     DB_XV._16XV1312.Output0 ;
+//=     A_16XV1312_0 ;
+//U     DB_XV._16XV1312.Output1 ;
+//=     A_16XV1312_1 ;
+//U     DB_XV._16XV1312.Output2 ;
+//=     A_16XV1312_2 ;
+//U     DB_XV._16XV1312.Output3 ;
+//=     A_16XV1312_3 ;
+
+NETWORK
+TITLE =16XV1313 TTJ3 : Manifold MDL10 - LSO13
+U     E_16XV1313_0 ;
+=     DB_XV._16XV1313.IOFeedback0 ;
+U     E_16XV1313_1 ;
+=     DB_XV._16XV1313.IOFeedback1 ;
+U     E_16XV1313_2 ;
+=     DB_XV._16XV1313.IOFeedback2 ;
+U     E_16XV1313_3 ;
+=     DB_XV._16XV1313.IOFeedback3 ;
+
+//U     DB_XV._16XV1313.Output0 ;
+//=     A_16XV1313_0 ;
+//U     DB_XV._16XV1313.Output1 ;
+//=     A_16XV1313_1 ;
+//U     DB_XV._16XV1313.Output2 ;
+//=     A_16XV1313_2 ;
+//U     DB_XV._16XV1313.Output3 ;
+//=     A_16XV1313_3 ;
+
+NETWORK
+TITLE =16XV1314 TTJ3 : Manifold MDL10 - LSO14
+U     E_16XV1314_0 ;
+=     DB_XV._16XV1314.IOFeedback0 ;
+U     E_16XV1314_1 ;
+=     DB_XV._16XV1314.IOFeedback1 ;
+U     E_16XV1314_2 ;
+=     DB_XV._16XV1314.IOFeedback2 ;
+U     E_16XV1314_3 ;
+=     DB_XV._16XV1314.IOFeedback3 ;
+
+//U     DB_XV._16XV1314.Output0 ;
+//=     A_16XV1314_0 ;
+//U     DB_XV._16XV1314.Output1 ;
+//=     A_16XV1314_1 ;
+//U     DB_XV._16XV1314.Output2 ;
+//=     A_16XV1314_2 ;
+//U     DB_XV._16XV1314.Output3 ;
+//=     A_16XV1314_3 ;
+
+NETWORK
+TITLE =16XV1315 TTJ3 : Manifold MDL10 - LSO15
+U     E_16XV1315_0 ;
+=     DB_XV._16XV1315.IOFeedback0 ;
+U     E_16XV1315_1 ;
+=     DB_XV._16XV1315.IOFeedback1 ;
+U     E_16XV1315_2 ;
+=     DB_XV._16XV1315.IOFeedback2 ;
+U     E_16XV1315_3 ;
+=     DB_XV._16XV1315.IOFeedback3 ;
+
+//U     DB_XV._16XV1315.Output0 ;
+//=     A_16XV1315_0 ;
+//U     DB_XV._16XV1315.Output1 ;
+//=     A_16XV1315_1 ;
+//U     DB_XV._16XV1315.Output2 ;
+//=     A_16XV1315_2 ;
+//U     DB_XV._16XV1315.Output3 ;
+//=     A_16XV1315_3 ;
+
+NETWORK
+TITLE =16XV1316 TTJ3 : Manifold MDL10 - LSO16
+U     E_16XV1316_0 ;
+=     DB_XV._16XV1316.IOFeedback0 ;
+U     E_16XV1316_1 ;
+=     DB_XV._16XV1316.IOFeedback1 ;
+U     E_16XV1316_2 ;
+=     DB_XV._16XV1316.IOFeedback2 ;
+U     E_16XV1316_3 ;
+=     DB_XV._16XV1316.IOFeedback3 ;
+
+//U     DB_XV._16XV1316.Output0 ;
+//=     A_16XV1316_0 ;
+//U     DB_XV._16XV1316.Output1 ;
+//=     A_16XV1316_1 ;
+//U     DB_XV._16XV1316.Output2 ;
+//=     A_16XV1316_2 ;
+//U     DB_XV._16XV1316.Output3 ;
+//=     A_16XV1316_3 ;
+
+NETWORK
+TITLE =16XV1340 TTJ3 : Arrivée eau prise échantillon
+U     E_16XV1340_0 ;
+=     DB_XV._16XV1340.IOFeedback0 ;
+U     E_16XV1340_1 ;
+=     DB_XV._16XV1340.IOFeedback1 ;
+U     E_16XV1340_2 ;
+=     DB_XV._16XV1340.IOFeedback2 ;
+U     E_16XV1340_3 ;
+=     DB_XV._16XV1340.IOFeedback3 ;
+
+//U     DB_XV._16XV1340.Output0 ;
+//=     A_16XV1340_0 ;
+//U     DB_XV._16XV1340.Output1 ;
+//=     A_16XV1340_1 ;
+//U     DB_XV._16XV1340.Output2 ;
+//=     A_16XV1340_2 ;
+//U     DB_XV._16XV1340.Output3 ;
+//=     A_16XV1340_3 ;
+
+NETWORK
+TITLE =16XV1350 TTJ3 : Arrivée vapeur prise échantillon
+U     E_16XV1350_0 ;
+=     DB_XV._16XV1350.IOFeedback0 ;
+U     E_16XV1350_1 ;
+=     DB_XV._16XV1350.IOFeedback1 ;
+U     E_16XV1350_2 ;
+=     DB_XV._16XV1350.IOFeedback2 ;
+U     E_16XV1350_3 ;
+=     DB_XV._16XV1350.IOFeedback3 ;
+
+//U     DB_XV._16XV1350.Output0 ;
+//=     A_16XV1350_0 ;
+//U     DB_XV._16XV1350.Output1 ;
+//=     A_16XV1350_1 ;
+//U     DB_XV._16XV1350.Output2 ;
+//=     A_16XV1350_2 ;
+//U     DB_XV._16XV1350.Output3 ;
+//=     A_16XV1350_3 ;
+
+NETWORK
+TITLE =16XV1351 TTJ3 : Arrivée vapeur stérilisation filtre
+U     E_16XV1351_0 ;
+=     DB_XV._16XV1351.IOFeedback0 ;
+U     E_16XV1351_1 ;
+=     DB_XV._16XV1351.IOFeedback1 ;
+U     E_16XV1351_2 ;
+=     DB_XV._16XV1351.IOFeedback2 ;
+U     E_16XV1351_3 ;
+=     DB_XV._16XV1351.IOFeedback3 ;
+
+//U     DB_XV._16XV1351.Output0 ;
+//=     A_16XV1351_0 ;
+//U     DB_XV._16XV1351.Output1 ;
+//=     A_16XV1351_1 ;
+//U     DB_XV._16XV1351.Output2 ;
+//=     A_16XV1351_2 ;
+//U     DB_XV._16XV1351.Output3 ;
+//=     A_16XV1351_3 ;
+
+NETWORK
+TITLE =16XV1352 TTJ3 : Purge filtre air
+U     E_16XV1352_0 ;
+=     DB_XV._16XV1352.IOFeedback0 ;
+U     E_16XV1352_1 ;
+=     DB_XV._16XV1352.IOFeedback1 ;
+U     E_16XV1352_2 ;
+=     DB_XV._16XV1352.IOFeedback2 ;
+U     E_16XV1352_3 ;
+=     DB_XV._16XV1352.IOFeedback3 ;
+
+//U     DB_XV._16XV1352.Output0 ;
+//=     A_16XV1352_0 ;
+//U     DB_XV._16XV1352.Output1 ;
+//=     A_16XV1352_1 ;
+//U     DB_XV._16XV1352.Output2 ;
+//=     A_16XV1352_2 ;
+//U     DB_XV._16XV1352.Output3 ;
+//=     A_16XV1352_3 ;
+
+NETWORK
+TITLE =16XV1353 TTJ3 : Purge ligne air
+U     E_16XV1353_0 ;
+=     DB_XV._16XV1353.IOFeedback0 ;
+U     E_16XV1353_1 ;
+=     DB_XV._16XV1353.IOFeedback1 ;
+U     E_16XV1353_2 ;
+=     DB_XV._16XV1353.IOFeedback2 ;
+U     E_16XV1353_3 ;
+=     DB_XV._16XV1353.IOFeedback3 ;
+
+//U     DB_XV._16XV1353.Output0 ;
+//=     A_16XV1353_0 ;
+//U     DB_XV._16XV1353.Output1 ;
+//=     A_16XV1353_1 ;
+//U     DB_XV._16XV1353.Output2 ;
+//=     A_16XV1353_2 ;
+//U     DB_XV._16XV1353.Output3 ;
+//=     A_16XV1353_3 ;
+
+NETWORK
+TITLE =16XV1361 TTJ3 : Arrivée air filtre
+U     E_16XV1361_0 ;
+=     DB_XV._16XV1361.IOFeedback0 ;
+U     E_16XV1361_1 ;
+=     DB_XV._16XV1361.IOFeedback1 ;
+U     E_16XV1361_2 ;
+=     DB_XV._16XV1361.IOFeedback2 ;
+U     E_16XV1361_3 ;
+=     DB_XV._16XV1361.IOFeedback3 ;
+
+//U     DB_XV._16XV1361.Output0 ;
+//=     A_16XV1361_0 ;
+//U     DB_XV._16XV1361.Output1 ;
+//=     A_16XV1361_1 ;
+//U     DB_XV._16XV1361.Output2 ;
+//=     A_16XV1361_2 ;
+//U     DB_XV._16XV1361.Output3 ;
+//=     A_16XV1361_3 ;
+
+NETWORK
+TITLE =16XV1362 TTJ3 : Arrivée air vers cuve
+U     E_16XV1362_0 ;
+=     DB_XV._16XV1362.IOFeedback0 ;
+U     E_16XV1362_1 ;
+=     DB_XV._16XV1362.IOFeedback1 ;
+U     E_16XV1362_2 ;
+=     DB_XV._16XV1362.IOFeedback2 ;
+U     E_16XV1362_3 ;
+=     DB_XV._16XV1362.IOFeedback3 ;
+
+//U     DB_XV._16XV1362.Output0 ;
+//=     A_16XV1362_0 ;
+//U     DB_XV._16XV1362.Output1 ;
+//=     A_16XV1362_1 ;
+//U     DB_XV._16XV1362.Output2 ;
+//=     A_16XV1362_2 ;
+//U     DB_XV._16XV1362.Output3 ;
+//=     A_16XV1362_3 ;
+
+NETWORK
+TITLE =16XV1371 TTJ3 : NEP prise échantillon
+U     E_16XV1371_0 ;
+=     DB_XV._16XV1371.IOFeedback0 ;
+U     E_16XV1371_1 ;
+=     DB_XV._16XV1371.IOFeedback1 ;
+U     E_16XV1371_2 ;
+=     DB_XV._16XV1371.IOFeedback2 ;
+U     E_16XV1371_3 ;
+=     DB_XV._16XV1371.IOFeedback3 ;
+
+//U     DB_XV._16XV1371.Output0 ;
+//=     A_16XV1371_0 ;
+//U     DB_XV._16XV1371.Output1 ;
+//=     A_16XV1371_1 ;
+//U     DB_XV._16XV1371.Output2 ;
+//=     A_16XV1371_2 ;
+//U     DB_XV._16XV1371.Output3 ;
+//=     A_16XV1371_3 ;
+
+NETWORK
+TITLE =16XV1373 TTJ3 : NEP 2eme boule lavage
+U     E_16XV1373_0 ;
+=     DB_XV._16XV1373.IOFeedback0 ;
+U     E_16XV1373_1 ;
+=     DB_XV._16XV1373.IOFeedback1 ;
+U     E_16XV1373_2 ;
+=     DB_XV._16XV1373.IOFeedback2 ;
+U     E_16XV1373_3 ;
+=     DB_XV._16XV1373.IOFeedback3 ;
+
+//U     DB_XV._16XV1373.Output0 ;
+//=     A_16XV1373_0 ;
+//U     DB_XV._16XV1373.Output1 ;
+//=     A_16XV1373_1 ;
+//U     DB_XV._16XV1373.Output2 ;
+//=     A_16XV1373_2 ;
+//U     DB_XV._16XV1373.Output3 ;
+//=     A_16XV1373_3 ;
+
+NETWORK
+TITLE =16XV1374 TTJ3 : Break ligne NEP cuve
+U     E_16XV1374_0 ;
+=     DB_XV._16XV1374.IOFeedback0 ;
+U     E_16XV1374_1 ;
+=     DB_XV._16XV1374.IOFeedback1 ;
+U     E_16XV1374_2 ;
+=     DB_XV._16XV1374.IOFeedback2 ;
+U     E_16XV1374_3 ;
+=     DB_XV._16XV1374.IOFeedback3 ;
+
+//U     DB_XV._16XV1374.Output0 ;
+//=     A_16XV1374_0 ;
+//U     DB_XV._16XV1374.Output1 ;
+//=     A_16XV1374_1 ;
+//U     DB_XV._16XV1374.Output2 ;
+//=     A_16XV1374_2 ;
+//U     DB_XV._16XV1374.Output3 ;
+//=     A_16XV1374_3 ;
+
+NETWORK
+TITLE =16XV1376 TTJ3 : NEP ligne air cuve
+U     E_16XV1376_0 ;
+=     DB_XV._16XV1376.IOFeedback0 ;
+U     E_16XV1376_1 ;
+=     DB_XV._16XV1376.IOFeedback1 ;
+U     E_16XV1376_2 ;
+=     DB_XV._16XV1376.IOFeedback2 ;
+U     E_16XV1376_3 ;
+=     DB_XV._16XV1376.IOFeedback3 ;
+
+//U     DB_XV._16XV1376.Output0 ;
+//=     A_16XV1376_0 ;
+//U     DB_XV._16XV1376.Output1 ;
+//=     A_16XV1376_1 ;
+//U     DB_XV._16XV1376.Output2 ;
+//=     A_16XV1376_2 ;
+//U     DB_XV._16XV1376.Output3 ;
+//=     A_16XV1376_3 ;
+
+NETWORK
+TITLE =16XV1377 TTJ3 : Arrivée NEP cuve
+U     E_16XV1377_0 ;
+=     DB_XV._16XV1377.IOFeedback0 ;
+U     E_16XV1377_1 ;
+=     DB_XV._16XV1377.IOFeedback1 ;
+U     E_16XV1377_2 ;
+=     DB_XV._16XV1377.IOFeedback2 ;
+U     E_16XV1377_3 ;
+=     DB_XV._16XV1377.IOFeedback3 ;
+
+//U     DB_XV._16XV1377.Output0 ;
+//=     A_16XV1377_0 ;
+//U     DB_XV._16XV1377.Output1 ;
+//=     A_16XV1377_1 ;
+//U     DB_XV._16XV1377.Output2 ;
+//=     A_16XV1377_2 ;
+//U     DB_XV._16XV1377.Output3 ;
+//=     A_16XV1377_3 ;
+
+NETWORK
+TITLE =16XV1378 TTJ3 : Retour NEP cuve
+U     E_16XV1378_0 ;
+=     DB_XV._16XV1378.IOFeedback0 ;
+U     E_16XV1378_1 ;
+=     DB_XV._16XV1378.IOFeedback1 ;
+U     E_16XV1378_2 ;
+=     DB_XV._16XV1378.IOFeedback2 ;
+U     E_16XV1378_3 ;
+=     DB_XV._16XV1378.IOFeedback3 ;
+
+//U     DB_XV._16XV1378.Output0 ;
+//=     A_16XV1378_0 ;
+//U     DB_XV._16XV1378.Output1 ;
+//=     A_16XV1378_1 ;
+//U     DB_XV._16XV1378.Output2 ;
+//=     A_16XV1378_2 ;
+//U     DB_XV._16XV1378.Output3 ;
+//=     A_16XV1378_3 ;
+
+NETWORK
+TITLE =16XV1075 LSO15 : Arrivée NEP ligne
+U     E_16XV1075_0 ;
+=     DB_XV._16XV1075.IOFeedback0 ;
+U     E_16XV1075_1 ;
+=     DB_XV._16XV1075.IOFeedback1 ;
+U     E_16XV1075_2 ;
+=     DB_XV._16XV1075.IOFeedback2 ;
+U     E_16XV1075_3 ;
+=     DB_XV._16XV1075.IOFeedback3 ;
+
+//U     DB_XV._16XV1075.Output0 ;
+//=     A_16XV1075_0 ;
+//U     DB_XV._16XV1075.Output1 ;
+//=     A_16XV1075_1 ;
+//U     DB_XV._16XV1075.Output2 ;
+//=     A_16XV1075_2 ;
+//U     DB_XV._16XV1075.Output3 ;
+//=     A_16XV1075_3 ;
+
+NETWORK
+TITLE =16XV1076 LSO16 : Arrivée NEP ligne
+U     E_16XV1076_0 ;
+=     DB_XV._16XV1076.IOFeedback0 ;
+U     E_16XV1076_1 ;
+=     DB_XV._16XV1076.IOFeedback1 ;
+U     E_16XV1076_2 ;
+=     DB_XV._16XV1076.IOFeedback2 ;
+U     E_16XV1076_3 ;
+=     DB_XV._16XV1076.IOFeedback3 ;
+
+//U     DB_XV._16XV1076.Output0 ;
+//=     A_16XV1076_0 ;
+//U     DB_XV._16XV1076.Output1 ;
+//=     A_16XV1076_1 ;
+//U     DB_XV._16XV1076.Output2 ;
+//=     A_16XV1076_2 ;
+//U     DB_XV._16XV1076.Output3 ;
+//=     A_16XV1076_3 ;
+
+NETWORK
+TITLE =16XV1372 TTJ3 : NEP 1er boule lavage
+U     E_16XV1372_0 ;
+=     DB_XV._16XV1372.IOFeedback0 ;
+U     E_16XV1372_1 ;
+=     DB_XV._16XV1372.IOFeedback1 ;
+U     E_16XV1372_2 ;
+=     DB_XV._16XV1372.IOFeedback2 ;
+U     E_16XV1372_3 ;
+=     DB_XV._16XV1372.IOFeedback3 ;
+
+//U     DB_XV._16XV1372.Output0 ;
+//=     A_16XV1372_0 ;
+//U     DB_XV._16XV1372.Output1 ;
+//=     A_16XV1372_1 ;
+//U     DB_XV._16XV1372.Output2 ;
+//=     A_16XV1372_2 ;
+//U     DB_XV._16XV1372.Output3 ;
+//=     A_16XV1372_3 ;
+
+NETWORK
+TITLE =16XV9872 LRM12 : Aiguillage RNEP ligne
+U     E_16XV9872_0 ;
+=     DB_XV._16XV9872.IOFeedback0 ;
+U     E_16XV9872_1 ;
+=     DB_XV._16XV9872.IOFeedback1 ;
+U     E_16XV9872_2 ;
+=     DB_XV._16XV9872.IOFeedback2 ;
+U     E_16XV9872_3 ;
+=     DB_XV._16XV9872.IOFeedback3 ;
+
+U     DB_XV._16XV9872.Output0 ;
+=     A_16XV9872_0 ;
+U     DB_XV._16XV9872.Output1 ;
+=     A_16XV9872_1 ;
+U     DB_XV._16XV9872.Output2 ;
+=     A_16XV9872_2 ;
+U     DB_XV._16XV9872.Output3 ;
+=     A_16XV9872_3 ;
+
+NETWORK
+TITLE =16XV9871 LRM11 : Aiguillage RNEP ligne
+U     E_16XV9871_0 ;
+=     DB_XV._16XV9871.IOFeedback0 ;
+U     E_16XV9871_1 ;
+=     DB_XV._16XV9871.IOFeedback1 ;
+U     E_16XV9871_2 ;
+=     DB_XV._16XV9871.IOFeedback2 ;
+U     E_16XV9871_3 ;
+=     DB_XV._16XV9871.IOFeedback3 ;
+
+U     DB_XV._16XV9871.Output0 ;
+=     A_16XV9871_0 ;
+U     DB_XV._16XV9871.Output1 ;
+=     A_16XV9871_1 ;
+U     DB_XV._16XV9871.Output2 ;
+=     A_16XV9871_2 ;
+U     DB_XV._16XV9871.Output3 ;
+=     A_16XV9871_3 ;
+
+NETWORK
+TITLE =16XV9861 LRM1 : Aiguillage RNEP ligne
+U     E_16XV9861_0 ;
+=     DB_XV._16XV9861.IOFeedback0 ;
+U     E_16XV9861_1 ;
+=     DB_XV._16XV9861.IOFeedback1 ;
+U     E_16XV9861_2 ;
+=     DB_XV._16XV9861.IOFeedback2 ;
+U     E_16XV9861_3 ;
+=     DB_XV._16XV9861.IOFeedback3 ;
+
+U     DB_XV._16XV9861.Output0 ;
+=     A_16XV9861_0 ;
+U     DB_XV._16XV9861.Output1 ;
+=     A_16XV9861_1 ;
+U     DB_XV._16XV9861.Output2 ;
+=     A_16XV9861_2 ;
+U     DB_XV._16XV9861.Output3 ;
+=     A_16XV9861_3 ;
+
+NETWORK
+TITLE =16XV1410 TTJ4 : Fond cuve
+U     E_16XV1410_0 ;
+=     DB_XV._16XV1410.IOFeedback0 ;
+U     E_16XV1410_1 ;
+=     DB_XV._16XV1410.IOFeedback1 ;
+U     E_16XV1410_2 ;
+=     DB_XV._16XV1410.IOFeedback2 ;
+U     E_16XV1410_3 ;
+=     DB_XV._16XV1410.IOFeedback3 ;
+
+U     DB_XV._16XV1410.Output0 ;
+=     A_16XV1410_0 ;
+U     DB_XV._16XV1410.Output1 ;
+=     A_16XV1410_1 ;
+U     DB_XV._16XV1410.Output2 ;
+=     A_16XV1410_2 ;
+U     DB_XV._16XV1410.Output3 ;
+=     A_16XV1410_3 ;
+
+NETWORK
+TITLE =16XV1440 TTJ4 : Arrivée eau prise échantillon
+U     E_16XV1440_0 ;
+=     DB_XV._16XV1440.IOFeedback0 ;
+U     E_16XV1440_1 ;
+=     DB_XV._16XV1440.IOFeedback1 ;
+U     E_16XV1440_2 ;
+=     DB_XV._16XV1440.IOFeedback2 ;
+U     E_16XV1440_3 ;
+=     DB_XV._16XV1440.IOFeedback3 ;
+
+U     DB_XV._16XV1440.Output0 ;
+=     A_16XV1440_0 ;
+U     DB_XV._16XV1440.Output1 ;
+=     A_16XV1440_1 ;
+U     DB_XV._16XV1440.Output2 ;
+=     A_16XV1440_2 ;
+U     DB_XV._16XV1440.Output3 ;
+=     A_16XV1440_3 ;
+
+NETWORK
+TITLE =16XV1450 TTJ4 : Arrivée vapeur prise échantillon
+U     E_16XV1450_0 ;
+=     DB_XV._16XV1450.IOFeedback0 ;
+U     E_16XV1450_1 ;
+=     DB_XV._16XV1450.IOFeedback1 ;
+U     E_16XV1450_2 ;
+=     DB_XV._16XV1450.IOFeedback2 ;
+U     E_16XV1450_3 ;
+=     DB_XV._16XV1450.IOFeedback3 ;
+
+U     DB_XV._16XV1450.Output0 ;
+=     A_16XV1450_0 ;
+U     DB_XV._16XV1450.Output1 ;
+=     A_16XV1450_1 ;
+U     DB_XV._16XV1450.Output2 ;
+=     A_16XV1450_2 ;
+U     DB_XV._16XV1450.Output3 ;
+=     A_16XV1450_3 ;
+
+NETWORK
+TITLE =16XV1451 TTJ4 : Arrivée vapeur stérilisation filtre
+U     E_16XV1451_0 ;
+=     DB_XV._16XV1451.IOFeedback0 ;
+U     E_16XV1451_1 ;
+=     DB_XV._16XV1451.IOFeedback1 ;
+U     E_16XV1451_2 ;
+=     DB_XV._16XV1451.IOFeedback2 ;
+U     E_16XV1451_3 ;
+=     DB_XV._16XV1451.IOFeedback3 ;
+
+U     DB_XV._16XV1451.Output0 ;
+=     A_16XV1451_0 ;
+U     DB_XV._16XV1451.Output1 ;
+=     A_16XV1451_1 ;
+U     DB_XV._16XV1451.Output2 ;
+=     A_16XV1451_2 ;
+U     DB_XV._16XV1451.Output3 ;
+=     A_16XV1451_3 ;
+
+NETWORK
+TITLE =16XV1452 TTJ4 : Purge filtre air
+U     E_16XV1452_0 ;
+=     DB_XV._16XV1452.IOFeedback0 ;
+U     E_16XV1452_1 ;
+=     DB_XV._16XV1452.IOFeedback1 ;
+U     E_16XV1452_2 ;
+=     DB_XV._16XV1452.IOFeedback2 ;
+U     E_16XV1452_3 ;
+=     DB_XV._16XV1452.IOFeedback3 ;
+
+U     DB_XV._16XV1452.Output0 ;
+=     A_16XV1452_0 ;
+U     DB_XV._16XV1452.Output1 ;
+=     A_16XV1452_1 ;
+U     DB_XV._16XV1452.Output2 ;
+=     A_16XV1452_2 ;
+U     DB_XV._16XV1452.Output3 ;
+=     A_16XV1452_3 ;
+
+NETWORK
+TITLE =16XV1453 TTJ4 : Purge ligne air
+U     E_16XV1453_0 ;
+=     DB_XV._16XV1453.IOFeedback0 ;
+U     E_16XV1453_1 ;
+=     DB_XV._16XV1453.IOFeedback1 ;
+U     E_16XV1453_2 ;
+=     DB_XV._16XV1453.IOFeedback2 ;
+U     E_16XV1453_3 ;
+=     DB_XV._16XV1453.IOFeedback3 ;
+
+U     DB_XV._16XV1453.Output0 ;
+=     A_16XV1453_0 ;
+U     DB_XV._16XV1453.Output1 ;
+=     A_16XV1453_1 ;
+U     DB_XV._16XV1453.Output2 ;
+=     A_16XV1453_2 ;
+U     DB_XV._16XV1453.Output3 ;
+=     A_16XV1453_3 ;
+
+NETWORK
+TITLE =16XV1461 TTJ4 : Arrivée air filtre
+U     E_16XV1461_0 ;
+=     DB_XV._16XV1461.IOFeedback0 ;
+U     E_16XV1461_1 ;
+=     DB_XV._16XV1461.IOFeedback1 ;
+U     E_16XV1461_2 ;
+=     DB_XV._16XV1461.IOFeedback2 ;
+U     E_16XV1461_3 ;
+=     DB_XV._16XV1461.IOFeedback3 ;
+
+U     DB_XV._16XV1461.Output0 ;
+=     A_16XV1461_0 ;
+U     DB_XV._16XV1461.Output1 ;
+=     A_16XV1461_1 ;
+U     DB_XV._16XV1461.Output2 ;
+=     A_16XV1461_2 ;
+U     DB_XV._16XV1461.Output3 ;
+=     A_16XV1461_3 ;
+
+NETWORK
+TITLE =16XV1462 TTJ4 : Arrivée air vers cuve
+U     E_16XV1462_0 ;
+=     DB_XV._16XV1462.IOFeedback0 ;
+U     E_16XV1462_1 ;
+=     DB_XV._16XV1462.IOFeedback1 ;
+U     E_16XV1462_2 ;
+=     DB_XV._16XV1462.IOFeedback2 ;
+U     E_16XV1462_3 ;
+=     DB_XV._16XV1462.IOFeedback3 ;
+
+U     DB_XV._16XV1462.Output0 ;
+=     A_16XV1462_0 ;
+U     DB_XV._16XV1462.Output1 ;
+=     A_16XV1462_1 ;
+U     DB_XV._16XV1462.Output2 ;
+=     A_16XV1462_2 ;
+U     DB_XV._16XV1462.Output3 ;
+=     A_16XV1462_3 ;
+
+NETWORK
+TITLE =16XV1471 TTJ4 : NEP prise échantillon
+U     E_16XV1471_0 ;
+=     DB_XV._16XV1471.IOFeedback0 ;
+U     E_16XV1471_1 ;
+=     DB_XV._16XV1471.IOFeedback1 ;
+U     E_16XV1471_2 ;
+=     DB_XV._16XV1471.IOFeedback2 ;
+U     E_16XV1471_3 ;
+=     DB_XV._16XV1471.IOFeedback3 ;
+
+U     DB_XV._16XV1471.Output0 ;
+=     A_16XV1471_0 ;
+U     DB_XV._16XV1471.Output1 ;
+=     A_16XV1471_1 ;
+U     DB_XV._16XV1471.Output2 ;
+=     A_16XV1471_2 ;
+U     DB_XV._16XV1471.Output3 ;
+=     A_16XV1471_3 ;
+
+NETWORK
+TITLE =16XV1472 TTJ4 : NEP 1er boule lavage
+U     E_16XV1472_0 ;
+=     DB_XV._16XV1472.IOFeedback0 ;
+U     E_16XV1472_1 ;
+=     DB_XV._16XV1472.IOFeedback1 ;
+U     E_16XV1472_2 ;
+=     DB_XV._16XV1472.IOFeedback2 ;
+U     E_16XV1472_3 ;
+=     DB_XV._16XV1472.IOFeedback3 ;
+
+U     DB_XV._16XV1472.Output0 ;
+=     A_16XV1472_0 ;
+U     DB_XV._16XV1472.Output1 ;
+=     A_16XV1472_1 ;
+U     DB_XV._16XV1472.Output2 ;
+=     A_16XV1472_2 ;
+U     DB_XV._16XV1472.Output3 ;
+=     A_16XV1472_3 ;
+
+NETWORK
+TITLE =16XV1473 TTJ4 : NEP 2eme boule lavage
+U     E_16XV1473_0 ;
+=     DB_XV._16XV1473.IOFeedback0 ;
+U     E_16XV1473_1 ;
+=     DB_XV._16XV1473.IOFeedback1 ;
+U     E_16XV1473_2 ;
+=     DB_XV._16XV1473.IOFeedback2 ;
+U     E_16XV1473_3 ;
+=     DB_XV._16XV1473.IOFeedback3 ;
+
+U     DB_XV._16XV1473.Output0 ;
+=     A_16XV1473_0 ;
+U     DB_XV._16XV1473.Output1 ;
+=     A_16XV1473_1 ;
+U     DB_XV._16XV1473.Output2 ;
+=     A_16XV1473_2 ;
+U     DB_XV._16XV1473.Output3 ;
+=     A_16XV1473_3 ;
+
+NETWORK
+TITLE =16XV1474 TTJ4 : Break ligne NEP cuve
+U     E_16XV1474_0 ;
+=     DB_XV._16XV1474.IOFeedback0 ;
+U     E_16XV1474_1 ;
+=     DB_XV._16XV1474.IOFeedback1 ;
+U     E_16XV1474_2 ;
+=     DB_XV._16XV1474.IOFeedback2 ;
+U     E_16XV1474_3 ;
+=     DB_XV._16XV1474.IOFeedback3 ;
+
+U     DB_XV._16XV1474.Output0 ;
+=     A_16XV1474_0 ;
+U     DB_XV._16XV1474.Output1 ;
+=     A_16XV1474_1 ;
+U     DB_XV._16XV1474.Output2 ;
+=     A_16XV1474_2 ;
+U     DB_XV._16XV1474.Output3 ;
+=     A_16XV1474_3 ;
+
+NETWORK
+TITLE =16XV1476 TTJ4 : NEP ligne air cuve
+U     E_16XV1476_0 ;
+=     DB_XV._16XV1476.IOFeedback0 ;
+U     E_16XV1476_1 ;
+=     DB_XV._16XV1476.IOFeedback1 ;
+U     E_16XV1476_2 ;
+=     DB_XV._16XV1476.IOFeedback2 ;
+U     E_16XV1476_3 ;
+=     DB_XV._16XV1476.IOFeedback3 ;
+
+U     DB_XV._16XV1476.Output0 ;
+=     A_16XV1476_0 ;
+U     DB_XV._16XV1476.Output1 ;
+=     A_16XV1476_1 ;
+U     DB_XV._16XV1476.Output2 ;
+=     A_16XV1476_2 ;
+U     DB_XV._16XV1476.Output3 ;
+=     A_16XV1476_3 ;
+
+NETWORK
+TITLE =16XV1411 TTJ4 : Manifold MDL10 - LRM11
+U     E_16XV1411_0 ;
+=     DB_XV._16XV1411.IOFeedback0 ;
+U     E_16XV1411_1 ;
+=     DB_XV._16XV1411.IOFeedback1 ;
+U     E_16XV1411_2 ;
+=     DB_XV._16XV1411.IOFeedback2 ;
+U     E_16XV1411_3 ;
+=     DB_XV._16XV1411.IOFeedback3 ;
+
+U     DB_XV._16XV1411.Output0 ;
+=     A_16XV1411_0 ;
+U     DB_XV._16XV1411.Output1 ;
+=     A_16XV1411_1 ;
+U     DB_XV._16XV1411.Output2 ;
+=     A_16XV1411_2 ;
+U     DB_XV._16XV1411.Output3 ;
+=     A_16XV1411_3 ;
+
+NETWORK
+TITLE =16XV1412 TTJ4 : Manifold MDL10 - LRM12
+U     E_16XV1412_0 ;
+=     DB_XV._16XV1412.IOFeedback0 ;
+U     E_16XV1412_1 ;
+=     DB_XV._16XV1412.IOFeedback1 ;
+U     E_16XV1412_2 ;
+=     DB_XV._16XV1412.IOFeedback2 ;
+U     E_16XV1412_3 ;
+=     DB_XV._16XV1412.IOFeedback3 ;
+
+U     DB_XV._16XV1412.Output0 ;
+=     A_16XV1412_0 ;
+U     DB_XV._16XV1412.Output1 ;
+=     A_16XV1412_1 ;
+U     DB_XV._16XV1412.Output2 ;
+=     A_16XV1412_2 ;
+U     DB_XV._16XV1412.Output3 ;
+=     A_16XV1412_3 ;
+
+NETWORK
+TITLE =16XV1413 TTJ4 : Manifold MDL10 - LSO13
+U     E_16XV1413_0 ;
+=     DB_XV._16XV1413.IOFeedback0 ;
+U     E_16XV1413_1 ;
+=     DB_XV._16XV1413.IOFeedback1 ;
+U     E_16XV1413_2 ;
+=     DB_XV._16XV1413.IOFeedback2 ;
+U     E_16XV1413_3 ;
+=     DB_XV._16XV1413.IOFeedback3 ;
+
+U     DB_XV._16XV1413.Output0 ;
+=     A_16XV1413_0 ;
+U     DB_XV._16XV1413.Output1 ;
+=     A_16XV1413_1 ;
+U     DB_XV._16XV1413.Output2 ;
+=     A_16XV1413_2 ;
+U     DB_XV._16XV1413.Output3 ;
+=     A_16XV1413_3 ;
+
+NETWORK
+TITLE =16XV1414 TTJ4 : Manifold MDL10 - LSO14
+U     E_16XV1414_0 ;
+=     DB_XV._16XV1414.IOFeedback0 ;
+U     E_16XV1414_1 ;
+=     DB_XV._16XV1414.IOFeedback1 ;
+U     E_16XV1414_2 ;
+=     DB_XV._16XV1414.IOFeedback2 ;
+U     E_16XV1414_3 ;
+=     DB_XV._16XV1414.IOFeedback3 ;
+
+U     DB_XV._16XV1414.Output0 ;
+=     A_16XV1414_0 ;
+U     DB_XV._16XV1414.Output1 ;
+=     A_16XV1414_1 ;
+U     DB_XV._16XV1414.Output2 ;
+=     A_16XV1414_2 ;
+U     DB_XV._16XV1414.Output3 ;
+=     A_16XV1414_3 ;
+
+NETWORK
+TITLE =16XV1415 TTJ4 : Manifold MDL10 - LSO15
+U     E_16XV1415_0 ;
+=     DB_XV._16XV1415.IOFeedback0 ;
+U     E_16XV1415_1 ;
+=     DB_XV._16XV1415.IOFeedback1 ;
+U     E_16XV1415_2 ;
+=     DB_XV._16XV1415.IOFeedback2 ;
+U     E_16XV1415_3 ;
+=     DB_XV._16XV1415.IOFeedback3 ;
+
+U     DB_XV._16XV1415.Output0 ;
+=     A_16XV1415_0 ;
+U     DB_XV._16XV1415.Output1 ;
+=     A_16XV1415_1 ;
+U     DB_XV._16XV1415.Output2 ;
+=     A_16XV1415_2 ;
+U     DB_XV._16XV1415.Output3 ;
+=     A_16XV1415_3 ;
+
+NETWORK
+TITLE =16XV1416 TTJ4 : Manifold MDL10 - LSO16
+U     E_16XV1416_0 ;
+=     DB_XV._16XV1416.IOFeedback0 ;
+U     E_16XV1416_1 ;
+=     DB_XV._16XV1416.IOFeedback1 ;
+U     E_16XV1416_2 ;
+=     DB_XV._16XV1416.IOFeedback2 ;
+U     E_16XV1416_3 ;
+=     DB_XV._16XV1416.IOFeedback3 ;
+
+U     DB_XV._16XV1416.Output0 ;
+=     A_16XV1416_0 ;
+U     DB_XV._16XV1416.Output1 ;
+=     A_16XV1416_1 ;
+U     DB_XV._16XV1416.Output2 ;
+=     A_16XV1416_2 ;
+U     DB_XV._16XV1416.Output3 ;
+=     A_16XV1416_3 ;
+
+NETWORK
+TITLE =16XV1417 TTJ4 : Manifold MDL10 - LSO17
+U     E_16XV1417_0 ;
+=     DB_XV._16XV1417.IOFeedback0 ;
+U     E_16XV1417_1 ;
+=     DB_XV._16XV1417.IOFeedback1 ;
+U     E_16XV1417_2 ;
+=     DB_XV._16XV1417.IOFeedback2 ;
+U     E_16XV1417_3 ;
+=     DB_XV._16XV1417.IOFeedback3 ;
+
+U     DB_XV._16XV1417.Output0 ;
+=     A_16XV1417_0 ;
+U     DB_XV._16XV1417.Output1 ;
+=     A_16XV1417_1 ;
+U     DB_XV._16XV1417.Output2 ;
+=     A_16XV1417_2 ;
+U     DB_XV._16XV1417.Output3 ;
+=     A_16XV1417_3 ;
+
+NETWORK
+TITLE =16XV1117 TTJ1 : Manifold MDL10 - LSO17
+U     E_16XV1117_0 ;
+=     DB_XV._16XV1117.IOFeedback0 ;
+U     E_16XV1117_1 ;
+=     DB_XV._16XV1117.IOFeedback1 ;
+U     E_16XV1117_2 ;
+=     DB_XV._16XV1117.IOFeedback2 ;
+U     E_16XV1117_3 ;
+=     DB_XV._16XV1117.IOFeedback3 ;
+
+U     DB_XV._16XV1117.Output0 ;
+=     A_16XV1117_0 ;
+U     DB_XV._16XV1117.Output1 ;
+=     A_16XV1117_1 ;
+U     DB_XV._16XV1117.Output2 ;
+=     A_16XV1117_2 ;
+U     DB_XV._16XV1117.Output3 ;
+=     A_16XV1117_3 ;
+
+NETWORK
+TITLE =16XV1217 TTJ2 : Manifold MDL10 - LSO17
+U     E_16XV1217_0 ;
+=     DB_XV._16XV1217.IOFeedback0 ;
+U     E_16XV1217_1 ;
+=     DB_XV._16XV1217.IOFeedback1 ;
+U     E_16XV1217_2 ;
+=     DB_XV._16XV1217.IOFeedback2 ;
+U     E_16XV1217_3 ;
+=     DB_XV._16XV1217.IOFeedback3 ;
+
+U     DB_XV._16XV1217.Output0 ;
+=     A_16XV1217_0 ;
+U     DB_XV._16XV1217.Output1 ;
+=     A_16XV1217_1 ;
+U     DB_XV._16XV1217.Output2 ;
+=     A_16XV1217_2 ;
+U     DB_XV._16XV1217.Output3 ;
+=     A_16XV1217_3 ;
+
+NETWORK
+TITLE =16XV1317 TTJ3 : Manifold MDL10 - LSO17
+U     E_16XV1317_0 ;
+=     DB_XV._16XV1317.IOFeedback0 ;
+U     E_16XV1317_1 ;
+=     DB_XV._16XV1317.IOFeedback1 ;
+U     E_16XV1317_2 ;
+=     DB_XV._16XV1317.IOFeedback2 ;
+U     E_16XV1317_3 ;
+=     DB_XV._16XV1317.IOFeedback3 ;
+
+U     DB_XV._16XV1317.Output0 ;
+=     A_16XV1317_0 ;
+U     DB_XV._16XV1317.Output1 ;
+=     A_16XV1317_1 ;
+U     DB_XV._16XV1317.Output2 ;
+=     A_16XV1317_2 ;
+U     DB_XV._16XV1317.Output3 ;
+=     A_16XV1317_3 ;
+
+NETWORK
+TITLE =16XV1478 TTJ4 : Retour NEP cuve
+U     E_16XV1478_0 ;
+=     DB_XV._16XV1478.IOFeedback0 ;
+U     E_16XV1478_1 ;
+=     DB_XV._16XV1478.IOFeedback1 ;
+U     E_16XV1478_2 ;
+=     DB_XV._16XV1478.IOFeedback2 ;
+U     E_16XV1478_3 ;
+=     DB_XV._16XV1478.IOFeedback3 ;
+
+U     DB_XV._16XV1478.Output0 ;
+=     A_16XV1478_0 ;
+U     DB_XV._16XV1478.Output1 ;
+=     A_16XV1478_1 ;
+U     DB_XV._16XV1478.Output2 ;
+=     A_16XV1478_2 ;
+U     DB_XV._16XV1478.Output3 ;
+=     A_16XV1478_3 ;
+
+NETWORK
+TITLE =16XV1477 TTJ4 : Arrivée NEP cuve
+U     E_16XV1477_0 ;
+=     DB_XV._16XV1477.IOFeedback0 ;
+U     E_16XV1477_1 ;
+=     DB_XV._16XV1477.IOFeedback1 ;
+U     E_16XV1477_2 ;
+=     DB_XV._16XV1477.IOFeedback2 ;
+U     E_16XV1477_3 ;
+=     DB_XV._16XV1477.IOFeedback3 ;
+
+U     DB_XV._16XV1477.Output0 ;
+=     A_16XV1477_0 ;
+U     DB_XV._16XV1477.Output1 ;
+=     A_16XV1477_1 ;
+U     DB_XV._16XV1477.Output2 ;
+=     A_16XV1477_2 ;
+U     DB_XV._16XV1477.Output3 ;
+=     A_16XV1477_3 ;
+
+NETWORK
+TITLE =16XV1077 LSO17 : Arrivée NEP ligne
+U     E_16XV1077_0 ;
+=     DB_XV._16XV1077.IOFeedback0 ;
+U     E_16XV1077_1 ;
+=     DB_XV._16XV1077.IOFeedback1 ;
+U     E_16XV1077_2 ;
+=     DB_XV._16XV1077.IOFeedback2 ;
+U     E_16XV1077_3 ;
+=     DB_XV._16XV1077.IOFeedback3 ;
+
+U     DB_XV._16XV1077.Output0 ;
+=     A_16XV1077_0 ;
+U     DB_XV._16XV1077.Output1 ;
+=     A_16XV1077_1 ;
+U     DB_XV._16XV1077.Output2 ;
+=     A_16XV1077_2 ;
+U     DB_XV._16XV1077.Output3 ;
+=     A_16XV1077_3 ;
+
+NETWORK
+TITLE =16XV8817 LSO17 : By-passe pompe ligne soutirage
+U     E_16XV8817_0 ;
+=     DB_XV._16XV8817.IOFeedback0 ;
+U     E_16XV8817_1 ;
+=     DB_XV._16XV8817.IOFeedback1 ;
+U     E_16XV8817_2 ;
+=     DB_XV._16XV8817.IOFeedback2 ;
+U     E_16XV8817_3 ;
+=     DB_XV._16XV8817.IOFeedback3 ;
+
+U     DB_XV._16XV8817.Output0 ;
+=     A_16XV8817_0 ;
+U     DB_XV._16XV8817.Output1 ;
+=     A_16XV8817_1 ;
+U     DB_XV._16XV8817.Output2 ;
+=     A_16XV8817_2 ;
+U     DB_XV._16XV8817.Output3 ;
+=     A_16XV8817_3 ;
+
+NETWORK
+TITLE =16XV9877 LSO17 : Break arrivée NEP
+U     E_16XV9877_0 ;
+=     DB_XV._16XV9877.IOFeedback0 ;
+U     E_16XV9877_1 ;
+=     DB_XV._16XV9877.IOFeedback1 ;
+U     E_16XV9877_2 ;
+=     DB_XV._16XV9877.IOFeedback2 ;
+U     E_16XV9877_3 ;
+=     DB_XV._16XV9877.IOFeedback3 ;
+
+U     DB_XV._16XV9877.Output0 ;
+=     A_16XV9877_0 ;
+U     DB_XV._16XV9877.Output1 ;
+=     A_16XV9877_1 ;
+U     DB_XV._16XV9877.Output2 ;
+=     A_16XV9877_2 ;
+U     DB_XV._16XV9877.Output3 ;
+=     A_16XV9877_3 ;
+
+NETWORK
+TITLE =16XV9917 LSO17 : Break eau de pousse
+U     E_16XV9917_0 ;
+=     DB_XV._16XV9917.IOFeedback0 ;
+U     E_16XV9917_1 ;
+=     DB_XV._16XV9917.IOFeedback1 ;
+U     E_16XV9917_2 ;
+=     DB_XV._16XV9917.IOFeedback2 ;
+U     E_16XV9917_3 ;
+=     DB_XV._16XV9917.IOFeedback3 ;
+
+U     DB_XV._16XV9917.Output0 ;
+=     A_16XV9917_0 ;
+U     DB_XV._16XV9917.Output1 ;
+=     A_16XV9917_1 ;
+U     DB_XV._16XV9917.Output2 ;
+=     A_16XV9917_2 ;
+U     DB_XV._16XV9917.Output3 ;
+=     A_16XV9917_3 ;
+
+NETWORK
+TITLE =16XV9947 LSO17 : Arrivée eau de pousse
+U     E_16XV9947_0 ;
+=     DB_XV._16XV9947.IOFeedback0 ;
+U     E_16XV9947_1 ;
+=     DB_XV._16XV9947.IOFeedback1 ;
+U     E_16XV9947_2 ;
+=     DB_XV._16XV9947.IOFeedback2 ;
+U     E_16XV9947_3 ;
+=     DB_XV._16XV9947.IOFeedback3 ;
+
+U     DB_XV._16XV9947.Output0 ;
+=     A_16XV9947_0 ;
+U     DB_XV._16XV9947.Output1 ;
+=     A_16XV9947_1 ;
+U     DB_XV._16XV9947.Output2 ;
+=     A_16XV9947_2 ;
+U     DB_XV._16XV9947.Output3 ;
+=     A_16XV9947_3 ;
+
+NETWORK
+TITLE =16XV8843 LSO13 : Arrosage garniture pompe
+UN    A_16XV8843_0 ;
+=     DB_XV._16XV8843.IOFeedback0 ;
+U     A_16XV8843_0 ;
+=     DB_XV._16XV8843.IOFeedback1 ;
+
+
+U     DB_XV._16XV8843.Output0 ;
+=     A_16XV8843_0 ;
+
+NETWORK
+TITLE =16XV8844 LSO14 : Arrosage garniture pompe
+UN    A_16XV8844_0 ;
+=     DB_XV._16XV8844.IOFeedback0 ;
+U     A_16XV8844_0 ;
+=     DB_XV._16XV8844.IOFeedback1 ;
+
+U     DB_XV._16XV8844.Output0 ;
+=     A_16XV8844_0 ;
+
+NETWORK
+TITLE =16XV8845 LSO15 : Arrosage garniture pompe
+UN    A_16XV8845_0 ;
+=     DB_XV._16XV8845.IOFeedback0 ;
+U     A_16XV8845_0 ;
+=     DB_XV._16XV8845.IOFeedback1 ;
+
+U     DB_XV._16XV8845.Output0 ;
+=     A_16XV8845_0 ;
+
+NETWORK
+TITLE =16XV8846 LSO16 : Arrosage garniture pompe
+UN    A_16XV8846_0 ;
+=     DB_XV._16XV8846.IOFeedback0 ;
+U     A_16XV8846_0 ;
+=     DB_XV._16XV8846.IOFeedback1 ;
+
+U     DB_XV._16XV8846.Output0 ;
+=     A_16XV8846_0 ;
+
+NETWORK
+TITLE =16XV8847 LSO17 : Arrosage garniture pompe
+UN    A_16XV8847_0 ;
+=     DB_XV._16XV8847.IOFeedback0 ;
+U     A_16XV8847_0 ;
+=     DB_XV._16XV8847.IOFeedback1 ;
+
+U     DB_XV._16XV8847.Output0 ;
+=     A_16XV8847_0 ;
+
+
+
+END_FUNCTION
+

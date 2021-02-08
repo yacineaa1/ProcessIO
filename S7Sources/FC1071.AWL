@@ -1,0 +1,299 @@
+FUNCTION "FC_IO_MM" : VOID
+TITLE =
+VERSION : 0.1
+
+BEGIN
+NETWORK
+TITLE = IO assignment for MM object
+//For diagnostic purposes only, to edit use the AWL source code
+//-------------------------------------------------------------
+//--History
+//--[Version]   [Name]      [DATE]      [Comments]
+//--1.00        Yacine AA   05-01-21    Creation
+
+NETWORK
+TITLE =16AG0101 P21 : Agitateur bac de lancement BL01
+U     E_16AG0101_0 ;
+=     DB_MM._16AG0101.IOFeedback0 ;
+UN    E_16AG0101_1 ;
+=     DB_MM._16AG0101.IOFeedback1 ;
+
+U     DB_MM._16AG0101.Output0 ;
+=     A_16AG0101 ;
+
+NETWORK
+TITLE =16PU0102 P21 : Pompe soutirage BL01
+U     E_16PU0102_0 ;
+=     DB_MM._16PU0102.IOFeedback0 ;
+UN    E_16PU0102_1 ;
+=     DB_MM._16PU0102.IOFeedback1 ;
+
+U     DB_MM._16PU0102.Output0 ;
+=     A_16PU0102 ;
+
+NETWORK
+TITLE =16PU0103 P21 : Pompe NEP BL01
+U     E_16PU0103_0 ;
+=     DB_MM._16PU0103.IOFeedback0 ;
+UN    E_16PU0103_1 ;
+=     DB_MM._16PU0103.IOFeedback1 ;
+
+U     DB_MM._16PU0103.Output0 ;
+=     A_16PU0103 ;
+
+NETWORK
+TITLE =16PU0104 P21 : Pompe soutirage de dégazeur DA01
+U     E_16PU0104_0 ;
+=     DB_MM._16PU0104.IOFeedback0 ;
+UN    E_16PU0104_1 ;
+=     DB_MM._16PU0104.IOFeedback1 ;
+
+U     DB_MM._16PU0104.Output0 ;
+=     A_16PU0104 ;
+
+NETWORK
+TITLE =16PU0105 P21 : Pompe NEP dégazeur DA01
+U     E_16PU0105_0 ;
+=     DB_MM._16PU0105.IOFeedback0 ;
+UN    E_16PU0105_1 ;
+=     DB_MM._16PU0105.IOFeedback1 ;
+
+U     DB_MM._16PU0105.Output0 ;
+=     A_16PU0105 ;
+
+NETWORK
+TITLE =16PU0111 P21 : Pompe boucle section 1er traitement HE01
+U     E_16PU0111_0 ;
+=     DB_MM._16PU0111.IOFeedback0 ;
+UN    E_16PU0111_1 ;
+=     DB_MM._16PU0111.IOFeedback1 ;
+
+U     DB_MM._16PU0111.Output0 ;
+=     A_16PU0111 ;
+
+NETWORK
+TITLE =16PU0121 P21 : Pompe vide dégazeur
+U     E_16PU0121_0 ;
+=     DB_MM._16PU0121.IOFeedback0 ;
+UN    E_16PU0121_1 ;
+=     DB_MM._16PU0121.IOFeedback1 ;
+
+U     DB_MM._16PU0121.Output0 ;
+=     A_16PU0121 ;
+
+NETWORK
+TITLE =16PU0122 P21 : Pompe boucle eau froid DA01
+U     E_16PU0122_0 ;
+=     DB_MM._16PU0122.IOFeedback0 ;
+UN    E_16PU0122_1 ;
+=     DB_MM._16PU0122.IOFeedback1 ;
+
+U     DB_MM._16PU0122.Output0 ;
+=     A_16PU0122 ;
+
+NETWORK
+TITLE =16PU0131 P21 : Pompe boucle section traitement
+U     E_16PU0131_0 ;
+=     DB_MM._16PU0131.IOFeedback0 ;
+UN    E_16PU0131_1 ;
+=     DB_MM._16PU0131.IOFeedback1 ;
+
+U     DB_MM._16PU0131.Output0 ;
+=     A_16PU0131 ;
+
+NETWORK
+TITLE =16PU0161 CR01 : Pompe recirculation cuve
+U     E_16PU0161_0 ;
+=     DB_MM._16PU0161.IOFeedback0 ;
+UN    E_16PU0161_1 ;
+=     DB_MM._16PU0161.IOFeedback1 ;
+
+U     DB_MM._16PU0161.Output0 ;
+=     A_16PU0161 ;
+
+NETWORK
+TITLE =16AG0162 CR01 : Agitateur cuve
+U     E_16AG0162_0 ;
+=     DB_MM._16AG0162.IOFeedback0 ;
+UN    E_16AG0162_1 ;
+=     DB_MM._16AG0162.IOFeedback1 ;
+
+U     DB_MM._16AG0162.Output0 ;
+=     A_16AG0162 ;
+
+NETWORK
+TITLE =16PU1072 TTJ1x : Pompe retour NEP
+U     E_16PU1072_0 ;
+=     DB_MM._16PU1072.IOFeedback0 ;
+UN    E_16PU1072_1 ;
+=     DB_MM._16PU1072.IOFeedback1 ;
+
+U     DB_MM._16PU1072.Output0 ;
+=     A_16PU1072 ;
+
+NETWORK
+TITLE =16AG2100 TTJ11 : Agitateur cuve
+U     E_16AG2100_0 ;
+=     DB_MM._16AG2100.IOFeedback0 ;
+UN    E_16AG2100_1 ;
+=     DB_MM._16AG2100.IOFeedback1 ;
+
+U     DB_MM._16AG2100.Output0 ;
+=     A_16AG2100 ;
+
+NETWORK
+TITLE =16AG2200 TTJ12 : Agitateur cuve
+U     E_16AG2200_0 ;
+=     DB_MM._16AG2200.IOFeedback0 ;
+UN    E_16AG2200_1 ;
+=     DB_MM._16AG2200.IOFeedback1 ;
+
+U     DB_MM._16AG2200.Output0 ;
+=     A_16AG2200 ;
+
+NETWORK
+TITLE =16PU8822 LSO22 : Pompe soutirage vers conditionneuse
+U     E_16PU8822_0 ;
+=     DB_MM._16PU8822.IOFeedback0 ;
+UN    E_16PU8822_1 ;
+=     DB_MM._16PU8822.IOFeedback1 ;
+
+U     DB_MM._16PU8822.Output0 ;
+=     A_16PU8822 ;
+
+NETWORK
+TITLE =16PU0123 P21 : Pompe retour eau glacée boucle DA01
+U     E_16PU0123_0 ;
+=     DB_MM._16PU0123.IOFeedback0 ;
+UN    E_16PU0123_1 ;
+=     DB_MM._16PU0123.IOFeedback1 ;
+
+U     DB_MM._16PU0123.Output0 ;
+=     A_16PU0123 ;
+
+NETWORK
+TITLE =16AG1200 TTJ2 : Agitateur cuve
+U     E_16AG1200_0 ;
+=     DB_MM._16AG1200.IOFeedback0 ;
+UN    E_16AG1200_1 ;
+=     DB_MM._16AG1200.IOFeedback1 ;
+U     E_16AG1200_2 ;
+=     DB_MM._16AG1200.IOFeedback2 ;
+
+//U     DB_MM._16AG1200.Output0 ;
+//=     A_16AG1200 ;
+
+NETWORK
+TITLE =16AG1100 TTJ1 : Agitateur cuve
+U     E_16AG1100_0 ;
+=     DB_MM._16AG1100.IOFeedback0 ;
+UN    E_16AG1100_1 ;
+=     DB_MM._16AG1100.IOFeedback1 ;
+U     E_16AG1100_2 ;
+=     DB_MM._16AG1100.IOFeedback2 ;
+
+//U     DB_MM._16AG1100.Output0 ;
+//=     A_16AG1100 ;
+
+NETWORK
+TITLE =16PU1073 TTJx : Pompe retour NEP
+U     E_16PU1073_0 ;
+=     DB_MM._16PU1073.IOFeedback0 ;
+UN    E_16PU1073_1 ;
+=     DB_MM._16PU1073.IOFeedback1 ;
+
+//U     DB_MM._16PU1073.Output0 ;
+//=     A_16PU1073 ;
+
+NETWORK
+TITLE =16PU8813 LSO13 : Pompe soutirage vers conditionneuse
+U     E_16PU8813_0 ;
+=     DB_MM._16PU8813.IOFeedback0 ;
+UN    E_16PU8813_1 ;
+=     DB_MM._16PU8813.IOFeedback1 ;
+U     E_16PU8813_2 ;
+=     DB_MM._16PU8813.IOFeedback2 ;
+
+//U     DB_MM._16PU8813.Output0 ;
+//=     A_16PU8813 ;
+
+NETWORK
+TITLE =16PU8814 LSO14 : Pompe soutirage vers conditionneuse
+U     E_16PU8814_0 ;
+=     DB_MM._16PU8814.IOFeedback0 ;
+UN    E_16PU8814_1 ;
+=     DB_MM._16PU8814.IOFeedback1 ;
+U     E_16PU8814_2 ;
+=     DB_MM._16PU8814.IOFeedback2 ;
+
+//U     DB_MM._16PU8814.Output0 ;
+//=     A_16PU8814 ;
+
+NETWORK
+TITLE =16PU8815 LSO15 : Pompe soutirage vers conditionneuse
+U     E_16PU8815_0 ;
+=     DB_MM._16PU8815.IOFeedback0 ;
+UN    E_16PU8815_1 ;
+=     DB_MM._16PU8815.IOFeedback1 ;
+
+//U     DB_MM._16PU8815.Output0 ;
+//=     A_16PU8815 ;
+
+NETWORK
+TITLE =16PU8816 LSO16 : Pompe soutirage vers conditionneuse
+U     E_16PU8816_0 ;
+=     DB_MM._16PU8816.IOFeedback0 ;
+UN    E_16PU8816_1 ;
+=     DB_MM._16PU8816.IOFeedback1 ;
+
+//U     DB_MM._16PU8816.Output0 ;
+//=     A_16PU8816 ;
+
+NETWORK
+TITLE =16AG1300 TTJ3 : Agitateur cuve
+U     E_16AG1300_0 ;
+=     DB_MM._16AG1300.IOFeedback0 ;
+UN    E_16AG1300_1 ;
+=     DB_MM._16AG1300.IOFeedback1 ;
+
+//U     DB_MM._16AG1300.Output0 ;
+//=     A_16AG1300 ;
+
+NETWORK
+TITLE =16AG1400 TTJ4 : Agitateur cuve
+U     E_16AG1400_0 ;
+=     DB_MM._16AG1400.IOFeedback0 ;
+UN    E_16AG1400_1 ;
+=     DB_MM._16AG1400.IOFeedback1 ;
+
+U     DB_MM._16AG1400.Output0 ;
+=     A_16AG1400 ;
+
+NETWORK
+TITLE =16AG1500 TTJ5 : Agitateur cuve
+U     E_16AG1500_0 ;
+=     DB_MM._16AG1500.IOFeedback0 ;
+UN    E_16AG1500_1 ;
+=     DB_MM._16AG1500.IOFeedback1 ;
+
+U     DB_MM._16AG1500.Output0 ;
+=     A_16AG1500 ;
+
+NETWORK
+TITLE =16PU8817 LSO17 : Pompe soutirage vers conditionneuse
+U     E_16PU8817_0 ;
+=     DB_MM._16PU8817.IOFeedback0 ;
+UN    E_16PU8817_1 ;
+=     DB_MM._16PU8817.IOFeedback1 ;
+
+U     DB_MM._16PU8817.Output0 ;
+=     A_16PU8817 ;
+
+
+
+
+
+
+
+END_FUNCTION
+

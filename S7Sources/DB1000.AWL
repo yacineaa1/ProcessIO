@@ -1,0 +1,188 @@
+DATA_BLOCK DB1000
+NAME    : DB_SCADA
+AUTHOR  : YACINEAA
+FAMILY  : SCADA
+VERSION : 1.0
+
+
+  STRUCT 	
+  
+   SYSTEM_CLK : STRUCT 	
+	    YEAR 			 : BYTE ;				//read system clock : YEAR
+	    MONTH 			 : BYTE ;				//read system clock : MONTH
+	    DAY 			 : BYTE ;				//read system clock : DAY
+	    HOUR  			 : BYTE ;				//read system clock : HOUR
+	    MINUTE 			 : BYTE ;				//read system clock : MINUTE
+	    SECOND    	     : BYTE ;				//read system clock : SECOND
+	    MILISECOND 		 : WORD ;			    //read system clock : MILISECOND
+	    WEEKDAY 		 : BYTE ;		    	//read system clock : WEEKDAY
+   END_STRUCT ;	
+   SYSTEM_CLK_MILISECOND : INT ;	            //System clock : MILISECOND
+   SYSTEM_CLK_SECOND	 : INT ;				//System clock : SECOND
+   SYSTEM_CLK_MINUTE 	 : INT ;				//System clock : MINUTE
+   SYSTEM_CLK_HOUR 		 : INT ;				//System clock : HOUR
+   
+   PrevCycle	    	 : REAL; 				//Cycle time of previous OB1 scan [s]
+ 
+   HeartBeat 			 : BOOL ;				//SCADA :  Communication heartbeat
+   WatchDog 			 : INT ;				//SCADA :  Communication watchdog
+   
+   AccessLevel 			 : INT ;				//SCADA :  Current access Level
+   
+   XVForc			: INT ;	//Number of forced valves
+   XVInhib			: INT ;	//Number of Inhibited(supressed) valves
+   XVFault			: INT ;	//Number of in faulted valves
+   
+   MMForc			: INT ;	//Number of forced motors
+   MMInhib			: INT ;	//Number of Inhibited(supressed) motors
+   MMFault			: INT ;	//Number of in fault motors
+   
+   AIForc			: INT ;	//Number of forced analogue inputs
+   AIInhib			: INT ;	//Number of Inhibited(supressed) analogue inputs
+   AIFault			: INT ;	//Number of in faulted analogue inputs
+   
+   AOForc			: INT ;	//Number of forced analogue outputs
+   AOInhib			: INT ;	//Number of Inhibited(supressed) analogue outputs
+   AOFault			: INT ;	//Number of in faulted analogue outputs
+
+   DIOForc			: INT ;	//Number of forced inputs/outputs
+   DIOInhib			: INT ;	//Number of Inhibited digital inputs/outputs
+   DIOFault			: INT ;	//Number of in faulted digital inputs/outputs
+
+   NbBlackout		: INT ;	//Nombre of blackout 
+   NbBrownout		: INT ;	//Nombre of brownout 
+   
+   AckScadaToPlc	: BOOL ;	//Acknowledgment from SCADA to PLC
+   AckPlcToScada 	: BOOL ;	//Acknowledgment from PLC to SCADA
+   Acknowledgment 	: BOOL ;	//Acknowledgment
+      
+   SimulationMode_0	: BOOL ;	//simulation mode selected in entier PLC
+   SimulationMode_1	: BOOL ;	//simulation mode selected in zone 1 : P21
+   SimulationMode_2	: BOOL ;	//simulation mode selected in zone 2 : TTJx
+   SimulationMode_3	: BOOL ;	//simulation mode selected in zone 3 : TTJ1x
+   
+      
+   SpareBool0 : BOOL ;	
+   SpareBool1 : BOOL ;	
+   SpareBool2 : BOOL ;	
+   SpareBool3 : BOOL ;	
+   SpareBool4 : BOOL ;	
+   SpareBool5 : BOOL ;	
+   SpareBool6 : BOOL ;	
+   SpareBool7 : BOOL ;	
+   SpareBool8 : BOOL ;	
+   SpareBool9 : BOOL ;	
+   SpareBool10 : BOOL ;	
+   SpareBool11 : BOOL ;	
+   SpareBool12 : BOOL ;	
+   SpareBool13 : BOOL ;	
+   SpareBool14 : BOOL ;	
+   SpareBool15 : BOOL ;	
+   SpareBool16 : BOOL ;	
+   SpareBool17 : BOOL ;	
+   SpareBool18 : BOOL ;	
+   SpareBool19 : BOOL ;	
+   SpareReal001 : REAL ;	
+   SpareReal002 : REAL ;	
+   SpareReal003 : REAL ;	
+   SpareReal004 : REAL ;	
+   SpareReal005 : REAL ;	
+   SpareReal006 : REAL ;	
+   SpareReal007 : REAL ;	
+   SpareReal008 : REAL ;	
+   SpareReal009 : REAL ;	
+   SpareReal0010 : REAL ;	
+   SpareReal0011 : REAL ;	
+   SpareReal0012 : REAL ;	
+   SpareReal0013 : REAL ;	
+   SpareReal : REAL ;	
+   SpareReal1 : REAL ;	
+   SpareReal2 : REAL ;	
+   SpareReal3 : REAL ;	
+   SpareReal4 : REAL ;	
+   SpareReal5 : REAL ;	
+   SpareReal6 : REAL ;	
+   SpareReal7 : REAL ;	
+   SpareReal8 : REAL ;	
+   SpareReal9 : REAL ;	
+   SpareReal10 : REAL ;	
+   SpareReal11 : REAL ;	
+   SpareReal12 : REAL ;	
+   SpareReal13 : REAL ;	
+   SpareReal14 : REAL ;	
+   SpareReal15 : REAL ;	
+   SpareReal16 : REAL ;	
+   SpareReal17 : REAL ;	
+   SpareReal18 : REAL ;	
+   SpareReal19 : REAL ;	
+   SpareReal20 : REAL ;	
+   SpareReal21 : REAL ;	
+   SpareReal22 : REAL ;	
+   SpareReal23 : REAL ;	
+   SpareReal24 : REAL ;	
+   SpareReal25 : REAL ;	
+   SpareReal26 : REAL ;	
+   SpareReal27 : REAL ;	
+   SpareReal28 : REAL ;	
+   SpareReal29 : REAL ;	
+   SpareReal30 : REAL ;	
+   SpareReal31 : REAL ;	
+   SpareReal32 : REAL ;	
+   SpareReal33 : REAL ;	
+   SpareReal34 : REAL ;	
+   SpareReal35 : REAL ;	
+   SpareReal36 : REAL ;	
+   SpareReal37 : REAL ;	
+   SpareReal38 : REAL ;	
+   SpareReal39 : REAL ;	
+   SpareReal40 : REAL ;	
+
+   SpareInt6 : INT ;	
+   SpareInt7 : INT ;	
+   SpareInt8 : INT ;	
+   SpareInt9 : INT ;	
+   SpareInt10 : INT ;	
+   SpareInt11 : INT ;	
+   SpareInt12 : INT ;	
+   SpareInt13 : INT ;	
+   SpareInt14 : INT ;	
+   SpareInt15 : INT ;	
+   SpareInt16 : INT ;	
+   SpareInt17 : INT ;	
+   SpareInt18 : INT ;	
+   SpareInt19 : INT ;	
+   SpareInt20 : INT ;	
+   SpareInt21 : INT ;	
+   SpareInt22 : INT ;	
+   SpareInt23 : INT ;	
+   SpareInt24 : INT ;	
+   SpareInt25 : INT ;	
+   SpareInt26 : INT ;	
+   SpareInt27 : INT ;	
+   SpareInt28 : INT ;	
+   SpareInt29 : INT ;	
+   SpareInt30 : INT ;	
+   SpareInt31 : INT ;	
+   SpareInt32 : INT ;	
+   SpareInt33 : INT ;	
+   SpareInt34 : INT ;	
+   SpareInt35 : INT ;	
+   SpareInt36 : INT ;	
+   SpareInt37 : INT ;	
+   SpareInt38 : INT ;	
+   SpareInt39 : INT ;	
+   SpareInt40 : INT ;	
+   SpareInt41 : INT ;	
+   SpareInt42 : INT ;	
+   SpareInt43 : INT ;	
+   SpareInt44 : INT ;	
+   SpareInt45 : INT ;	
+   SpareInt46 : INT ;	
+   SpareInt47 : INT ;	
+   SpareInt48 : INT ;	
+   SpareInt49 : INT ;	
+   SpareInt50 : INT ;	
+  END_STRUCT ;	
+BEGIN
+  END_DATA_BLOCK
+

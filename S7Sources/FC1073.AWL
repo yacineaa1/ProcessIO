@@ -1,0 +1,294 @@
+FUNCTION "FC_IO_AI" : VOID
+TITLE =
+VERSION : 0.1
+
+BEGIN
+NETWORK
+TITLE = IO assignment for AI object
+//For diagnostic purposes only, to edit use the AWL source code
+//-------------------------------------------------------------
+//--History
+//--[Version]   [Name]      [DATE]      [Comments]
+//--1.00        Yacine AA   04-01-21    Creation
+NETWORK
+TITLE =16TT0101 P21 : Température entrée appareil
+L     EW_16TT0101 ;
+T     DB_AI._16TT0101.Input ;
+
+NETWORK
+TITLE =16TT0102 P21 : Température sortie section 1er traitement HE01
+L     EW_16TT0102 ;
+T     DB_AI._16TT0102.Input ;
+
+NETWORK
+TITLE =16TT0103 P21 : Température sortie dégazeur DA01
+L     EW_16TT0103 ;
+T     DB_AI._16TT0103.Input ;
+
+NETWORK
+TITLE =16TT0105 P21 : Température sortie section 2eme traitement HE2
+L     EW_16TT0105 ;
+T     DB_AI._16TT0105.Input ;
+
+NETWORK
+TITLE =16TT0106 P21 : Température sortie chambrage traitement
+L     EW_16TT0106 ;
+T     DB_AI._16TT0106.Input ;
+
+NETWORK
+TITLE =16TT0107 P21 : Température sortie appareil
+L     EW_16TT0107 ;
+T     DB_AI._16TT0107.Input ;
+
+NETWORK
+TITLE =16TT0111 P21 : Température entrée boucle  HE01
+L     EW_16TT0111 ;
+T     DB_AI._16TT0111.Input ;
+
+NETWORK
+TITLE =16TT0112 P21 : Température sortie boucle HE01
+L     EW_16TT0112 ;
+T     DB_AI._16TT0112.Input ;
+
+NETWORK
+TITLE =16TT0121 P21 : Température boucle eau froid BA01
+L     EW_16TT0121 ;
+T     DB_AI._16TT0121.Input ;
+
+NETWORK
+TITLE =16TT0131 P21 : Température entrée boucle HE2
+L     EW_16TT0131 ;
+T     DB_AI._16TT0131.Input ;
+
+NETWORK
+TITLE =16TT0132 P21 : Température sortie boucle HE2
+L     EW_16TT0132 ;
+T     DB_AI._16TT0132.Input ;
+
+NETWORK
+TITLE =16TT0161 CR01 : Température cuve récupération
+L     EW_16TT0161 ;
+T     DB_AI._16TT0161.Input ;
+
+NETWORK
+TITLE =16TT1021 LRM21 : Température arrivée produit
+L     EW_16TT1021 ;
+T     DB_AI._16TT1021.Input ;
+
+NETWORK
+TITLE =16TT2100 TTJ11 : Température cuve
+L     EW_16TT2100 ;
+T     DB_AI._16TT2100.Input ;
+
+NETWORK
+TITLE =16TT2160 TTJ11 : Température stérilisation circuit air
+L     EW_16TT2160 ;
+T     DB_AI._16TT2160.Input ;
+
+NETWORK
+TITLE =16TT2200 TTJ12 : Température cuve
+L     EW_16TT2200 ;
+T     DB_AI._16TT2200.Input ;
+
+NETWORK
+TITLE =16TT2260 TTJ12 : Température stérilisation circuit air
+L     EW_16TT2260 ;
+T     DB_AI._16TT2260.Input ;
+
+NETWORK
+TITLE =16TT8822 LSO22 : Température soutirage
+L     EW_16TT8822 ;
+T     DB_AI._16TT8822.Input ;
+
+NETWORK
+TITLE =16PT0102 P21 : Pression haut dégazeur DA01
+L     EW_16PT0102 ;
+T     DB_AI._16PT0102.Input ;
+
+NETWORK
+TITLE =16PT0103 P21 : Pression bas dégazeur DA02
+L     EW_16PT0103 ;
+T     DB_AI._16PT0103.Input ;
+
+NETWORK
+TITLE =16PT0104 P21 : Pression entrée section traitement
+L     EW_16PT0104 ;
+T     DB_AI._16PT0104.Input ;
+
+NETWORK
+TITLE =16PT0107 P21 : Pression sortie appareil
+L     EW_16PT0107 ;
+T     DB_AI._16PT0107.Input ;
+
+NETWORK
+TITLE =16PT0130 P21 : Pression arrivée vapeur
+L     EW_16PT0130 ;
+T     DB_AI._16PT0130.Input ;
+
+NETWORK
+TITLE =16PT2100 TTJ11 : Pression arrivée d'air tank
+L     EW_16PT2100 ;
+T     DB_AI._16PT2100.Input ;
+
+NETWORK
+TITLE =16PT2200 TTJ12 : Pression arrivée d'air tank
+L     EW_16PT2200 ;
+T     DB_AI._16PT2200.Input ;
+
+NETWORK
+TITLE =16CT0101 P21 : Conductivité sortie appareil
+L     EW_16CT0101 ;
+T     DB_AI._16CT0101.Input ;
+
+NETWORK
+TITLE =16PT0101 P21 : Pression bas bac de lancement BL01
+L     EW_16PT0101 ;
+T     DB_AI._16PT0101.Input ;
+
+NETWORK
+TITLE =16PT2101 TTJ11 : Pression fond tank
+L     EW_16PT2101 ;
+T     DB_AI._16PT2101.Input ;
+
+NETWORK
+TITLE =16PT2201 TTJ12 : Pression fond tank
+L     EW_16PT2201 ;
+T     DB_AI._16PT2201.Input ;
+
+NETWORK
+TITLE =16TT0100 P21 : Température BL01
+L     EW_16TT0100 ;
+T     DB_AI._16TT0100.Input ;
+
+NETWORK
+TITLE =16TT0162 CR01 : Température retour eau glacée
+L     EW_16TT0162 ;
+T     DB_AI._16TT0162.Input ;
+
+NETWORK
+TITLE =16PT0161 CR01 : Pression bas cuve recupération
+L     EW_16PT0161 ;
+T     DB_AI._16PT0161.Input ;
+
+NETWORK
+TITLE =16FT0111 P21 : Débit boucle section 1er traitement HE01
+L     EW_16FT0111 ;
+T     DB_AI._16FT0111.Input ;
+
+NETWORK
+TITLE =16FT0131 P21 : Débit boucle section 2eme traitement HE2
+L     EW_16FT0131 ;
+T     DB_AI._16FT0131.Input ;
+
+NETWORK
+TITLE =16FT0141 P21 : Débit injection soude/acide concentrée
+L     EW_16FT0141 ;
+T     DB_AI._16FT0141.Input ;
+
+NETWORK
+TITLE =16FT8822 LSO22 : Débit soutirage
+L     EW_16FT8822 ;
+T     DB_AI._16FT8822.Input ;
+
+NETWORK
+TITLE =16FT0101 P21 : Débit sortie appareil
+L     EW_16FT0101 ;
+T     DB_AI._16FT0101.Input ;
+
+NETWORK
+TITLE =16TT1200 TTJ2 : Température cuve
+L     EW_16TT1200 ;
+T     DB_AI._16TT1200.Input ;
+
+NETWORK
+TITLE =16TT1260 TTJ2 : Température stérilisation circuit air
+L     EW_16TT1260 ;
+T     DB_AI._16TT1260.Input ;
+
+NETWORK
+TITLE =16PT1100 TTJ1 : Pression arrivée d'air tank
+L     EW_16PT1100 ;
+T     DB_AI._16PT1100.Input ;
+
+NETWORK
+TITLE =16PT1201 TTJ2 : Pression fond tank
+L     EW_16PT1201 ;
+T     DB_AI._16PT1201.Input ;
+
+NETWORK
+TITLE =16PT1200 TTJ2 : Pression arrivée d'air tank
+L     EW_16PT1200 ;
+T     DB_AI._16PT1200.Input ;
+
+NETWORK
+TITLE =16PT1101 TTJ1 : Pression fond tank
+L     EW_16PT1101 ;
+T     DB_AI._16PT1101.Input ;
+
+NETWORK
+TITLE =16TT1400 TTJ4 : Température cuve
+L     EW_16TT1400 ;
+T     DB_AI._16TT1400.Input ;
+
+NETWORK
+TITLE =16TT1460 TTJ4 : Température stérilisation circuit air
+L     EW_16TT1460 ;
+T     DB_AI._16TT1460.Input ;
+
+NETWORK
+TITLE =16PT1400 TTJ4 : Pression arrivée d'air tank
+L     EW_16PT1400 ;
+T     DB_AI._16PT1400.Input ;
+
+NETWORK
+TITLE =16PT1401 TTJ4 : Pression fond tank
+L     EW_16PT1401 ;
+T     DB_AI._16PT1401.Input ;
+
+NETWORK
+TITLE =16TT1100 TTJ1 : Température cuve
+L     EW_16TT1100 ;
+T     DB_AI._16TT1100.Input ;
+
+NETWORK
+TITLE =16TT1160 TTJ1 : Température stérilisation circuit air
+L     EW_16TT1160 ;
+T     DB_AI._16TT1160.Input ;
+
+NETWORK
+TITLE =16TT1300 TTJ3 : Température cuve
+L     EW_16TT1300 ;
+T     DB_AI._16TT1300.Input ;
+
+NETWORK
+TITLE =16TT1360 TTJ3 : Température stérilisation circuit air
+L     EW_16TT1360 ;
+T     DB_AI._16TT1360.Input ;
+
+NETWORK
+TITLE =16PT1300 TTJ3 : Pression arrivée d'air tank
+L     EW_16PT1300 ;
+T     DB_AI._16PT1300.Input ;
+
+NETWORK
+TITLE =16PT1301 TTJ3 : Pression fond tank
+L     EW_16PT1301 ;
+T     DB_AI._16PT1301.Input ;
+
+NETWORK
+TITLE =16FT8817 LSO17 : Débit ligne soutirage
+L     EW_16FT8817 ;
+T     DB_AI._16FT8817.Input ;
+
+NETWORK
+TITLE =16FT8812 LRM12 : Débit ligne remplissage
+L     EW_16FT8812 ;
+T     DB_AI._16FT8812.Input ;
+
+NETWORK
+TITLE =16LT8816 TTOP1/L2 : Niveau trémie
+L     EW_16LT8816 ;
+T     DB_AI._16LT8816.Input ;
+
+END_FUNCTION
+

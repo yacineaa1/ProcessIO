@@ -1,0 +1,315 @@
+FUNCTION "FC_IO_DIO" : VOID
+TITLE =
+VERSION : 0.1
+
+BEGIN
+NETWORK
+TITLE = IO assignment for MM object
+//For diagnostic purposes only, to edit use the AWL source code
+//-------------------------------------------------------------
+//--History
+//--[Version]   [Name]      [DATE]      [Comments]
+//--1.00        Yacine AA   05-01-21    Creation
+
+
+NETWORK
+TITLE =16ES0001 CF01 : Présence arrêt d'urgence
+UN    E_16ES0001 ;
+=     DB_DIO._16ES0001.Input ;
+NETWORK
+TITLE =16XI4060 LSO16 : Prêt pour production TTOP1/L2
+U     E_16XI4060 ;
+=     DB_DIO._16XI4060.Input ;
+NETWORK
+TITLE =16XI4061 LSO16 : Prêt pour NEP TTOP1/L2
+U     E_16XI4061 ;
+=     DB_DIO._16XI4061.Input ;
+NETWORK
+TITLE =16XI4059 LSO15 : Validation amorçage TTOP2
+U     E_16XI4059 ;
+=     DB_DIO._16XI4059.Input ;
+NETWORK
+TITLE =16XI4069 LSO16 : Validation amorçage TTOP1/L2
+U     E_16XI4069 ;
+=     DB_DIO._16XI4069.Input ;
+NETWORK
+TITLE =16XO4060 LSO16 : Production en cours TTOP1/L2
+//U     DB_DIO._16XO4060.Value ;
+//=     A_16XO4060 ;
+NETWORK
+TITLE =16XO4061 LSO16 : Prêt pour NEP TTOP1/L2
+//U     DB_DIO._16XO4061.Value ;
+//=     A_16XO4061 ;
+NETWORK
+TITLE =16XO4062 LSO16 : NEP en cours TTOP1/L2
+//U     DB_DIO._16XO4062.Value ;
+//=     A_16XO4062 ;
+NETWORK
+TITLE =16XO4059 LSO15 : Demande validation amorçage TTOP2
+//U     DB_DIO._16XO4059.Value ;
+//=     A_16XO4059 ;
+NETWORK
+TITLE =16XO4069 LSO16 : Demande validation amorçage TTOP1/L2
+//U     DB_DIO._16XO4069.Value ;
+//=     A_16XO4069 ;
+NETWORK
+TITLE =16LSL1400 TTJ4 : Niveau bas cuve
+U     E_16LSL1400 ;
+=     DB_DIO._16LSL1400.Input ;
+NETWORK
+TITLE =16LSM1400 TTJ4 : Niveau moyen cuve
+U     E_16LSM1400 ;
+=     DB_DIO._16LSM1400.Input ;
+NETWORK
+TITLE =16LSH1400 TTJ4 : Niveau haut cuve
+UN    E_16LSH1400 ;
+=     DB_DIO._16LSH1400.Input ;
+NETWORK
+TITLE =16LSX1400 TTJ4 : Niveau changement vitesse agitation cuve
+U     E_16LSX1400 ;
+=     DB_DIO._16LSX1400.Input ;
+NETWORK
+TITLE =16ZS1201 TTJ2 : Détecteur trou d'homme bas cuve
+U     E_16ZS1201 ;
+=     DB_DIO._16ZS1201.Input ;
+NETWORK
+TITLE =16ZS1101 TTJ1 : Détecteur trou d'homme bas cuve
+U     E_16ZS1101 ;
+=     DB_DIO._16ZS1101.Input ;
+NETWORK
+TITLE =16ZS1100 TTJ1 : Détecteur trou d'homme haut cuve
+U     E_16ZS1100 ;
+=     DB_DIO._16ZS1100.Input ;
+NETWORK
+TITLE =16LSL1200 TTJ2 : Niveau bas cuve
+U     E_16LSL1200 ;
+=     DB_DIO._16LSL1200.Input ;
+NETWORK
+TITLE =16LSM1200 TTJ2 : Niveau moyen cuve
+U     E_16LSM1200 ;
+=     DB_DIO._16LSM1200.Input ;
+NETWORK
+TITLE =16LSH1200 TTJ2 : Niveau haut cuve
+UN    E_16LSH1200 ;
+=     DB_DIO._16LSH1200.Input ;
+NETWORK
+TITLE =16ZS1200 TTJ2 : Détecteur trou d'homme haut cuve
+U     E_16ZS1200 ;
+=     DB_DIO._16ZS1200.Input ;
+NETWORK
+TITLE =16LSL1100 TTJ1 : Niveau bas cuve
+U     E_16LSL1100 ;
+=     DB_DIO._16LSL1100.Input ;
+NETWORK
+TITLE =16LSM1100 TTJ1 : Niveau moyen cuve
+U     E_16LSM1100 ;
+=     DB_DIO._16LSM1100.Input ;
+NETWORK
+TITLE =16LSH1100 TTJ1 : Niveau haut cuve
+UN    E_16LSH1100 ;
+=     DB_DIO._16LSH1100.Input ;
+NETWORK
+TITLE =16LSX1100 TTJ1 : Niveau changement vitesse agitation cuve
+U     E_16LSX1100 ;
+=     DB_DIO._16LSX1100.Input ;
+NETWORK
+TITLE =16LSX1200 TTJ2 : Niveau changement vitesse agitation cuve
+U     E_16LSX1200 ;
+=     DB_DIO._16LSX1200.Input ;
+NETWORK
+TITLE =16LSL1300 TTJ3 : Niveau bas cuve
+U     E_16LSL1300 ;
+=     DB_DIO._16LSL1300.Input ;
+NETWORK
+TITLE =16LSM1300 TTJ3 : Niveau moyen cuve
+U     E_16LSM1300 ;
+=     DB_DIO._16LSM1300.Input ;
+NETWORK
+TITLE =16LSH1300 TTJ3 : Niveau haut cuve
+UN    E_16LSH1300 ;
+=     DB_DIO._16LSH1300.Input ;
+NETWORK
+TITLE =16LSX1300 TTJ3 : Niveau changement vitesse agitation cuve
+U     E_16LSX1300 ;
+=     DB_DIO._16LSX1300.Input ;
+NETWORK
+TITLE =16ZS1301 TTJ3 : Détecteur trou d'homme bas cuve
+U     E_16ZS1301 ;
+=     DB_DIO._16ZS1301.Input ;
+NETWORK
+TITLE =16ZS1300 TTJ3 : Détecteur trou d'homme haut cuve
+U     E_16ZS1300 ;
+=     DB_DIO._16ZS1300.Input ;
+NETWORK
+TITLE =16ZS1400 TTJ4 : Détecteur trou d'homme haut cuve
+U     E_16ZS1400 ;
+=     DB_DIO._16ZS1400.Input ;
+NETWORK
+TITLE =16ZS1401 TTJ4 : Détecteur trou d'homme bas cuve
+U     E_16ZS1401 ;
+=     DB_DIO._16ZS1401.Input ;
+NETWORK
+TITLE =16QT8812 LRM12 : Compteur ligne remplissage
+U     E_16QT8812 ;
+=     DB_DIO._16QT8812.Input ;
+NETWORK
+TITLE =16QT8817 LSO17 : Compteur ligne soutirage
+U     E_16QT8817 ;
+=     DB_DIO._16QT8817.Input ;
+NETWORK
+TITLE =16LSL0101 P21 : Niveau bas BL01
+U     E_16LSL0101 ;
+=     DB_DIO._16LSL0101.Input ;
+NETWORK
+TITLE =16LSM0101 P21 : Niveau moyen BL01
+U     E_16LSM0101 ;
+=     DB_DIO._16LSM0101.Input ;
+NETWORK
+TITLE =16LSH0101 P21 : Niveau haut BL01
+UN    E_16LSH0101 ;
+=     DB_DIO._16LSH0101.Input ;
+NETWORK
+TITLE =16LSH0102 P21 : Niveau haut dégazeur DA01
+UN    E_16LSH0102 ;
+=     DB_DIO._16LSH0102.Input ;
+NETWORK
+TITLE =16LSL0111 P21 : Niveau bas boucle section 1er traitement HE01
+U     E_16LSL0111 ;
+=     DB_DIO._16LSL0111.Input ;
+NETWORK
+TITLE =16LSL0121 P21 : Niveau bas bac eau BA01
+U     E_16LSL0121 ;
+=     DB_DIO._16LSL0121.Input ;
+NETWORK
+TITLE =16LSH0121 P21 : Niveau haut bac eau BA01
+U     E_16LSH0121 ;
+=     DB_DIO._16LSH0121.Input ;
+NETWORK
+TITLE =16LSL0131 P21 : Niveau bas boucle section 2eme traitement HE2
+U     E_16LSL0131 ;
+=     DB_DIO._16LSL0131.Input ;
+NETWORK
+TITLE =16LSL0161 CR01 : Niveau bas cuve récupération
+U     E_16LSL0161 ;
+=     DB_DIO._16LSL0161.Input ;
+NETWORK
+TITLE =16LSH0161 CR01 : Niveau haut cuve récupération
+UN    E_16LSH0161 ;
+=     DB_DIO._16LSH0161.Input ;
+NETWORK
+TITLE =16LSL2100 TTJ11 : Niveau bas cuve
+U     E_16LSL2100 ;
+=     DB_DIO._16LSL2100.Input ;
+NETWORK
+TITLE =16LSM2100 TTJ11 : Niveau moyen cuve
+U     E_16LSM2100 ;
+=     DB_DIO._16LSM2100.Input ;
+NETWORK
+TITLE =16LSH2100 TTJ11 : Niveau haut cuve
+UN    E_16LSH2100 ;
+=     DB_DIO._16LSH2100.Input ;
+NETWORK
+TITLE =16LSL2200 TTJ12 : Niveau bas cuve
+U     E_16LSL2200 ;
+=     DB_DIO._16LSL2200.Input ;
+NETWORK
+TITLE =16LSM2200 TTJ12 : Niveau moyen cuve
+U     E_16LSM2200 ;
+=     DB_DIO._16LSM2200.Input ;
+NETWORK
+TITLE =16LSH2200 TTJ12 : Niveau haut cuve
+UN    E_16LSH2200 ;
+=     DB_DIO._16LSH2200.Input ;
+NETWORK
+TITLE =16ZS0101 P21 : Détecteur trou d'homme BL01
+U     E_16ZS0101 ;
+=     DB_DIO._16ZS0101.Input ;
+NETWORK
+TITLE =16ZS0161 P21 : Détecteur trou d'homme CR01
+U     E_16ZS0161 ;
+=     DB_DIO._16ZS0161.Input ;
+NETWORK
+TITLE =16ZS2100 TTJ11 : Détecteur trou d'homme cuve
+U     E_16ZS2100 ;
+=     DB_DIO._16ZS2100.Input ;
+NETWORK
+TITLE =16ZS2200 TTJ12 : Détecteur trou d'homme cuve
+U     E_16ZS2200 ;
+=     DB_DIO._16ZS2200.Input ;
+NETWORK
+TITLE =16FS0181 P21 : Détecteur débit arrosage garniture pompe BL01
+U     E_16FS0181 ;
+=     DB_DIO._16FS0181.Input ;
+NETWORK
+TITLE =16FS0184 P21 : Détecteur débit arrosage garniture pompe DA01
+U     E_16FS0184 ;
+=     DB_DIO._16FS0184.Input ;
+NETWORK
+TITLE =16FS8852 LSO22 : Détecteur débit arrosage garniture pompe
+U     E_16FS8852 ;
+=     DB_DIO._16FS8852.Input ;
+NETWORK
+TITLE =16ZS4120 COND.B : Détecteur pontage production TTJ1x-LSO22
+U     E_16ZS4120 ;
+=     DB_DIO._16ZS4120.Input ;
+NETWORK
+TITLE =16ZS4121 COND.B : Détecteur pontage production TT-LSO17
+U     E_16ZS4121 ;
+=     DB_DIO._16ZS4121.Input ;
+NETWORK
+TITLE =16ES0002 CF02 : Présence arrêt d'urgence
+UN    E_16ES0002 ;
+=     DB_DIO._16ES0002.Input ;
+NETWORK
+TITLE =16QT0101 P21 : Comptage sortie appareil
+U     E_16QT0101 ;
+=     DB_DIO._16QT0101.Input ;
+NETWORK
+TITLE =16QT0141 P21 : Comptage injection soude/acide concentrée
+U     E_16QT0141 ;
+=     DB_DIO._16QT0141.Input ;
+NETWORK
+TITLE =16QT8822 LSO22 : Comptage soutirage
+U     E_16QT8822 ;
+=     DB_DIO._16QT8822.Input ;
+NETWORK
+TITLE =16XI4120 LSO22 : Prêt pour production
+U     E_16XI4120 ;
+=     DB_DIO._16XI4120.Input ;
+NETWORK
+TITLE =16XI4121 LSO22 : Prêt pour NEP
+U     E_16XI4121 ;
+=     DB_DIO._16XI4121.Input ;
+NETWORK
+TITLE =16XO4120 LSO22 : Production en cours
+U     DB_DIO._16XO4120.Value ;
+=     A_16XO4120 ;
+NETWORK
+TITLE =16XO4121 LSO22 : Prêt pour NEP
+U     DB_DIO._16XO4121.Value ;
+=     A_16XO4121 ;
+NETWORK
+TITLE =16XO4122 LSO22 : NEP en cours
+U     DB_DIO._16XO4122.Value ;
+=     A_16XO4122 ;
+NETWORK
+TITLE =16XO0111 P21 : Voyant de signalisation vert
+U     DB_DIO._16XO0111.Value ;
+=     A_16XO0111 ;
+NETWORK
+TITLE =16XO0112 P21 : Voyant de signalisation jaune
+U     DB_DIO._16XO0112.Value ;
+=     A_16XO0112 ;
+NETWORK
+TITLE =16XO0113 P21 : Voyant de signalisation rouge
+U     DB_DIO._16XO0113.Value ;
+=     A_16XO0113 ;
+NETWORK
+TITLE =16XO0114 P21 : Voyant de signalisation acoustique
+U     DB_DIO._16XO0114.Value ;
+=     A_16XO0114 ;
+
+
+
+END_FUNCTION
+

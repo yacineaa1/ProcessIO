@@ -2,7 +2,7 @@ TYPE "UDT_AO"
 NAME    : UDT_AO
 AUTHOR  : YACINEAA
 FAMILY  : AO
-VERSION : 1.3
+VERSION : 1.5
 
 
   STRUCT
@@ -46,56 +46,19 @@ VERSION : 1.3
 	Input	 			: REAL ;			//Physical value in engineering unit 
 	Value			 	: REAL ;			//Physical value in engineering unit 
    
-   Setting : STRUCT 	
-    _00 				: INT  := 0;		//ID type of the object (see function help)
-    _01 				: INT  := 1;		//Grace period before fault [100ms]
-    _02 				: INT  := 0;		//Spare integer
-    _03 				: INT  := 0;		//Analog output minimum raw value
-    _04 				: INT  := 27648;	//Analog output maximum raw value
-  	_05					: REAL := 0.0;		//Engineering units input minimum Value [EU]
-   	_06 				: REAL := 100.0;	//Engineering units input maximum Value [EU]
-    _07 				: REAL := 0.0; 		//Engineering units input minimum limit [EU]
-    _08 				: REAL := 100.0; 	//Engineering units input maximum limit [EU]
-	Buffer : STRUCT
-		_00 			: INT ;				//Grace period before fault [100ms]
-		_01 			: REAL ;			//Old physical value in engineering unit [EU]
-	END_STRUCT ;	
-   END_STRUCT ;	
+    SettingInt          : ARRAY[0..4] of INT;
+    
+    SettingReal         : ARRAY[5..8] of REAL;	
+	
+    Buffer_00 			: INT ;				//Grace period before fault [100ms]
+    Buffer_01 			: REAL ;			//Old physical value in engineering unit [EU]
+ 
+    Register            : ARRAY[0..3] of INT;    
    
-   Register : STRUCT 		
-    _00			 		: INT ;				//Fault counter
-    _01					: INT ;				//Manual mode counter
-    _02 				: INT ;				//Suppression mode counter
-    _03 				: INT ;				//Spare register
-   END_STRUCT ;	
+    AccessLevel         : ARRAY[0..3] of INT;
    
-   AccessLevel : STRUCT 	
-    _00					: INT   := 2000;	//Access level 0 : for manual main operation
-    _01					: INT   := 2050;	//Access level 1 : for suppression mode 
-    _02					: INT   := 7000;	//Access level 2 : for setting
-    _03					: INT   := 7050;	//Access level 3 : for advanced setting
-   END_STRUCT ;
-   
-   Bit : STRUCT
-    _00 				: BOOL ;			//
-    _01					: BOOL ;			//
-    _02					: BOOL ;			//
-    _03 				: BOOL ;			//
-    _04 				: BOOL ;			//
-    _05 				: BOOL ;			//
-    _06 				: BOOL ;			// 
-    _07 				: BOOL ;			//
-    _08 				: BOOL ;			//
-    _09 				: BOOL ;			//
-    _10 				: BOOL ;			//
-    _11 				: BOOL ;			//
-    _12 				: BOOL ;			//
-    _13 				: BOOL ;			//
-    _14 				: BOOL ;			//
-    _15 				: BOOL ;			//
-   END_STRUCT ;	
-   
-  END_STRUCT ;	
-  
+    Bit                 : ARRAY[0..15] of BOOL;
+ 
+  END_STRUCT ;	 
 END_TYPE
 

@@ -1,0 +1,393 @@
+FUNCTION "FC_CALL_DIO" : VOID
+TITLE =
+VERSION : 0.1
+
+BEGIN
+NETWORK
+TITLE = Calling MM objects
+//For diagnostic purposes only, to edit use the AWL source code
+//-------------------------------------------------------------
+//--History
+//--[Version]   [Name]      [DATE]      [Comments]
+//--1.00        Yacine AA   05-01-21    Creation
+
+
+NETWORK
+TITLE =16DIO0000 For testing purposes only
+CALL FC_DIO (DIO := DB_DIO._16DIO0000) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16ES0001 CF01 : Présence arrêt d'urgence
+CALL FC_DIO (DIO := DB_DIO._16ES0001) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16XI4060 LSO16 : Prêt pour production TTOP1/L2
+CALL FC_DIO (DIO := DB_DIO._16XI4060) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16XI4061 LSO16 : Prêt pour NEP TTOP1/L2
+CALL FC_DIO (DIO := DB_DIO._16XI4061) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16XI4059 LSO15 : Validation amorçage TTOP2
+CALL FC_DIO (DIO := DB_DIO._16XI4059) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16XI4069 LSO16 : Validation amorçage TTOP1/L2
+CALL FC_DIO (DIO := DB_DIO._16XI4069) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16XO4060 LSO16 : Production en cours TTOP1/L2
+CALL FC_DIO (DIO := DB_DIO._16XO4060) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16XO4061 LSO16 : Prêt pour NEP TTOP1/L2
+CALL FC_DIO (DIO := DB_DIO._16XO4061) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16XO4062 LSO16 : NEP en cours TTOP1/L2
+CALL FC_DIO (DIO := DB_DIO._16XO4062) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16XO4059 LSO15 : Demande validation amorçage TTOP2
+CALL FC_DIO (DIO := DB_DIO._16XO4059) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16XO4069 LSO16 : Demande validation amorçage TTOP1/L2
+CALL FC_DIO (DIO := DB_DIO._16XO4069) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16LSL1400 TTJ4 : Niveau bas cuve
+CALL FC_DIO (DIO := DB_DIO._16LSL1400) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16LSM1400 TTJ4 : Niveau moyen cuve
+CALL FC_DIO (DIO := DB_DIO._16LSM1400) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16LSH1400 TTJ4 : Niveau haut cuve
+CALL FC_DIO (DIO := DB_DIO._16LSH1400) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16LSX1400 TTJ4 : Niveau changement vitesse agitation cuve
+CALL FC_DIO (DIO := DB_DIO._16LSX1400) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16ZS1201 TTJ2 : Détecteur trou d'homme bas cuve
+CALL FC_DIO (DIO := DB_DIO._16ZS1201) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16ZS1101 TTJ1 : Détecteur trou d'homme bas cuve
+CALL FC_DIO (DIO := DB_DIO._16ZS1101) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16ZS1100 TTJ1 : Détecteur trou d'homme haut cuve
+CALL FC_DIO (DIO := DB_DIO._16ZS1100) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16LSL1200 TTJ2 : Niveau bas cuve
+CALL FC_DIO (DIO := DB_DIO._16LSL1200) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16LSM1200 TTJ2 : Niveau moyen cuve
+CALL FC_DIO (DIO := DB_DIO._16LSM1200) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16LSH1200 TTJ2 : Niveau haut cuve
+CALL FC_DIO (DIO := DB_DIO._16LSH1200) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16ZS1200 TTJ2 : Détecteur trou d'homme haut cuve
+CALL FC_DIO (DIO := DB_DIO._16ZS1200) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16LSL1100 TTJ1 : Niveau bas cuve
+CALL FC_DIO (DIO := DB_DIO._16LSL1100) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16LSM1100 TTJ1 : Niveau moyen cuve
+CALL FC_DIO (DIO := DB_DIO._16LSM1100) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16LSH1100 TTJ1 : Niveau haut cuve
+CALL FC_DIO (DIO := DB_DIO._16LSH1100) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16LSX1100 TTJ1 : Niveau changement vitesse agitation cuve
+CALL FC_DIO (DIO := DB_DIO._16LSX1100) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16LSX1200 TTJ2 : Niveau changement vitesse agitation cuve
+CALL FC_DIO (DIO := DB_DIO._16LSX1200) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16LSL1300 TTJ3 : Niveau bas cuve
+CALL FC_DIO (DIO := DB_DIO._16LSL1300) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16LSM1300 TTJ3 : Niveau moyen cuve
+CALL FC_DIO (DIO := DB_DIO._16LSM1300) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16LSH1300 TTJ3 : Niveau haut cuve
+CALL FC_DIO (DIO := DB_DIO._16LSH1300) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16LSX1300 TTJ3 : Niveau changement vitesse agitation cuve
+CALL FC_DIO (DIO := DB_DIO._16LSX1300) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16ZS1301 TTJ3 : Détecteur trou d'homme bas cuve
+CALL FC_DIO (DIO := DB_DIO._16ZS1301) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16ZS1300 TTJ3 : Détecteur trou d'homme haut cuve
+CALL FC_DIO (DIO := DB_DIO._16ZS1300) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16ZS1400 TTJ4 : Détecteur trou d'homme haut cuve
+CALL FC_DIO (DIO := DB_DIO._16ZS1400) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16ZS1401 TTJ4 : Détecteur trou d'homme bas cuve
+CALL FC_DIO (DIO := DB_DIO._16ZS1401) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16QT8812 LRM12 : Compteur ligne remplissage
+CALL FC_DIO (DIO := DB_DIO._16QT8812) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16QT8817 LSO17 : Compteur ligne soutirage
+CALL FC_DIO (DIO := DB_DIO._16QT8817) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16LSL0101 P21 : Niveau bas BL01
+CALL FC_DIO (DIO := DB_DIO._16LSL0101) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16LSM0101 P21 : Niveau moyen BL01
+CALL FC_DIO (DIO := DB_DIO._16LSM0101) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16LSH0101 P21 : Niveau haut BL01
+CALL FC_DIO (DIO := DB_DIO._16LSH0101) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16LSH0102 P21 : Niveau haut dégazeur DA01
+CALL FC_DIO (DIO := DB_DIO._16LSH0102) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16LSL0111 P21 : Niveau bas boucle section 1er traitement HE01
+CALL FC_DIO (DIO := DB_DIO._16LSL0111) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16LSL0121 P21 : Niveau bas bac eau BA01
+CALL FC_DIO (DIO := DB_DIO._16LSL0121) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16LSH0121 P21 : Niveau haut bac eau BA01
+CALL FC_DIO (DIO := DB_DIO._16LSH0121) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16LSL0131 P21 : Niveau bas boucle section 2eme traitement HE2
+CALL FC_DIO (DIO := DB_DIO._16LSL0131) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16LSL0161 CR01 : Niveau bas cuve récupération
+CALL FC_DIO (DIO := DB_DIO._16LSL0161) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16LSH0161 CR01 : Niveau haut cuve récupération
+CALL FC_DIO (DIO := DB_DIO._16LSH0161) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16LSL2100 TTJ11 : Niveau bas cuve
+CALL FC_DIO (DIO := DB_DIO._16LSL2100) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16LSM2100 TTJ11 : Niveau moyen cuve
+CALL FC_DIO (DIO := DB_DIO._16LSM2100) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16LSH2100 TTJ11 : Niveau haut cuve
+CALL FC_DIO (DIO := DB_DIO._16LSH2100) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16LSL2200 TTJ12 : Niveau bas cuve
+CALL FC_DIO (DIO := DB_DIO._16LSL2200) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16LSM2200 TTJ12 : Niveau moyen cuve
+CALL FC_DIO (DIO := DB_DIO._16LSM2200) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16LSH2200 TTJ12 : Niveau haut cuve
+CALL FC_DIO (DIO := DB_DIO._16LSH2200) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16ZS0101 P21 : Détecteur trou d'homme BL01
+CALL FC_DIO (DIO := DB_DIO._16ZS0101) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16ZS0161 P21 : Détecteur trou d'homme CR01
+CALL FC_DIO (DIO := DB_DIO._16ZS0161) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16ZS2100 TTJ11 : Détecteur trou d'homme cuve
+CALL FC_DIO (DIO := DB_DIO._16ZS2100) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16ZS2200 TTJ12 : Détecteur trou d'homme cuve
+CALL FC_DIO (DIO := DB_DIO._16ZS2200) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16FS0181 P21 : Détecteur débit arrosage garniture pompe BL01
+CALL FC_DIO (DIO := DB_DIO._16FS0181) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16FS0184 P21 : Détecteur débit arrosage garniture pompe DA01
+CALL FC_DIO (DIO := DB_DIO._16FS0184) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16FS8852 LSO22 : Détecteur débit arrosage garniture pompe
+CALL FC_DIO (DIO := DB_DIO._16FS8852) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16ZS4120 COND.B : Détecteur pontage production TTJ1x-LSO22
+CALL FC_DIO (DIO := DB_DIO._16ZS4120) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16ZS4121 COND.B : Détecteur pontage production TT-LSO17
+CALL FC_DIO (DIO := DB_DIO._16ZS4121) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16ES0002 CF02 : Présence arrêt d'urgence
+CALL FC_DIO (DIO := DB_DIO._16ES0002) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16QT0101 P21 : Comptage sortie appareil
+CALL FC_DIO (DIO := DB_DIO._16QT0101) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16QT0141 P21 : Comptage injection soude/acide concentrée
+CALL FC_DIO (DIO := DB_DIO._16QT0141) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16QT8822 LSO22 : Comptage soutirage
+CALL FC_DIO (DIO := DB_DIO._16QT8822) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16XI4120 LSO22 : Prêt pour production
+CALL FC_DIO (DIO := DB_DIO._16XI4120) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16XI4121 LSO22 : Prêt pour NEP
+CALL FC_DIO (DIO := DB_DIO._16XI4121) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16XO4120 LSO22 : Production en cours
+CALL FC_DIO (DIO := DB_DIO._16XO4120) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16XO4121 LSO22 : Prêt pour NEP
+CALL FC_DIO (DIO := DB_DIO._16XO4121) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16XO4122 LSO22 : NEP en cours
+CALL FC_DIO (DIO := DB_DIO._16XO4122) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16XO0111 P21 : Voyant de signalisation vert
+CALL FC_DIO (DIO := DB_DIO._16XO0111) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16XO0112 P21 : Voyant de signalisation jaune
+CALL FC_DIO (DIO := DB_DIO._16XO0112) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16XO0113 P21 : Voyant de signalisation rouge
+CALL FC_DIO (DIO := DB_DIO._16XO0113) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16XO0114 P21 : Voyant de signalisation acoustique
+CALL FC_DIO (DIO := DB_DIO._16XO0114) ;
+NOP   0 ;
+
+
+
+END_FUNCTION
+

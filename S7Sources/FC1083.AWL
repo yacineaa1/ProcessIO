@@ -1,0 +1,345 @@
+FUNCTION "FC_CALL_AI" : VOID
+TITLE =
+VERSION : 0.1
+
+BEGIN
+NETWORK
+TITLE = Calling AI object
+//For diagnostic purposes only, to edit use the AWL source code
+//-------------------------------------------------------------
+//--History
+//--[Version]   [Name]      [DATE]      [Comments]
+//--1.00        Yacine AA   04-01-21    Creation
+NETWORK
+TITLE =16AI0000 Dummy
+CALL FC_AI (AI := DB_AI._16AI0000);
+NOP   0; 
+NETWORK
+TITLE =16TT0101 P21 : Température entrée appareil
+CALL FC_AI (AI := DB_AI._16TT0101) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16TT0102 P21 : Température sortie section 1er traitement HE01
+CALL FC_AI (AI := DB_AI._16TT0102) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16TT0103 P21 : Température sortie dégazeur DA01
+CALL FC_AI (AI := DB_AI._16TT0103) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16TT0105 P21 : Température sortie section 2eme traitement HE2
+CALL FC_AI (AI := DB_AI._16TT0105) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16TT0106 P21 : Température sortie chambrage traitement
+CALL FC_AI (AI := DB_AI._16TT0106) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16TT0107 P21 : Température sortie appareil
+CALL FC_AI (AI := DB_AI._16TT0107) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16TT0111 P21 : Température entrée boucle  HE01
+CALL FC_AI (AI := DB_AI._16TT0111) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16TT0112 P21 : Température sortie boucle HE01
+CALL FC_AI (AI := DB_AI._16TT0112) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16TT0121 P21 : Température boucle eau froid BA01
+CALL FC_AI (AI := DB_AI._16TT0121) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16TT0131 P21 : Température entrée boucle HE2
+CALL FC_AI (AI := DB_AI._16TT0131) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16TT0132 P21 : Température sortie boucle HE2
+CALL FC_AI (AI := DB_AI._16TT0132) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16TT0161 CR01 : Température cuve récupération
+CALL FC_AI (AI := DB_AI._16TT0161) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16TT1021 LRM21 : Température arrivée produit
+CALL FC_AI (AI := DB_AI._16TT1021) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16TT2100 TTJ11 : Température cuve
+CALL FC_AI (AI := DB_AI._16TT2100) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16TT2160 TTJ11 : Température stérilisation circuit air
+CALL FC_AI (AI := DB_AI._16TT2160) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16TT2200 TTJ12 : Température cuve
+CALL FC_AI (AI := DB_AI._16TT2200) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16TT2260 TTJ12 : Température stérilisation circuit air
+CALL FC_AI (AI := DB_AI._16TT2260) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16TT8822 LSO22 : Température soutirage
+CALL FC_AI (AI := DB_AI._16TT8822) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16PT0102 P21 : Pression haut dégazeur DA01
+CALL FC_AI (AI := DB_AI._16PT0102) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16PT0103 P21 : Pression bas dégazeur DA02
+CALL FC_AI (AI := DB_AI._16PT0103) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16PT0104 P21 : Pression entrée section traitement
+CALL FC_AI (AI := DB_AI._16PT0104) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16PT0107 P21 : Pression sortie appareil
+CALL FC_AI (AI := DB_AI._16PT0107) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16PT0130 P21 : Pression arrivée vapeur
+CALL FC_AI (AI := DB_AI._16PT0130) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16PT2100 TTJ11 : Pression arrivée d'air tank
+CALL FC_AI (AI := DB_AI._16PT2100) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16PT2200 TTJ12 : Pression arrivée d'air tank
+CALL FC_AI (AI := DB_AI._16PT2200) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16CT0101 P21 : Conductivité sortie appareil
+CALL FC_AI (AI := DB_AI._16CT0101) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16PT0101 P21 : Pression bas bac de lancement BL01
+CALL FC_AI (AI := DB_AI._16PT0101) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16PT2101 TTJ11 : Pression fond tank
+CALL FC_AI (AI := DB_AI._16PT2101) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16PT2201 TTJ12 : Pression fond tank
+CALL FC_AI (AI := DB_AI._16PT2201) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16TT0100 P21 : Température BL01
+CALL FC_AI (AI := DB_AI._16TT0100) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16TT0162 CR01 : Température retour eau glacée
+CALL FC_AI (AI := DB_AI._16TT0162) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16PT0161 CR01 : Pression bas cuve recupération
+CALL FC_AI (AI := DB_AI._16PT0161) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16FT0111 P21 : Débit boucle section 1er traitement HE01
+CALL FC_AI (AI := DB_AI._16FT0111) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16FT0131 P21 : Débit boucle section 2eme traitement HE2
+CALL FC_AI (AI := DB_AI._16FT0131) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16FT0141 P21 : Débit injection soude/acide concentrée
+CALL FC_AI (AI := DB_AI._16FT0141) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16FT8822 LSO22 : Débit soutirage
+CALL FC_AI (AI := DB_AI._16FT8822) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16FT0101 P21 : Débit sortie appareil
+CALL FC_AI (AI := DB_AI._16FT0101) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16TT1200 TTJ2 : Température cuve
+CALL FC_AI (AI := DB_AI._16TT1200) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16TT1260 TTJ2 : Température stérilisation circuit air
+CALL FC_AI (AI := DB_AI._16TT1260) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16PT1100 TTJ1 : Pression arrivée d'air tank
+CALL FC_AI (AI := DB_AI._16PT1100) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16PT1201 TTJ2 : Pression fond tank
+CALL FC_AI (AI := DB_AI._16PT1201) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16PT1200 TTJ2 : Pression arrivée d'air tank
+CALL FC_AI (AI := DB_AI._16PT1200) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16PT1101 TTJ1 : Pression fond tank
+CALL FC_AI (AI := DB_AI._16PT1101) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16TT1400 TTJ4 : Température cuve
+CALL FC_AI (AI := DB_AI._16TT1400) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16TT1460 TTJ4 : Température stérilisation circuit air
+CALL FC_AI (AI := DB_AI._16TT1460) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16PT1400 TTJ4 : Pression arrivée d'air tank
+CALL FC_AI (AI := DB_AI._16PT1400) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16PT1401 TTJ4 : Pression fond tank
+CALL FC_AI (AI := DB_AI._16PT1401) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16TT1100 TTJ1 : Température cuve
+CALL FC_AI (AI := DB_AI._16TT1100) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16TT1160 TTJ1 : Température stérilisation circuit air
+CALL FC_AI (AI := DB_AI._16TT1160) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16TT1300 TTJ3 : Température cuve
+CALL FC_AI (AI := DB_AI._16TT1300) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16TT1360 TTJ3 : Température stérilisation circuit air
+CALL FC_AI (AI := DB_AI._16TT1360) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16PT1300 TTJ3 : Pression arrivée d'air tank
+CALL FC_AI (AI := DB_AI._16PT1300) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16PT1301 TTJ3 : Pression fond tank
+CALL FC_AI (AI := DB_AI._16PT1301) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16FT8817 LSO17 : Débit ligne soutirage
+CALL FC_AI (AI := DB_AI._16FT8817) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16FT8812 LRM12 : Débit ligne remplissage
+CALL FC_AI (AI := DB_AI._16FT8812) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16LT8816 TTOP1/L2 : Niveau trémie
+CALL FC_AI (AI := DB_AI._16LT8816) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16LT0101 P21 : Niveau bac de lancement BL01
+CALL FC_AI (AI := DB_AI._16LT0101) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16LT0102 P21 : Niveau dégazeur DA01
+CALL FC_AI (AI := DB_AI._16LT0102) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16LT0161 CR01 : Niveau cuve recupération
+CALL FC_AI (AI := DB_AI._16LT0161) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16LT1100 TTJ2 : Niveau cuve
+CALL FC_AI (AI := DB_AI._16LT1100) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16LT1200 TTJ1 : Niveau cuve
+CALL FC_AI (AI := DB_AI._16LT1200) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16LT1300 TTJ3 : Niveau cuve
+CALL FC_AI (AI := DB_AI._16LT1300) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16LT1400 TTJ4 : Niveau cuve 
+CALL FC_AI (AI := DB_AI._16LT1400) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16LT2100 TTJ11 : Niveau cuve
+CALL FC_AI (AI := DB_AI._16LT2100) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16LT2200 TTJ12 : Niveau cuve
+CALL FC_AI (AI := DB_AI._16LT2200) ;
+NOP   0 ;
+
+
+
+END_FUNCTION
+

@@ -1,0 +1,121 @@
+FUNCTION "FC_IO_AO" : VOID
+TITLE =
+VERSION : 0.1
+
+BEGIN
+NETWORK
+TITLE = IO assignment for AO object
+//For diagnostic purposes only, to edit use the AWL source code
+//-------------------------------------------------------------
+//--History
+//--[Version]   [Name]      [DATE]      [Comments]
+//--1.00        Yacine AA   05-01-21    Creation
+NETWORK
+TITLE =16SC1100 TTJ1 : Agitateur cuve
+//L     DB_AO._16SC1100.Output ;
+//T     AW_16SC1100 ;
+
+NETWORK
+TITLE =16SC1200 TTJ2 : Agitateur cuve
+//L     DB_AO._16SC1200.Output ;
+//T     AW_16SC1200 ;
+
+NETWORK
+TITLE =16SC8813 LSO13 : Pompe soutirage
+//L     DB_AO._16SC8813.Output ;
+//T     AW_16SC8813 ;
+
+NETWORK
+TITLE =16SC8814 LSO14 : Pompe soutirage
+//L     DB_AO._16SC8814.Output ;
+//T     AW_16SC8814 ;
+
+NETWORK
+TITLE =16SC1300 TTJ3 : Agitateur cuve
+//L     DB_AO._16SC1300.Output ;
+//T     AW_16SC1300 ;
+
+NETWORK
+TITLE =16SC8815 LSO15 : Pompe soutirage
+//L     DB_AO._16SC8815.Output ;
+//T     AW_16SC8815 ;
+
+NETWORK
+TITLE =16SC8816 LSO16 : Pompe soutirage
+//L     DB_AO._16SC8816.Output ;
+//T     AW_16SC8816 ;
+
+NETWORK
+TITLE =16SC8817 LSO17 : Pompe soutirage
+//L     DB_AO._16SC8817.Output ;
+//T     AW_16SC8817 ;
+
+NETWORK
+TITLE =16SC1400 TTJ4 : Agitateur cuve
+L     DB_AO._16SC1400.Output ;
+T     AW_16SC1400 ;
+
+NETWORK
+TITLE =16SC1500 TTJ5 : Agitateur cuve
+L     DB_AO._16SC1500.Output ;
+T     AW_16SC1500 ;
+
+NETWORK
+TITLE =16SC0101 P21 : Agitateur bac de lancement BL01
+L     DB_AO._16SC0101.Output ;
+T     AW_16SC0101 ;
+
+NETWORK
+TITLE =16SC0102 P21 : Pompe soutirage de BL01
+L     DB_AO._16SC0102.Output ;
+T     AW_16SC0102 ;
+
+NETWORK
+TITLE =16SC0104 P21 : Pompe soutirage depuis dégazeur DA01
+L     DB_AO._16SC0104.Output ;
+T     AW_16SC0104 ;
+
+NETWORK
+TITLE =16SC2100 TTJ11 : Agitateur cuve
+L     DB_AO._16SC2100.Output ;
+T     AW_16SC2100 ;
+
+NETWORK
+TITLE =16SC2200 TTJ12 : Agitateur cuve
+L     DB_AO._16SC2200.Output ;
+T     AW_16SC2200 ;
+
+NETWORK
+TITLE =16SC8822 LSO22 : Pompe soutirage
+L     DB_AO._16SC8822.Output ;
+T     AW_16SC8822 ;
+
+NETWORK
+TITLE =16CV0101 P21 : Sortie appareil
+L     DB_AO._16CV0101.Output ;
+T     AW_16CV0101 ;
+
+NETWORK
+TITLE =16CV0111 P21 : Arrivée vapeur boucle section 1er traitement HE01
+L     DB_AO._16CV0111.Output ;
+T     AW_16CV0111 ;
+
+NETWORK
+TITLE =16CV0131 P21 : Arrivée vapeur boucle section 2eme traitement HE2
+L     DB_AO._16CV0131.Output ;
+T     AW_16CV0131 ;
+
+NETWORK
+TITLE =16CV0132 P21 : By-passe eau chaude section refroidissement S3
+L     DB_AO._16CV0132.Output ;
+T     AW_16CV0132 ;
+
+NETWORK
+TITLE =16CV0102 P21 : Régulation vide
+L     DB_AO._16CV0102.Output ;
+T     AW_16CV0102 ;
+
+
+
+END_FUNCTION
+

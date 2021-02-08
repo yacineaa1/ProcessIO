@@ -1,0 +1,127 @@
+FUNCTION "FC_CALL_AO" : VOID
+TITLE =
+VERSION : 0.1
+
+BEGIN
+NETWORK
+TITLE = Calling AO object
+//For diagnostic purposes only, to edit use the AWL source code
+//-------------------------------------------------------------
+//--History
+//--[Version]   [Name]      [DATE]      [Comments]
+//--1.00        Yacine AA   06-01-21    Creation
+NETWORK
+TITLE =16AO0000 For testing purposes only
+CALL FC_AO (AO := DB_AO._16AO0000) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16SC1100 TTJ1 : Agitateur cuve
+CALL FC_AO (AO := DB_AO._16SC1100) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16SC1200 TTJ2 : Agitateur cuve
+CALL FC_AO (AO := DB_AO._16SC1200) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16SC8813 LSO13 : Pompe soutirage
+CALL FC_AO (AO := DB_AO._16SC8813) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16SC8814 LSO14 : Pompe soutirage
+CALL FC_AO (AO := DB_AO._16SC8814) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16SC1300 TTJ3 : Agitateur cuve
+CALL FC_AO (AO := DB_AO._16SC1300) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16SC8815 LSO15 : Pompe soutirage
+CALL FC_AO (AO := DB_AO._16SC8815) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16SC8816 LSO16 : Pompe soutirage
+CALL FC_AO (AO := DB_AO._16SC8816) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16SC8817 LSO17 : Pompe soutirage
+CALL FC_AO (AO := DB_AO._16SC8817) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16SC1400 TTJ4 : Agitateur cuve
+CALL FC_AO (AO := DB_AO._16SC1400) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16SC1500 TTJ5 : Agitateur cuve
+CALL FC_AO (AO := DB_AO._16SC1500) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16SC0101 P21 : Agitateur bac de lancement BL01
+CALL FC_AO (AO := DB_AO._16SC0101) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16SC0102 P21 : Pompe soutirage de BL01
+CALL FC_AO (AO := DB_AO._16SC0102) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16SC0104 P21 : Pompe soutirage depuis dégazeur DA01
+CALL FC_AO (AO := DB_AO._16SC0104) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16SC2100 TTJ11 : Agitateur cuve
+CALL FC_AO (AO := DB_AO._16SC2100) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16SC2200 TTJ12 : Agitateur cuve
+CALL FC_AO (AO := DB_AO._16SC2200) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16SC8822 LSO22 : Pompe soutirage
+CALL FC_AO (AO := DB_AO._16SC8822) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16CV0101 P21 : Sortie appareil
+CALL FC_AO (AO := DB_AO._16CV0101) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16CV0111 P21 : Arrivée vapeur boucle section 1er traitement HE01
+CALL FC_AO (AO := DB_AO._16CV0111) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16CV0131 P21 : Arrivée vapeur boucle section 2eme traitement HE2
+CALL FC_AO (AO := DB_AO._16CV0131) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16CV0132 P21 : By-passe eau chaude section refroidissement S3
+CALL FC_AO (AO := DB_AO._16CV0132) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16CV0102 P21 : Régulation vide
+CALL FC_AO (AO := DB_AO._16CV0102) ;
+NOP   0 ;
+
+
+
+
+END_FUNCTION
+

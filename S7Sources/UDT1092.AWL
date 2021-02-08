@@ -2,7 +2,7 @@ TYPE "UDT_DIO"
 NAME    : UDT_DIO
 AUTHOR  : YACINEAA
 FAMILY  : DIO
-VERSION : 1.0
+VERSION : 1.5
 
 
   STRUCT	
@@ -42,76 +42,19 @@ VERSION : 1.0
 	Bit_3_6 			: BOOL ;			//06 Spare
 	Bit_3_7 			: BOOL ;			//07 Spare
 
-   Setting : STRUCT 	
-    _00 				: INT  := 0;		//ID of the digital object  
-    _01			 		: INT  := 0;		//Manual forcing period (0 if permanent) [100ms]
-    _02			 		: INT  := 15;		//Grace period before activation output [100ms]
-    _03			 		: INT  := 30;		//Grace period before deactivation output [100ms]
-    _04				 	: INT  := 50;		//Grace period before activation output in CIP mode [100ms]
-    _05			 		: INT  := 10;		//Grace period before deactivation output in CIP mode [100ms]
-    _06			 		: INT  := 0;		//Spare [100ms]
-	Buffer : STRUCT 
-	    _00	 			: INT  := 0;		//Manual forcing period [100ms]
-	    _01		 		: INT  := 20;		//Grace period before activation output [100ms]
-	    _02		 		: INT  := 20;		//Grace period before deactivation output [100ms]
-	    _03		 		: INT  := 50;		//Spare [100ms]
+   	Setting             : ARRAY[0..6] of INT;
+	
+	Buffer              : ARRAY[0..3] of INT;
+	
+	Register_00			: REAL ;			//Main operating time [h]
+	
+	Register            : ARRAY[1..4] of INT;
 
-	END_STRUCT ;	
-   END_STRUCT ;	
-   
-   Register : STRUCT 	
-    _00		 			: REAL ;			//Object operating time [h]
-    _01					: INT ;				//Object cycle counter
-    _02		 			: INT ;				//faults counter
-    _03		 			: INT ;				//Manual mode counter
-    _04 				: INT ;				//Spare
-   END_STRUCT ;	
-   
-   AccessLevel : STRUCT 	
-    _00					: INT   := 2000;	//Access level 0 : for manual operation
-    _01					: INT   := 2050;	//Access level 1 ; for inhibition mode 
-    _02					: INT   := 7000;	//Access level 2 : for setting level 
-    _03					: INT   := 7050;	//Access level 3 : for advanced setting level
-   END_STRUCT ;
-   
-   Bit : STRUCT
-    _00					: BOOL ;			//
-    _01 				: BOOL ;			//
-    _02 				: BOOL ;			//
-    _03 				: BOOL ;			//
-    _04 				: BOOL ;			//
-    _05 				: BOOL ;			//
-    _06 				: BOOL ;			// 
-    _07 				: BOOL ;			//
-    _08 				: BOOL ;			//
-    _09 				: BOOL ;			//
-    _10 				: BOOL ;			//
-    _11 				: BOOL ;			//
-    _12 				: BOOL ;			//
-    _13 				: BOOL ;			//
-    _14 				: BOOL ;			//
-    _15 				: BOOL ;			//
-   END_STRUCT ;	
-   
-   Edge : STRUCT
-    _00					: BOOL ;			//
-    _01 				: BOOL ;			//
-    _02 				: BOOL ;			//
-    _03 				: BOOL ;			//
-    _04 				: BOOL ;			//
-    _05 				: BOOL ;			//
-    _06 				: BOOL ;			// 
-    _07 				: BOOL ;			//
-    _08 				: BOOL ;			//
-    _09 				: BOOL ;			//
-    _10 				: BOOL ;			//
-    _11 				: BOOL ;			//
-    _12 				: BOOL ;			//
-    _13 				: BOOL ;			//
-    _14 				: BOOL ;			//
-    _15 				: BOOL ;			//
-   END_STRUCT ;	
-   
+    AccessLevel         : ARRAY[0..3] of INT;
+
+    Bit                 : ARRAY[0..15] of BOOL;
+
+    Edge                : ARRAY[0..15] of BOOL;
 
      
   END_STRUCT ;	

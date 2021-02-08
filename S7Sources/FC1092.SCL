@@ -2,7 +2,7 @@ FUNCTION FC1092 : VOID
 NAME    : 'FC_DIO'
 AUTHOR  : 'YACINEAA'
 FAMILY  : 'DIO'
-VERSION : '1.0'
+VERSION : '1.5'
 
 
 //GNU General Public License v3.0
@@ -24,6 +24,7 @@ VERSION : '1.0'
 //--History
 //--[Version]            [Name]                        [DATE]                    [Comments]
 //--1.00                 Yacine AA                     13-01-21                  Creation
+//--1.50              Yacine AA                     07-02-21                  Replacing STRUCT with ARRAY to gain memrory space  
 //--------------------------------------------------------------------------------------------------------------------------------------
 //-----ToDo
 //-- Calculate Hardware fault via module diagnostic 
@@ -37,6 +38,28 @@ VERSION : '1.0'
 //--- 1 : Digital input
 //--- 3 : Digital output
 //--- 2 : input or output with cycle counter 
+//----ARRAYS : 
+// Setting_00 : INT  : ID of the digital object  
+// Setting_01 : INT  : Manual forcing period (0 if permanent) [100ms]
+// Setting_02 : INT  : Grace period before activation output [100ms]
+// Setting_03 : INT  : Grace period before deactivation output [100ms]
+// Setting_04 : INT  : Grace period before activation output in CIP mode [100ms]
+// Setting_05 : INT  : Grace period before deactivation output in CIP mode [100ms]
+// Setting_06 : INT  : Spare [100ms]
+// Buffer_00 : INT  : Manual forcing period [100ms]
+// Buffer_01 : INT  : Grace period before activation output [100ms]
+// Buffer_02 : INT  : Grace period before deactivation output [100ms]
+// Buffer_03 : INT  : Spare [100ms]
+// Register_00 : REAL : Object operating time [h]
+// Register_01 : INT : Object cycle counter
+// Register_02 : INT : faults counter
+// Register_03 : INT : Manual mode counter
+// Register_04 : INT : Spare
+// AccessLevel_00 : INT : Access level 0 : for manual operation
+// AccessLevel_01 : INT : Access level 1 ; for inhibition mode 
+// AccessLevel_02 : INT : Access level 2 : for setting level 
+// AccessLevel_03 : INT : Access level 3 : for advanced setting level
+
 
 
 
@@ -44,15 +67,13 @@ VAR_IN_OUT
     DIO                      : UDT_DIO ; //Standerd user data type for Digital inputs or outputs DIO
 END_VAR
 
-VAR_INPUT
+
+VAR_TEMP
     PostiveEdge100ms        : BOOL ; //Positive edge for 100ms (10Hz) 
     PostiveEdge1s           : BOOL ; //Positive edge for 1s (1Hz) 
     Acknowledgment          : BOOL ; //Acknowledgment for motor zone
     Simulation              : BOOL ; //Simulation mode in motor zone
     PowerOn                 : BOOL ; //Power on signal 
-END_VAR
-
-VAR_TEMP
     Ack                     : BOOL ; //Acknowledgment temporary working bit 
     Setting00               : INT  ; //Grace period before activation output [100ms]
     Setting01               : INT  ; //Grace period before activation output [100ms]
@@ -61,6 +82,13 @@ END_VAR
 
 
 BEGIN
+
+//Loading utilities
+PostiveEdge100ms   := "Frm_100ms" ;
+PostiveEdge1s      := "Frm_1s" ; 
+Acknowledgment     := "DB_COM_HMI".ACQ_DE_HMI_MEM ;
+Simulation         := "MODE_SIM" ; 
+PowerOn            := True;
 
 //Simulation = Zone Simulation or element Simulation
 DIO.WorkinMode0 := Simulation OR "DB_SCADA".SimulationMode_0 ;
@@ -84,13 +112,13 @@ END_IF;
 IF DIO.WorkinMode4  THEN DIO.WorkinMode3 := False; DIO.ForceValue := False; END_IF;
 
 //CIP mode
-IF DIO.Setting._00 = 0 THEN 
+IF DIO.Setting[0] = 0 THEN 
     IF DIO.WorkinMode2  THEN 
-        Setting00 := DIO.Setting._04 ;
-        Setting01 := DIO.Setting._05 ;
+        Setting00 := DIO.Setting[4] ;
+        Setting01 := DIO.Setting[5] ;
     ELSE
-        Setting00 := DIO.Setting._02 ;
-        Setting01 := DIO.Setting._03 ;
+        Setting00 := DIO.Setting[2] ;
+        Setting01 := DIO.Setting[3] ;
     END_IF;
 ELSE
     DIO.WorkinMode2 := False;
@@ -99,42 +127,42 @@ END_IF;
 
 //Simulation & suppression modes
 IF DIO.WorkinMode0 OR DIO.WorkinMode1 THEN 
-    IF NOT DIO.Edge._08 THEN DIO.Acknowledgment := True ; END_IF;
+    IF NOT DIO.Edge[8] THEN DIO.Acknowledgment := True ; END_IF;
 END_IF;
 
 //Manual mode
 IF DIO.WorkinMode3 THEN
-    DIO.Bit._00 := DIO.ForceValue ;
+    DIO.Bit[0] := DIO.ForceValue ;
     Setting00   := 0 ;
     Setting01   := 0 ;
     //Positive edge
-    IF NOT DIO.Edge._09 THEN 
-        DIO.Setting.Buffer._00 := 0; 
-        DIO.Register._03       := DIO.Register._03 + 1 ;
+    IF NOT DIO.Edge[9] THEN 
+        DIO.Buffer[0] := 0; 
+        DIO.Register[3]       := DIO.Register[3] + 1 ;
     END_IF;
-    IF PostiveEdge100ms AND DIO.Setting.Buffer._00 < DIO.Setting._01 THEN DIO.Setting.Buffer._00 := DIO.Setting.Buffer._00 + 1; END_IF;
-    IF DIO.Setting.Buffer._00 >= DIO.Setting._01 AND DIO.Setting._01 > 0  THEN DIO.WorkinMode3 := False; DIO.ForceValue := False; END_IF;
+    IF PostiveEdge100ms AND DIO.Buffer[0] < DIO.Setting[1] THEN DIO.Buffer[0] := DIO.Buffer[0] + 1; END_IF;
+    IF DIO.Buffer[0] >= DIO.Setting[1] AND DIO.Setting[1] > 0  THEN DIO.WorkinMode3 := False; DIO.ForceValue := False; END_IF;
 ELSE
     //Automatic modes
-    DIO.Bit._00 := DIO.Input ;
+    DIO.Bit[0] := DIO.Input ;
 END_IF;
 
 //Writting to value
-IF DIO.Bit._00 THEN
+IF DIO.Bit[0] THEN
     //Positive edge
-    IF NOT DIO.Edge._00 THEN 
-        DIO.Setting.Buffer._01 := 0;
-        DIO.Register._01       := DIO.Register._01 + 1;
+    IF NOT DIO.Edge[0] THEN 
+        DIO.Buffer[1] := 0;
+        DIO.Register[1]       := DIO.Register[1] + 1;
     END_IF;
-    IF PostiveEdge100ms AND DIO.Setting.Buffer._01 < Setting00 THEN DIO.Setting.Buffer._01 := DIO.Setting.Buffer._01 + 1; END_IF;
-    IF DIO.Setting.Buffer._01 >= Setting00 OR Setting00 <= 0   THEN DIO.Value := DIO.Bit._00; END_IF;
+    IF PostiveEdge100ms AND DIO.Buffer[1] < Setting00 THEN DIO.Buffer[1] := DIO.Buffer[1] + 1; END_IF;
+    IF DIO.Buffer[1] >= Setting00 OR Setting00 <= 0   THEN DIO.Value := DIO.Bit[0]; END_IF;
 ELSE
     //Negative edge
-    IF  DIO.Edge._00 THEN 
-        DIO.Setting.Buffer._02 := 0 ; 
+    IF  DIO.Edge[0] THEN 
+        DIO.Buffer[2] := 0 ; 
     END_IF;
-    IF PostiveEdge100ms AND DIO.Setting._02 < Setting01 THEN DIO.Setting.Buffer._02 := DIO.Setting.Buffer._02 + 1; END_IF;
-    IF DIO.Setting.Buffer._02 >= Setting01 OR Setting01 <= 0   THEN DIO.Value := DIO.Bit._00; END_IF;
+    IF PostiveEdge100ms AND DIO.Setting[2] < Setting01 THEN DIO.Buffer[2] := DIO.Buffer[2] + 1; END_IF;
+    IF DIO.Buffer[2] >= Setting01 OR Setting01 <= 0   THEN DIO.Value := DIO.Bit[0]; END_IF;
 END_IF; 
 
 //Object in unconformity state (externally set) : 01
@@ -147,34 +175,34 @@ IF False THEN DIO.Fault_02 := False ; END_IF;
 IF NOT PowerOn THEN DIO.Fault_03 := True ; END_IF;
 
 //Maximum operating time before preventive maintenance reached : 04
-IF (DIO.Register._01 > 70000) AND DIO.Setting._00 = 2 THEN DIO.Fault_04 := True ; END_IF;
+IF (DIO.Register[1] > 70000) AND DIO.Setting[0] = 2 THEN DIO.Fault_04 := True ; END_IF;
 
 //Summing main faults : 00
 IF (DIO.Fault_01 OR DIO.Fault_02 OR DIO.Fault_03) AND NOT (DIO.WorkinMode0 OR DIO.WorkinMode1) THEN
-    IF NOT DIO.Fault_00 THEN DIO.Register._02 := DIO.Register._02 + 1; END_IF;
+    IF NOT DIO.Fault_00 THEN DIO.Register[2] := DIO.Register[2] + 1; END_IF;
     DIO.Fault_00 := True ;
 ELSE
     DIO.Acknowledged := False;
 END_IF;
 
 //Access levels monitoring
-IF DIO.AccessLevel._03 > 9999                THEN DIO.AccessLevel._03 := 9999; END_IF;
-IF DIO.AccessLevel._03 < DIO.AccessLevel._02 THEN DIO.AccessLevel._03 := DIO.AccessLevel._02 + 1; END_IF;
-IF DIO.AccessLevel._02 < DIO.AccessLevel._01 THEN DIO.AccessLevel._02 := DIO.AccessLevel._01 + 1; END_IF;
-IF DIO.AccessLevel._01 < DIO.AccessLevel._00 THEN DIO.AccessLevel._01 := DIO.AccessLevel._00 + 1; END_IF;
-IF DIO.AccessLevel._00 < 0                   THEN DIO.AccessLevel._00 := 0; END_IF;
+IF DIO.AccessLevel[3] > 9999                THEN DIO.AccessLevel[3] := 9999; END_IF;
+IF DIO.AccessLevel[3] < DIO.AccessLevel[2] THEN DIO.AccessLevel[3] := DIO.AccessLevel[2] + 1; END_IF;
+IF DIO.AccessLevel[2] < DIO.AccessLevel[1] THEN DIO.AccessLevel[2] := DIO.AccessLevel[1] + 1; END_IF;
+IF DIO.AccessLevel[1] < DIO.AccessLevel[0] THEN DIO.AccessLevel[1] := DIO.AccessLevel[0] + 1; END_IF;
+IF DIO.AccessLevel[0] < 0                   THEN DIO.AccessLevel[0] := 0; END_IF;
 
 //Edgging
-DIO.Edge._00 := DIO.Bit._00 ; 
+DIO.Edge[0] := DIO.Bit[0] ; 
 
-DIO.Edge._08 := DIO.WorkinMode0 OR DIO.WorkinMode1 ; 
+DIO.Edge[8] := DIO.WorkinMode0 OR DIO.WorkinMode1 ; 
 
-DIO.Edge._09 := DIO.WorkinMode3 ;
+DIO.Edge[9] := DIO.WorkinMode3 ;
 
 
 //Main operating time [h]
 IF PostiveEdge1s AND DIO.Value THEN 
-    DIO.Register._00 := DIO.Register._00 + (1.0/3600.0); 
+    DIO.Register_00 := DIO.Register_00 + (1.0/3600.0); 
 END_IF;
 
 //Calulating number of forced, inhibited and in fault elements [Legacy]

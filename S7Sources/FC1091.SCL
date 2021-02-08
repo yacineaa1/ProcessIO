@@ -2,7 +2,7 @@ FUNCTION FC1091 : VOID
 NAME    : 'FC_MM'
 AUTHOR  : 'YACINEAA'
 FAMILY  : 'MM'
-VERSION : '1.2'
+VERSION : '1.5'
 
 
 //GNU General Public License v3.0
@@ -26,6 +26,7 @@ VERSION : '1.2'
 //--1.00                 Yacine AA                     08-10-20                  Creation
 //--1.10                 Yacine AA                     08-12-20                  Test with WW
 //--1.20                 Yacine AA                     02-01-21                  Standardizing UDT naming and adding manual mode counter
+//--1.50              Yacine AA                     07-02-21                  Replacing STRUCT with ARRAY to gain memrory space  
 //--------------------------------------------------------------------------------------------------------------------------------------
 //-----ToDo
 //-- Motor rebounding fault
@@ -38,6 +39,34 @@ VERSION : '1.2'
 //--- 0 : Simple motor with one direction
 //--- 1 : Simple motor with two directions
 //--- 2 : 
+// Setting_00 : INT  : ID type of motor object 
+// Setting_01 : INT  : Maximum operating time before preventive maintenance [h]
+// Setting_02 : INT  : Grace period before fault when stopping motor [100ms]
+// Setting_03 : INT  : Grace period before fault when starting motor [100ms]
+// Setting_04 : INT  : Grace period before reboundding fault [100ms]
+// Setting_05 : INT  : Grace period before overload fault [100ms]
+// Setting_06 : INT  : Grace period before VFR not ready fault [100ms]
+// Setting_07 : INT  : Delay before stopping motor [100ms]
+// Setting_08 : INT  : Delay before starting motor [100ms]
+//
+//-----ARRAYS
+// Buffer_00 : INT : Grace period before fault when stopping/starting motor [100ms]
+// Buffer_01 : INT : Grace period before rebound fault [100ms]
+// Buffer_02 : INT : Grace period before overload fault [100ms]
+// Buffer_03 : INT : Grace period before VFR not ready fault [100ms]
+// Buffer_04 : INT : Delay before start/stop [100ms]
+// Buffer_05 : INT : Spare
+// Register_00 : REAL : Motor operating time [h]
+// Register_01// : INT : Motor Forward cycle counter
+// Register_02 : INT : Motor Reverse cycle counter
+// Register_03 : INT : Manual mode counter
+// Register_04 : INT : Start/Stop fault counter
+// Register_05 : INT : Overload fault counter
+// Register_06 : INT : VFD fault counter
+// AccessLevel_00 : INT : Access level 0 : for manual operation
+// AccessLevel_01 : INT : Access level 1 : for inhibition mode 
+// AccessLevel_02 : INT : Access level 2 : for setting level 
+// AccessLevel_03 : INT : Access level 3 : for advenced setting level 
 
 
 
@@ -45,20 +74,23 @@ VAR_IN_OUT
     MM                      : UDT_MM ; //Standerd user data type for motors MM
 END_VAR
 
-VAR_INPUT
+VAR_TEMP
+    Ack                     : BOOL ; //Acknowledgment temporary working bit 
     PostiveEdge100ms        : BOOL ; //Positive edge for 100ms (10Hz) 
     PostiveEdge1s           : BOOL ; //Positive edge for 1s (1Hz) 
     Acknowledgment          : BOOL ; //Acknowledgment for motor zone
     Simulation              : BOOL ; //Simulation mode in motor zone
-END_VAR
-
-VAR_TEMP
-    Ack                     : BOOL ; //Acknowledgment temporary working bit 
 END_VAR 
 
 
 
 BEGIN
+
+//Loading utilities
+PostiveEdge100ms   := "Frm_100ms" ;
+PostiveEdge1s      := "Frm_1s" ; 
+Acknowledgment     := "DB_COM_HMI".ACQ_DE_HMI_MEM ;
+Simulation         := "MODE_SIM" ; 
 
 //Simulation = Zone Simulation or element Simulation
 MM.WorkinMode0 := Simulation OR "DB_SCADA".SimulationMode_0 ;
@@ -88,7 +120,7 @@ IF MM.WorkinMode0 OR MM.WorkinMode1 THEN
     MM.Feedback1 := True ;
     MM.Feedback2 := True ;
     MM.Feedback3 := True ;
-    IF NOT MM.Edge._08 THEN MM.Acknowledgment := True ; END_IF;
+    IF NOT MM.Edge[8] THEN MM.Acknowledgment := True ; END_IF;
 ELSE
     MM.Feedback0 := MM.IOFeedback0;
     MM.Feedback1 := MM.IOFeedback1;
@@ -97,96 +129,96 @@ ELSE
 END_IF;
 
 //Mode(start/stop) established
-MM.Bit._00  := (MM.Output0 AND  MM.Feedback0) OR (NOT MM.Output0 AND NOT MM.Feedback0) ;
-MM.Bit._01  := (MM.Output1 AND  MM.Feedback0) OR (NOT MM.Output1 AND NOT MM.Feedback0) ;
+MM.Bit[0]  := (MM.Output0 AND  MM.Feedback0) OR (NOT MM.Output0 AND NOT MM.Feedback0) ;
+MM.Bit[1]  := (MM.Output1 AND  MM.Feedback0) OR (NOT MM.Output1 AND NOT MM.Feedback0) ;
 
 
 //Resetting grace temporary timers
-IF (MM.Bit._00 AND NOT MM.Edge._00) OR (MM.Bit._01 AND NOT MM.Edge._01)THEN 
-    MM.Setting.Buffer._00  := 0;
-    MM.Setting.Buffer._01  := 0;
+IF (MM.Bit[0] AND NOT MM.Edge[0]) OR (MM.Bit[1] AND NOT MM.Edge[1])THEN 
+    MM.Buffer[0]  := 0;
+    MM.Buffer[1]  := 0;
 END_IF;
 
 
 //Activation order to outputs 
-MM.Bit._10   :=  (NOT MM.WorkinMode3 AND MM.AutoOutput0) OR (MM.WorkinMode3 AND MM.ForceOutput0) ;
-MM.Bit._11   :=  (NOT MM.WorkinMode3 AND MM.AutoOutput1) OR (MM.WorkinMode3 AND MM.ForceOutput1) ;
-MM.Bit._12   :=  MM.AutoOutput2 ;
-MM.Bit._13   :=  False ;
+MM.Bit[10]   :=  (NOT MM.WorkinMode3 AND MM.AutoOutput0) OR (MM.WorkinMode3 AND MM.ForceOutput0) ;
+MM.Bit[11]   :=  (NOT MM.WorkinMode3 AND MM.AutoOutput1) OR (MM.WorkinMode3 AND MM.ForceOutput1) ;
+MM.Bit[12]   :=  MM.AutoOutput2 ;
+MM.Bit[13]   :=  False ;
 
 //Management of outputs 
-IF MM.Bit._10 THEN MM.Bit._11 := False; END_IF;
-IF MM.Bit._11 THEN MM.Bit._10 := False; END_IF;
-IF MM.Bit._12 THEN MM.Bit._10 := False; MM.Bit._11 := False; END_IF;      
+IF MM.Bit[10] THEN MM.Bit[11] := False; END_IF;
+IF MM.Bit[11] THEN MM.Bit[10] := False; END_IF;
+IF MM.Bit[12] THEN MM.Bit[10] := False; MM.Bit[11] := False; END_IF;      
 
 //Writting output 0
-IF MM.Bit._10 THEN
-    IF NOT MM.Edge._10 THEN 
-        MM.Setting.Buffer._00 := 0;
-        MM.Setting.Buffer._01 := 0;
-        MM.Setting.Buffer._04 := 0;
-        MM.Register._01       := MM.Register._01 + 1;
+IF MM.Bit[10] THEN
+    IF NOT MM.Edge[10] THEN 
+        MM.Buffer[0] := 0;
+        MM.Buffer[1] := 0;
+        MM.Buffer[4] := 0;
+        MM.Register[1]       := MM.Register[1] + 1;
     END_IF;
-    IF PostiveEdge100ms AND MM.Setting.Buffer._04 < MM.Setting._08 THEN MM.Setting.Buffer._04 := MM.Setting.Buffer._04 + 1; END_IF;
-    IF MM.Setting.Buffer._04 >= MM.Setting._08 OR MM.Setting._08 <= 0 THEN MM.Output0 := MM.Bit._10; END_IF;
+    IF PostiveEdge100ms AND MM.Buffer[4] < MM.Setting[8]   THEN MM.Buffer[4] := MM.Buffer[4] + 1; END_IF;
+    IF MM.Buffer[4] >= MM.Setting[8] OR MM.Setting[8] <= 0 THEN MM.Output0 := MM.Bit[10]; END_IF;
 ELSE
-    IF  MM.Edge._10 THEN 
-        MM.Setting.Buffer._00 := 0 ; 
-        MM.Setting.Buffer._01 := 0;
-        MM.Setting.Buffer._04 := 0;
+    IF  MM.Edge[10] THEN 
+        MM.Buffer[0] := 0 ; 
+        MM.Buffer[1] := 0;
+        MM.Buffer[4] := 0;
     END_IF;
-    IF PostiveEdge100ms AND MM.Setting.Buffer._04 < MM.Setting._07 THEN MM.Setting.Buffer._04 := MM.Setting.Buffer._04 + 1; END_IF;
-    IF MM.Setting.Buffer._04 >= MM.Setting._07 OR MM.Setting._07 <= 0 THEN MM.Output0 := MM.Bit._10; END_IF;
+    IF PostiveEdge100ms AND MM.Buffer[4] < MM.Setting[7]   THEN MM.Buffer[4] := MM.Buffer[4] + 1; END_IF;
+    IF MM.Buffer[4] >= MM.Setting[7] OR MM.Setting[7] <= 0 THEN MM.Output0 := MM.Bit[10]; END_IF;
 END_IF; 
 
 //Writting output 1
-IF MM.Bit._11 THEN
-    IF NOT MM.Edge._11 THEN 
-        MM.Setting.Buffer._00 := 0;
-        MM.Setting.Buffer._01 := 0;
-        MM.Setting.Buffer._04 := 0;
-        MM.Register._02  := MM.Register._02 + 1;
+IF MM.Bit[11] THEN
+    IF NOT MM.Edge[11] THEN 
+        MM.Buffer[0] := 0;
+        MM.Buffer[1] := 0;
+        MM.Buffer[4] := 0;
+        MM.Register[2]  := MM.Register[2] + 1;
     END_IF;
-    IF PostiveEdge100ms AND MM.Setting.Buffer._04 < MM.Setting._08 THEN MM.Setting.Buffer._04 := MM.Setting.Buffer._04 + 1; END_IF;
-    IF MM.Setting.Buffer._04 >= MM.Setting._08 OR MM.Setting._08 <= 0 THEN MM.Output1 := MM.Bit._11; END_IF;
+    IF PostiveEdge100ms AND MM.Buffer[4] < MM.Setting[8] THEN MM.Buffer[4] := MM.Buffer[4] + 1; END_IF;
+    IF MM.Buffer[4] >= MM.Setting[8] OR MM.Setting[8] <= 0 THEN MM.Output1 := MM.Bit[11]; END_IF;
 ELSE
-    IF  MM.Edge._11 THEN 
-        MM.Setting.Buffer._00 := 0; 
-        MM.Setting.Buffer._01 := 0;
-        MM.Setting.Buffer._04 := 0;
+    IF  MM.Edge[11] THEN 
+        MM.Buffer[0] := 0; 
+        MM.Buffer[1] := 0;
+        MM.Buffer[4] := 0;
     END_IF;
-    IF PostiveEdge100ms AND MM.Setting.Buffer._04 < MM.Setting._07 THEN MM.Setting.Buffer._04 := MM.Setting.Buffer._04 + 1; END_IF;
-    IF MM.Setting.Buffer._04 >= MM.Setting._07 OR MM.Setting._07 <= 0 THEN MM.Output1 := MM.Bit._11; END_IF;
+    IF PostiveEdge100ms AND MM.Buffer[4] < MM.Setting[7]   THEN MM.Buffer[4] := MM.Buffer[4] + 1; END_IF;
+    IF MM.Buffer[4] >= MM.Setting[7] OR MM.Setting[7] <= 0 THEN MM.Output1 := MM.Bit[11]; END_IF;
 END_IF; 
 
 //Writting output 2-3
-MM.Output2 := NOT MM.Bit._12 ;
-MM.Output3 := MM.Bit._13 ;
+MM.Output2 := NOT MM.Bit[12] ;
+MM.Output3 := MM.Bit[13] ;
 
 //Motor forward running fault : 01/02
-IF NOT MM.Bit._00 THEN
-    IF PostiveEdge100ms THEN MM.Setting.Buffer._00 := MM.Setting.Buffer._00 + 1 ; END_IF;
-    MM.Fault_01 := MM.Setting.Buffer._00 > MM.Setting._03 AND     MM.Bit._10 ;  
-    MM.Fault_02 := MM.Setting.Buffer._00 > MM.Setting._02  AND NOT MM.Bit._10 ;      
+IF NOT MM.Bit[0] THEN
+    IF PostiveEdge100ms THEN MM.Buffer[0] := MM.Buffer[0] + 1 ; END_IF;
+    MM.Fault_01 := MM.Buffer[0] > MM.Setting[3] AND     MM.Bit[10] ;  
+    MM.Fault_02 := MM.Buffer[0] > MM.Setting[2]  AND NOT MM.Bit[10] ;      
 END_IF;
 
 //Motor reverse running fault : 01/02
-IF MM.WorkinMode2 AND NOT MM.Bit._01 THEN
-    IF PostiveEdge100ms THEN MM.Setting.Buffer._00 := MM.Setting.Buffer._00 + 1 ; END_IF;
-    MM.Fault_01 := MM.Setting.Buffer._00 > MM.Setting._03 AND     MM.Bit._11 ;  
-    MM.Fault_02 := MM.Setting.Buffer._00 > MM.Setting._02  AND NOT MM.Bit._11 ;      
+IF MM.WorkinMode2 AND NOT MM.Bit[1] THEN
+    IF PostiveEdge100ms THEN MM.Buffer[0] := MM.Buffer[0] + 1 ; END_IF;
+    MM.Fault_01 := MM.Buffer[0] > MM.Setting[3] AND     MM.Bit[11] ;  
+    MM.Fault_02 := MM.Buffer[0] > MM.Setting[2]  AND NOT MM.Bit[11] ;      
 END_IF;
 
 //Motor overload fault : 03
 IF NOT MM.Feedback1 THEN
-    IF PostiveEdge100ms THEN MM.Setting.Buffer._02 := MM.Setting.Buffer._02 + 1 ; END_IF;
-    MM.Fault_03 := MM.Setting.Buffer._02 > MM.Setting._05 ;
+    IF PostiveEdge100ms THEN MM.Buffer[2] := MM.Buffer[2] + 1 ; END_IF;
+    MM.Fault_03 := MM.Buffer[2] > MM.Setting[5] ;
 END_IF;
 
 //VFD not ready fault : 04
 IF NOT MM.Feedback2 THEN
-    IF PostiveEdge100ms THEN MM.Setting.Buffer._03 := MM.Setting.Buffer._03 + 1 ; END_IF;
-    MM.Fault_04 := MM.Setting.Buffer._03 > MM.Setting._06 ;
+    IF PostiveEdge100ms THEN MM.Buffer[3] := MM.Buffer[3] + 1 ; END_IF;
+    MM.Fault_04 := MM.Buffer[3] > MM.Setting[6] ;
 END_IF;
 
 //Emergency stop : 05
@@ -195,7 +227,7 @@ IF NOT MM.Output2 THEN
 END_IF;
 
 //Maximum operating : 06
-IF MM.Register._02 >= MM.Setting._01 THEN
+IF MM.Register[2] >= MM.Setting[1] THEN
     MM.Fault_06 := True ;
 END_IF;
 
@@ -207,46 +239,46 @@ ELSE
 END_IF;
 
 //Manual mode counter
-IF MM.WorkinMode3 AND NOT MM.Edge._09 THEN 
-    MM.Register._03 := MM.Register._03 + 1 ;
+IF MM.WorkinMode3 AND NOT MM.Edge[9] THEN 
+    MM.Register[3] := MM.Register[3] + 1 ;
 END_IF;  
 //Motor running/stopping fault counter
 IF (MM.Fault_01 OR MM.Fault_01) AND NOT MM.Fault_00 THEN 
-    MM.Register._04 := MM.Register._04 + 1 ;
+    MM.Register[4] := MM.Register[4] + 1 ;
 END_IF;  
 //Motor overload fault 
 IF MM.Fault_03 AND NOT MM.Fault_00 THEN 
-    MM.Register._05 := MM.Register._05 + 1 ;
+    MM.Register[5] := MM.Register[5] + 1 ;
 END_IF;
 //VFD not ready fault 
 IF MM.Fault_04 AND NOT MM.Fault_00 THEN 
-    MM.Register._06 := MM.Register._06 + 1 ;
+    MM.Register[6] := MM.Register[6] + 1 ;
 END_IF;   
 
 //Access levels monitoring
-IF MM.AccessLevel._03 > 9999               THEN MM.AccessLevel._03 := 9999; END_IF;
-IF MM.AccessLevel._03 < MM.AccessLevel._02 THEN MM.AccessLevel._03 := MM.AccessLevel._02 + 1; END_IF;
-IF MM.AccessLevel._02 < MM.AccessLevel._01 THEN MM.AccessLevel._02 := MM.AccessLevel._01 + 1; END_IF;
-IF MM.AccessLevel._01 < MM.AccessLevel._00 THEN MM.AccessLevel._01 := MM.AccessLevel._00 + 1; END_IF;
-IF MM.AccessLevel._00 < 0                  THEN MM.AccessLevel._00 := 0; END_IF;
+IF MM.AccessLevel[3] > 9999              THEN MM.AccessLevel[3] := 9999; END_IF;
+IF MM.AccessLevel[3] < MM.AccessLevel[2] THEN MM.AccessLevel[3] := MM.AccessLevel[2] + 1; END_IF;
+IF MM.AccessLevel[2] < MM.AccessLevel[1] THEN MM.AccessLevel[2] := MM.AccessLevel[1] + 1; END_IF;
+IF MM.AccessLevel[1] < MM.AccessLevel[0] THEN MM.AccessLevel[1] := MM.AccessLevel[0] + 1; END_IF;
+IF MM.AccessLevel[0] < 0                 THEN MM.AccessLevel[0] := 0; END_IF;
 
 
 //Edgging
-MM.Edge._00 := MM.Bit._00 ; //Positive edge position of motor running forward
-MM.Edge._01 := MM.Bit._01 ; //Positive edge position of motor running reverse
+MM.Edge[0] := MM.Bit[0] ; //Positive edge position of motor running forward
+MM.Edge[1] := MM.Bit[1] ; //Positive edge position of motor running reverse
 
-MM.Edge._08 := MM.WorkinMode0 OR MM.WorkinMode1 ; //Positive edge for inhibition & simulation
+MM.Edge[8] := MM.WorkinMode0 OR MM.WorkinMode1 ; //Positive edge for inhibition & simulation
 
-MM.Edge._09 := MM.WorkinMode3 ;
+MM.Edge[9] := MM.WorkinMode3 ;
 
-MM.Edge._10 := MM.Bit._10 ; 
-MM.Edge._11 := MM.Bit._11 ;
-MM.Edge._12 := MM.Bit._12 ;
-MM.Edge._13 := MM.Bit._13 ;
+MM.Edge[10] := MM.Bit[10] ; 
+MM.Edge[11] := MM.Bit[11] ;
+MM.Edge[12] := MM.Bit[12] ;
+MM.Edge[13] := MM.Bit[13] ;
 
 //Main operating time [h]
 IF PostiveEdge1s AND (MM.Output0 OR MM.Output1) THEN 
-    MM.Register._00 := MM.Register._00 + (1.0/3600.0); 
+    MM.Register_00 := MM.Register_00 + (1.0/3600.0); 
 END_IF;
 
 //Calulating number of forced, inhibited and in fault elements [Legacy]

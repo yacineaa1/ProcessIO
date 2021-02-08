@@ -2,7 +2,7 @@ TYPE "UDT_MM"
 NAME    : UDT_MM
 AUTHOR  : YACINEAA
 FAMILY  : MM
-VERSION : 1.2
+VERSION : 1.5
 
 
   STRUCT	
@@ -52,93 +52,22 @@ VERSION : 1.2
 	Bit_4_5 			: BOOL ;			//Spare
 	Bit_4_6 			: BOOL ;			//Spare
 	Bit_4_7 			: BOOL ;			//Spare
-	Bit_5_0 			: BOOL ;			//Spare
-	Bit_5_1 			: BOOL ;			//Spare
-	Bit_5_2 			: BOOL ;			//Spare
-	Bit_5_3 			: BOOL ;			//Spare
-	Bit_5_4 			: BOOL ;			//Spare
-	Bit_5_5 			: BOOL ;			//Spare
-	Bit_5_6 			: BOOL ;			//Spare
-	Bit_5_7 			: BOOL ;			//Spare
+	Byte_5  			: BYTE ;			//Spare
 	
+	Setting             : ARRAY[0..8] of INT;
+	
+	Buffer              : ARRAY[0..5] of INT;
    
-   Setting : STRUCT 	
-    _00 				: INT  := 0;		//ID type of motor object 
-    _01 				: INT  := 6000;		//Maximum operating time before preventive maintenance [h]
-    _02			 		: INT  := 20;		//Grace period before fault when stopping motor [100ms]
-    _03			 		: INT  := 20;		//Grace period before fault when starting motor [100ms]
-    _04			 		: INT  := 10;		//Grace period before reboundding fault [100ms]
-    _05			 		: INT  := 1;		//Grace period before overload fault [100ms]
-  	_06			 		: INT  := 1;		//Grace period before VFR not ready fault [100ms]
-    _07		 			: INT  := 0; 		//Delay before stopping motor [100ms]
-    _08					: INT  := 0; 		//Delay before starting motor [100ms]
-	Buffer : STRUCT
-		_00				: INT ;				//Grace period before fault when stopping/starting motor [100ms]
-		_01 			: INT ;				//Grace period before rebound fault [100ms]
-		_02		 		: INT ;				//Grace period before overload fault [100ms]
-		_03				: INT ;				//Grace period before VFR not ready fault [100ms]
-		_04 			: INT ;				//Delay before start/stop [100ms]
-		_05 			: INT ;				//Spare
-	END_STRUCT ;	
-   END_STRUCT ;	
-   
-   Register : STRUCT 	
-    _00			 		: REAL ;			//Motor operating time [h]
-    _01					: INT ;				//Motor Forward cycle counter
-    _02					: INT ;				//Motor Reverse cycle counter
-    _03			 		: INT ;				//Manual mode counter
-    _04			 		: INT ;				//Start/Stop fault counter
-    _05			 		: INT ;				//Overload fault counter
-    _06			 		: INT ;				//VFD fault counter
-   END_STRUCT ;	
-   
-   AccessLevel : STRUCT 	
-    _00					: INT   := 2000;	//Access level 0 : for manual operation
-    _01					: INT   := 2050;	//Access level 1 ; for inhibition mode 
-    _02					: INT   := 7000;	//Access level 2 : for setting level 
-    _03					: INT   := 7050;	//Access level 3 : for advenced setting level 
-   END_STRUCT ;
-   
-   Bit : STRUCT 	//Temporary working bits
-    _00 				: BOOL ;			//run forware (start/stop) of motor established
-    _01 				: BOOL ;			//run reverse (start/stop) of motor established
-    _02 				: BOOL ;			//
-    _03 				: BOOL ;			//
-    _04 				: BOOL ;			//
-    _05 				: BOOL ;			//
-    _06 				: BOOL ;			// 
-    _07 				: BOOL ;			//
-    _08 				: BOOL ;			//
-    _09 				: BOOL ;			//
-    _10 				: BOOL ;			//Buffer output 0
-    _11 				: BOOL ;			//Buffer output 1
-    _12 				: BOOL ;			//Buffer output 2
-    _13 				: BOOL ;			//Buffer output 3
-    _14 				: BOOL ;			//
-    _15 				: BOOL ;			//
-   END_STRUCT ;	
-   
-   Edge : STRUCT 	//Working edges
-    _00 				: BOOL ;			//PE run forware (start/stop) of motor established
-    _01 				: BOOL ;			//PE run reverse (start/stop) of motor established
-    _02 				: BOOL ;			//
-    _03 				: BOOL ;			//
-    _04 				: BOOL ;			//
-    _05 				: BOOL ;			//
-    _06 				: BOOL ;			//
-    _07 				: BOOL ;			//
-    _08 				: BOOL ;			//
-    _09 				: BOOL ;			//
-    _10 				: BOOL ;			//Positive edge for output 0
-    _11 				: BOOL ;			//Positive edge for output 1
-    _12 				: BOOL ;			//Positive edge for output 2
-    _13 				: BOOL ;			//Positive edge for output 3
-    _14 				: BOOL ;			//
-    _15 				: BOOL ;			//
-   END_STRUCT ;	
-   
+   	Register_00			: REAL ;			//Main operating time [h]
+	
+	Register            : ARRAY[1..6] of INT;
+	
+	AccessLevel         : ARRAY[0..3] of INT;
 
-     
+    Bit                 : ARRAY[0..15] of BOOL;
+
+    Edge                : ARRAY[0..15] of BOOL;
+
   END_STRUCT ;	
 END_TYPE
 

@@ -1,0 +1,157 @@
+FUNCTION "FC_CALL_MM" : VOID
+TITLE =
+VERSION : 0.1
+
+BEGIN
+NETWORK
+TITLE = Calling MM objects
+//For diagnostic purposes only, to edit use the AWL source code
+//-------------------------------------------------------------
+//--History
+//--[Version]   [Name]      [DATE]      [Comments]
+//--1.00        Yacine AA   05-01-21    Creation
+NETWORK
+TITLE =16MM0000 For testing purposes only
+CALL FC_MM (MM := DB_MM._16MM0000) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16AG0101 P21 : Agitateur bac de lancement BL01
+CALL FC_MM (MM := DB_MM._16AG0101) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16PU0102 P21 : Pompe soutirage BL01
+CALL FC_MM (MM := DB_MM._16PU0102) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16PU0103 P21 : Pompe NEP BL01
+CALL FC_MM (MM := DB_MM._16PU0103) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16PU0104 P21 : Pompe soutirage de dégazeur DA01
+CALL FC_MM (MM := DB_MM._16PU0104) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16PU0105 P21 : Pompe NEP dégazeur DA01
+CALL FC_MM (MM := DB_MM._16PU0105) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16PU0111 P21 : Pompe boucle section 1er traitement HE01
+CALL FC_MM (MM := DB_MM._16PU0111) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16PU0121 P21 : Pompe vide dégazeur
+CALL FC_MM (MM := DB_MM._16PU0121) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16PU0122 P21 : Pompe boucle eau froid DA01
+CALL FC_MM (MM := DB_MM._16PU0122) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16PU0131 P21 : Pompe boucle section traitement
+CALL FC_MM (MM := DB_MM._16PU0131) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16PU0161 CR01 : Pompe recirculation cuve
+CALL FC_MM (MM := DB_MM._16PU0161) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16AG0162 CR01 : Agitateur cuve
+CALL FC_MM (MM := DB_MM._16AG0162) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16PU1072 TTJ1x : Pompe retour NEP
+CALL FC_MM (MM := DB_MM._16PU1072) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16AG2100 TTJ11 : Agitateur cuve
+CALL FC_MM (MM := DB_MM._16AG2100) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16AG2200 TTJ12 : Agitateur cuve
+CALL FC_MM (MM := DB_MM._16AG2200) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16PU8822 LSO22 : Pompe soutirage vers conditionneuse
+CALL FC_MM (MM := DB_MM._16PU8822) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16PU0123 P21 : Pompe retour eau glacée boucle DA01
+CALL FC_MM (MM := DB_MM._16PU0123) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16AG1200 TTJ2 : Agitateur cuve
+CALL FC_MM (MM := DB_MM._16AG1200) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16AG1100 TTJ1 : Agitateur cuve
+CALL FC_MM (MM := DB_MM._16AG1100) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16PU1073 TTJx : Pompe retour NEP
+CALL FC_MM (MM := DB_MM._16PU1073) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16PU8813 LSO13 : Pompe soutirage vers conditionneuse
+CALL FC_MM (MM := DB_MM._16PU8813) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16PU8814 LSO14 : Pompe soutirage vers conditionneuse
+CALL FC_MM (MM := DB_MM._16PU8814) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16PU8815 LSO15 : Pompe soutirage vers conditionneuse
+CALL FC_MM (MM := DB_MM._16PU8815) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16PU8816 LSO16 : Pompe soutirage vers conditionneuse
+CALL FC_MM (MM := DB_MM._16PU8816) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16AG1300 TTJ3 : Agitateur cuve
+CALL FC_MM (MM := DB_MM._16AG1300) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16AG1400 TTJ4 : Agitateur cuve
+CALL FC_MM (MM := DB_MM._16AG1400) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16AG1500 TTJ5 : Agitateur cuve
+CALL FC_MM (MM := DB_MM._16AG1500) ;
+NOP   0 ;
+
+NETWORK
+TITLE =16PU8817 LSO17 : Pompe soutirage vers conditionneuse
+CALL FC_MM (MM := DB_MM._16PU8817) ;
+NOP   0 ;
+
+
+
+
+END_FUNCTION
+
